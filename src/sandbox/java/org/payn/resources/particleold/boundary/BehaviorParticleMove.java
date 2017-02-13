@@ -1,4 +1,4 @@
-package org.payn.resources.particle.boundary;
+package org.payn.resources.particleold.boundary;
 
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueParticleList;

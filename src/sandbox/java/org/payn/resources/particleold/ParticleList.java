@@ -1,4 +1,4 @@
-package org.payn.resources.particle;
+package org.payn.resources.particleold;
 
 import org.payn.chsm.processors.ProcessorAbstract;
 import org.payn.chsm.processors.interfaces.UpdaterAuto;

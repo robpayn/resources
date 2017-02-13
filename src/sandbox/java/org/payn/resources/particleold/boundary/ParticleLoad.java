@@ -1,4 +1,4 @@
-package org.payn.resources.particle.boundary;
+package org.payn.resources.particleold.boundary;
 
 import java.util.ArrayList;
 

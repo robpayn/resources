@@ -1,4 +1,4 @@
-package org.payn.resources.particle.cell;
+package org.payn.resources.particleold.cell;
 
 public class ParticleManagerLagrange extends ParticleManager {
    

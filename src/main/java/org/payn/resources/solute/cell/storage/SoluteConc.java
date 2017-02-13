@@ -1,10 +1,9 @@
 package org.payn.resources.solute.cell.storage;
 
 import org.payn.chsm.values.ValueDouble;
+import org.payn.neoch.processors.ProcessorDoubleState;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.cell.BehaviorSoluteStorage;
-
-import neoch.processors.ProcessorDoubleState;
 
 /**
  * Processor for solute concentration

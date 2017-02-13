@@ -2,10 +2,9 @@ package org.payn.resources.solute.cell.storage;
 
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
+import org.payn.neoch.processors.ProcessorStorageDouble;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.cell.BehaviorSoluteStorage;
-
-import neoch.processors.ProcessorStorageDouble;
 
 /**
  * Processor for solute mass

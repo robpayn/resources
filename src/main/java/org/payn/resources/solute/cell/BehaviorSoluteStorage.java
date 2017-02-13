@@ -1,11 +1,10 @@
 package org.payn.resources.solute.cell;
 
 import org.payn.chsm.values.ValueDouble;
+import org.payn.neoch.behavior.BehaviorMatrix;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.cell.storage.SoluteConc;
 import org.payn.resources.solute.cell.storage.SoluteMass;
-
-import neoch.behaviors.BehaviorMatrix;
 
 /**
  * Generic aqueous storage behavior for a solute in a cell

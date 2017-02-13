@@ -1,11 +1,10 @@
 package org.payn.resources.solute.boundary.active;
 
 import org.payn.chsm.values.ValueDouble;
+import org.payn.neoch.HolonBoundary;
+import org.payn.neoch.processors.ProcessorLoadDouble;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.BehaviorSoluteActiveMM;
-
-import neoch.HolonBoundary;
-import neoch.processors.ProcessorLoadDouble;
 
 /**
  * Simulates solute uptake as a boundary condition based on Michaelis Menten kinetics

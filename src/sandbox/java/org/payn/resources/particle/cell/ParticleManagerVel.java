@@ -161,9 +161,9 @@ public class ParticleManagerVel extends ProcessorLong implements UpdaterInfo {
       finishedParticles.get(particle.getResourceName()).add(particle);
    }
 
-   public void addResource(String currencyName) 
+   public void addResource(String resourceName) 
    {
-      finishedParticles.put(currencyName, new ArrayList<Particle>());
+      finishedParticles.put(resourceName, new ArrayList<Particle>());
    }
    
 }

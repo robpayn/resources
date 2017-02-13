@@ -8,6 +8,7 @@ import org.payn.chsm.State;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueLong;
 import org.payn.resources.particle.Particle;
+import org.payn.resources.particle.ParticleManager;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
 
@@ -16,12 +17,12 @@ import neoch.HolonCell;
 
 public abstract class ParticleConcTracker implements Particle {
 
-   protected ParticleManagerVel particleManager;
+   protected ParticleManager particleManager;
    protected String resourceName;
    private ValueLong tick;
    private ValueDouble time;
    protected ValueDouble timeStep;
-   private ValueLong interval;
+   private long interval;
    private double startTime;
    protected HolonCell currentCell;
    protected HolonCell endCell;
@@ -30,7 +31,7 @@ public abstract class ParticleConcTracker implements Particle {
    protected double currentDistance;
    protected BufferedWriter writer;
 
-   public ParticleConcTracker(ParticleManagerVel particleManager,
+   public ParticleConcTracker(ParticleManager particleManager,
          String resourceName) 
    {
       this.particleManager = particleManager;
@@ -40,7 +41,7 @@ public abstract class ParticleConcTracker implements Particle {
    @Override
    public void update() throws Exception 
    {
-      if (tick.n % interval.n == 0)
+      if (tick.n % interval == 0)
       {
          sample();
       }
@@ -77,7 +78,7 @@ public abstract class ParticleConcTracker implements Particle {
 
    @Override
    public void initializeTime(ValueLong tick, ValueDouble time,
-         ValueDouble timeStep, ValueLong interval) 
+         ValueDouble timeStep, long interval) 
    {
       this.tick = tick;
       this.time = time;
@@ -88,9 +89,9 @@ public abstract class ParticleConcTracker implements Particle {
 
 
    @Override
-   public void initializeOutput(int particleCount, String output) throws IOException 
+   public void initializeOutput(int particleCount, File output) throws IOException 
    {
-      File outputDir = new File(output + File.separator + resourceName);
+      File outputDir = new File(output.getAbsolutePath() + File.separator + resourceName);
       if (!outputDir.exists())
       {
          outputDir.mkdirs();

@@ -5,10 +5,9 @@ import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.resources.time.BehaviorTime;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueLong;
+import org.payn.neoch.processors.ProcessorDoubleTrade;
 import org.payn.resources.solute.boundary.BehaviorSoluteBoundInject;
 import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
-
-import neoch.processors.ProcessorDoubleTrade;
 
 /**
  * Processor for calculating the concentration based on background from an input file and

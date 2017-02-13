@@ -1,10 +1,9 @@
 package org.payn.resources.solute.boundary;
 
 import org.payn.chsm.values.ValueDouble;
+import org.payn.neoch.behavior.BehaviorMatrix;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.active.SoluteUptakeMM;
-
-import neoch.behaviors.BehaviorMatrix;
 
 /**
  * Behavior of solute at a flow-controlled boundary

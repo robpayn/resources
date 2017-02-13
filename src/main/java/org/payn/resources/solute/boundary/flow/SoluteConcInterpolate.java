@@ -1,8 +1,7 @@
 package org.payn.resources.solute.boundary.flow;
 
 import org.payn.chsm.io.file.interpolate.ProcessorInterpolateSnapshotTable;
-
-import neoch.UpdaterTrade;
+import org.payn.neoch.UpdaterTrade;
 
 /**
  * Solute concentration processor based on interpolation from input data

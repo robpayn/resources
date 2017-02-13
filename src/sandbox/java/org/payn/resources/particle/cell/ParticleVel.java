@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import org.payn.chsm.values.ValueDouble;
+import org.payn.resources.particle.ParticleManager;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
 
@@ -14,11 +15,10 @@ public class ParticleVel extends ParticleConcTracker {
 
    private double velocity;
 
-   public ParticleVel(ParticleManagerVel particleManager, String resourceName,
+   public ParticleVel(ParticleManager particleManager, String resourceName,
          double velocity) 
    {
       super(particleManager, resourceName);
-      this.velocity = velocity;
    }
 
    @Override

@@ -1,11 +1,10 @@
 package org.payn.resources.solute.boundary;
 
 import org.payn.chsm.values.ValueDouble;
+import org.payn.neoch.behavior.symmetric.symmdouble.BehaviorSymmetricDouble;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.flow.SoluteAdvection;
 import org.payn.resources.solute.boundary.flow.SoluteDispersion;
-
-import neoch.behaviors.symmetric.symmdouble.BehaviorSymmetricDouble;
 
 /**
  * Behavior for aqueous solute movement between aqueous storage cells

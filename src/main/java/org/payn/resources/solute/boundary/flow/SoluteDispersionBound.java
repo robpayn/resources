@@ -1,12 +1,11 @@
 package org.payn.resources.solute.boundary.flow;
 
 import org.payn.chsm.values.ValueDouble;
+import org.payn.neoch.HolonBoundary;
+import org.payn.neoch.HolonCell;
+import org.payn.neoch.processors.ProcessorLoadDouble;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
-
-import neoch.HolonBoundary;
-import neoch.HolonCell;
-import neoch.processors.ProcessorLoadDouble;
 
 /**
  * Processor to calculate dispersive transport of solute

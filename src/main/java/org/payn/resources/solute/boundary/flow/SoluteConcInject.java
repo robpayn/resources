@@ -3,6 +3,7 @@ package org.payn.resources.solute.boundary.flow;
 import org.payn.chsm.Holon;
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.resources.time.BehaviorTime;
+import org.payn.chsm.resources.time.Iteration;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueLong;
 import org.payn.neoch.processors.ProcessorDoubleTrade;
@@ -72,14 +73,14 @@ public class SoluteConcInject extends ProcessorDoubleTrade implements Initialize
             BehaviorTime.ITERATION_INTERVAL
             ).getValue();
 
-      mass = (ValueDouble)createDependency(
-            getResourceName() + BehaviorSoluteBoundInject.REQ_STATE_MASS
+      mass = (ValueDouble)createAbstractDependency(
+            BehaviorSoluteBoundInject.REQ_STATE_MASS
             ).getValue();
-      startTick = (ValueLong)createDependency(
-            getResourceName() + BehaviorSoluteBoundInject.REQ_STATE_START
+      startTick = (ValueLong)createAbstractDependency(
+            BehaviorSoluteBoundInject.REQ_STATE_START
             ).getValue();
-      duration = (ValueLong)createDependency(
-            getResourceName() + BehaviorSoluteBoundInject.REQ_STATE_DURATION
+      duration = (ValueLong)createAbstractDependency(
+            BehaviorSoluteBoundInject.REQ_STATE_DURATION
             ).getValue();
       setUpdateDependencies();
    }
@@ -98,12 +99,12 @@ public class SoluteConcInject extends ProcessorDoubleTrade implements Initialize
       Holon controllerHolon = (Holon)getController().getState();
       tick = (ValueLong)createDependency(
             controllerHolon,
-            BehaviorTime.DEFAULT_ITERATION_NAME
+            Iteration.class.getSimpleName()
             ).getValue();
 
       flow = (ValueDouble)createDependency(BehaviorSoluteFlow.REQ_STATE_FLOW).getValue();
-      bkgConc = (ValueDouble)createDependency(
-            getResourceName() + BehaviorSoluteBoundInject.REQ_STATE_BKGCONC
+      bkgConc = (ValueDouble)createAbstractDependency(
+            BehaviorSoluteBoundInject.NAME_BKG_CONC
             ).getValue();
    }
 

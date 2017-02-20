@@ -15,7 +15,7 @@ import org.payn.resources.solute.boundary.flow.SoluteDispersionBound;
 public class BehaviorSoluteBound extends BehaviorMatrix {
 
    @Override
-   protected void addRequiredStates() 
+   public void addRequiredStates() 
    {
       addRequiredState(BehaviorSoluteFlow.REQ_STATE_DISP, ValueDouble.class);
       addRequiredState(BehaviorSoluteFlow.REQ_STATE_FLOW, ValueDouble.class);
@@ -24,10 +24,18 @@ public class BehaviorSoluteBound extends BehaviorMatrix {
    }
    
    @Override
-   protected void addProcessors() 
+   public void addProcessors() 
    {
-      addProcessor(ResourceSolute.NAME_ADVECTION, SoluteAdvectionBound.class, SoluteAdvectionBound.getValueClass());
-      addProcessor(ResourceSolute.NAME_DISPERSION, SoluteDispersionBound.class, SoluteDispersionBound.getValueClass());
+      addAbstractProcessor(
+            ResourceSolute.NAME_ADVECTION, 
+            SoluteAdvectionBound.class, 
+            SoluteAdvectionBound.getValueClass()
+            );
+      addAbstractProcessor(
+            ResourceSolute.NAME_DISPERSION, 
+            SoluteDispersionBound.class, 
+            SoluteDispersionBound.getValueClass()
+            );
    }
 
 }

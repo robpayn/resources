@@ -34,18 +34,23 @@ public class BehaviorSoluteActiveMM extends BehaviorMatrix {
    public static String REQ_STATE_BKG_CONC = "Bkg" + ResourceSolute.NAME_SOLUTE_CONC;
    
    @Override
-   protected void addRequiredStates() 
+   public void addRequiredStates() 
    {
-      addRequiredState(REQ_STATE_UMAX, ValueDouble.class);
-      addRequiredState(REQ_STATE_HALFSAT, ValueDouble.class);
+      addAbstractRequiredState(REQ_STATE_UMAX, ValueDouble.class);
+      addAbstractRequiredState(REQ_STATE_HALFSAT, ValueDouble.class);
+      addAbstractRequiredState(REQ_STATE_BKG_CONC, ValueDouble.class);
+      
       addRequiredState(REQ_STATE_PLANAREA, ValueDouble.class);
-      addRequiredState(REQ_STATE_BKG_CONC, ValueDouble.class);
    }
 
    @Override
-   protected void addProcessors() 
+   public void addProcessors() 
    {
-      addProcessor(ResourceSolute.NAME_SOLUTE_LOAD, SoluteUptakeMM.class, SoluteUptakeMM.getValueClass());
+      addAbstractProcessor(
+            ResourceSolute.NAME_SOLUTE_LOAD, 
+            SoluteUptakeMM.class, 
+            SoluteUptakeMM.getValueClass()
+            );
    }
 
 }

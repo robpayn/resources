@@ -1,6 +1,6 @@
 package org.payn.resources.solute;
 
-import org.payn.chsm.Resource;
+import org.payn.chsm.ResourceAbstract;
 import org.payn.resources.solute.boundary.BehaviorSoluteActiveMM;
 import org.payn.resources.solute.boundary.BehaviorSoluteBoundInject;
 import org.payn.resources.solute.boundary.BehaviorSoluteBoundInterp;
@@ -14,7 +14,7 @@ import org.payn.resources.solute.cell.BehaviorSoluteStorage;
  * @author v78h241
  *
  */
-public class ResourceSolute extends Resource {
+public class ResourceSolute extends ResourceAbstract {
    
    /**
     * Name of the solute load state
@@ -73,7 +73,7 @@ public class ResourceSolute extends Resource {
 
 
    @Override
-   protected void addBehaviors() 
+   public void addBehaviors() 
    {
       addBehavior(
             BEHAVIOR_STORAGE, 

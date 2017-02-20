@@ -1,6 +1,5 @@
 package org.payn.resources.solute.boundary;
 
-import org.payn.chsm.io.file.interpolate.ProcessorInterpolateSnapshotTable;
 import org.payn.chsm.values.ValueString;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.flow.SoluteConcInterpolate;
@@ -14,28 +13,70 @@ import org.payn.resources.solute.boundary.flow.SoluteConcInterpolate;
 public class BehaviorSoluteBoundInterp extends BehaviorSoluteBound {
 
    @Override
-   protected void addRequiredStates() 
+   public void addRequiredStates() 
    {
       super.addRequiredStates();
-      addRequiredState(
-            resource.getName() + ProcessorInterpolateSnapshotTable.REQ_STATE_TYPE, 
+      addAbstractRequiredState(
+            SoluteConcInterpolate.REQ_STATE_TYPE, 
             ValueString.class
             );
-      addRequiredState(
-            resource.getName() + ProcessorInterpolateSnapshotTable.REQ_STATE_PATH, 
+      addAbstractRequiredState(
+            SoluteConcInterpolate.REQ_STATE_PATH, 
             ValueString.class
             );
-      addRequiredState(
-            resource.getName() + ProcessorInterpolateSnapshotTable.REQ_STATE_DELIMITER, 
+      addAbstractRequiredState(
+            SoluteConcInterpolate.REQ_STATE_DELIMITER, 
             ValueString.class
             );
    }
 
    @Override
-   protected void addProcessors() 
+   public void addProcessors() 
    {
       super.addProcessors();
-      addProcessor(ResourceSolute.NAME_SOLUTE_CONC, SoluteConcInterpolate.class, SoluteConcInterpolate.getValueClass());
+      addAbstractProcessor(
+            ResourceSolute.NAME_SOLUTE_CONC, 
+            SoluteConcInterpolate.class, 
+            SoluteConcInterpolate.getValueClass()
+            );
+   }
+
+   /**
+    * Get the state name for the path
+    * 
+    * @return
+    *       state name
+    */
+   public String getInterpolationPathStateName() 
+   {
+      return resource.getName() + SoluteConcInterpolate.REQ_STATE_PATH;
+   }
+
+   /**
+    * Get the state name for the type of interpolation
+    * 
+    * @return
+    *       state name
+    */
+   public String getInterpolationTypeStateName() 
+   {
+      return resource.getName() + SoluteConcInterpolate.REQ_STATE_TYPE;
+   }
+
+   /**
+    * Get the state name for the delimiter
+    * 
+    * @return
+    *       state name
+    */
+   public String getInterpolationDelimiterStateName() 
+   {
+      return resource.getName() + SoluteConcInterpolate.REQ_STATE_DELIMITER;
+   }
+
+   public String getConcStateName() 
+   {
+      return resource.getName() + ResourceSolute.NAME_SOLUTE_CONC;
    }
 
 }

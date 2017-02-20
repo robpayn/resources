@@ -20,16 +20,24 @@ public class BehaviorSoluteStorage extends BehaviorMatrix {
    public static String REQ_STATE_VOLUME = "WaterStorage";
 
    @Override
-   protected void addRequiredStates() 
+   public void addRequiredStates() 
    {
       addRequiredState(REQ_STATE_VOLUME, ValueDouble.class);
    }
 
    @Override
-   protected void addProcessors() 
+   public void addProcessors() 
    {
-      addProcessor(ResourceSolute.NAME_SOLUTE_STORAGE, SoluteMass.class, SoluteMass.getValueClass());
-      addProcessor(ResourceSolute.NAME_SOLUTE_CONC, SoluteConc.class, SoluteConc.getValueClass());
+      addAbstractProcessor(
+            ResourceSolute.NAME_SOLUTE_STORAGE, 
+            SoluteMass.class, 
+            SoluteMass.getValueClass()
+            );
+      addAbstractProcessor(
+            ResourceSolute.NAME_SOLUTE_CONC, 
+            SoluteConc.class, 
+            SoluteConc.getValueClass()
+            );
    }
 
 }

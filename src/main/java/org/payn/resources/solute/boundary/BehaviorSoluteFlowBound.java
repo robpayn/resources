@@ -19,16 +19,23 @@ public class BehaviorSoluteFlowBound extends BehaviorMatrix {
    public static String REQ_STATE_FLOW = "WaterFlow";
    
    @Override
-   protected void addRequiredStates() 
+   public void addRequiredStates() 
    {
       addRequiredState(REQ_STATE_FLOW, ValueDouble.class);
-      addRequiredState(resource.getName() + ResourceSolute.NAME_SOLUTE_CONC, ValueDouble.class);
+      addAbstractRequiredState(
+            ResourceSolute.NAME_SOLUTE_CONC, 
+            ValueDouble.class
+            );
    }
 
    @Override
-   protected void addProcessors() 
+   public void addProcessors() 
    {
-      addProcessor(ResourceSolute.NAME_SOLUTE_LOAD, SoluteFlowBound.class, SoluteFlowBound.getValueClass());
+      addAbstractProcessor(
+            ResourceSolute.NAME_SOLUTE_LOAD, 
+            SoluteFlowBound.class, 
+            SoluteFlowBound.getValueClass()
+            );
    }
 
 }

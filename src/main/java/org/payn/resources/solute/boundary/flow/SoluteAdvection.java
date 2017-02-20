@@ -34,16 +34,18 @@ public class SoluteAdvection extends ProcessorLoadDouble {
    public void setUpdateDependencies() throws Exception 
    {
       HolonCell cell = ((HolonBoundary)getState().getParentHolon()).getCell();
-      concLocal = (ValueDouble)createDependency(
+      concLocal = (ValueDouble)createAbstractDependency(
             cell, 
-            getResourceName() + ResourceSolute.NAME_SOLUTE_CONC
+            ResourceSolute.NAME_SOLUTE_CONC
             ).getValue();
       cell = ((HolonBoundary)getState().getParentHolon()).getAdjacentBoundary().getCell();
-      concAdjacent = (ValueDouble)createDependency(
+      concAdjacent = (ValueDouble)createAbstractDependency(
             cell, 
-            getResourceName() + ResourceSolute.NAME_SOLUTE_CONC
+            ResourceSolute.NAME_SOLUTE_CONC
             ).getValue();
-      waterFlow = (ValueDouble)createDependency(BehaviorSoluteFlow.REQ_STATE_FLOW).getValue();
+      waterFlow = (ValueDouble)createDependency(
+            BehaviorSoluteFlow.REQ_STATE_FLOW
+            ).getValue();
    }
 
    @Override

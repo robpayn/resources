@@ -33,13 +33,13 @@ public class SoluteFlowBound extends ProcessorLoadDouble {
    @Override
    public void setUpdateDependencies() throws Exception 
    {
-      extConc = (ValueDouble)createDependency(
-            getResourceName() + ResourceSolute.NAME_SOLUTE_CONC
+      extConc = (ValueDouble)createAbstractDependency(
+            ResourceSolute.NAME_SOLUTE_CONC
             ).getValue();
       HolonCell cell = ((HolonBoundary)getState().getParentHolon()).getCell();
-      concLocal = (ValueDouble)createDependency(
+      concLocal = (ValueDouble)createAbstractDependency(
             cell, 
-            getResourceName() + ResourceSolute.NAME_SOLUTE_CONC
+            ResourceSolute.NAME_SOLUTE_CONC
             ).getValue();
       waterFlow = (ValueDouble)createDependency(BehaviorSoluteFlowBound.REQ_STATE_FLOW).getValue();
    }

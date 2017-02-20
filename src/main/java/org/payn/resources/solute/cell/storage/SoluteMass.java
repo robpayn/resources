@@ -12,7 +12,7 @@ import org.payn.resources.solute.cell.BehaviorSoluteStorage;
  * @author v78h241
  *
  */
-public class SoluteMass extends ProcessorStorageDouble  implements InitializerAutoSimple {
+public class SoluteMass extends ProcessorStorageDouble implements InitializerAutoSimple {
    
    /**
     * Concentration value
@@ -27,8 +27,8 @@ public class SoluteMass extends ProcessorStorageDouble  implements InitializerAu
    @Override
    public void setInitDependencies() throws Exception 
    {
-      concentration = (ValueDouble)createDependency(
-            getResourceName() + ResourceSolute.NAME_SOLUTE_CONC
+      concentration = (ValueDouble)createAbstractDependency(
+            ResourceSolute.NAME_SOLUTE_CONC
             ).getValue();
       waterVolume = (ValueDouble)createDependency(
             BehaviorSoluteStorage.REQ_STATE_VOLUME

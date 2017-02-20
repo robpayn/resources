@@ -26,8 +26,8 @@ public class SoluteConc extends ProcessorDoubleState {
    @Override
    public void setUpdateDependencies() throws Exception 
    {
-      mass = (ValueDouble)createDependency(
-            getResourceName() + ResourceSolute.NAME_SOLUTE_STORAGE
+      mass = (ValueDouble)createAbstractDependency(
+            ResourceSolute.NAME_SOLUTE_STORAGE
             ).getValue();
       waterVolume = (ValueDouble)createDependency(
             BehaviorSoluteStorage.REQ_STATE_VOLUME

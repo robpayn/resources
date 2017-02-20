@@ -35,7 +35,7 @@ public class BehaviorSoluteFlow extends BehaviorSymmetricDouble {
    public static String REQ_STATE_AREA_XSECT = "AreaXSect";
    
    @Override
-   protected void addRequiredStates() 
+   public void addRequiredStates() 
    {
       addRequiredState(REQ_STATE_DISP, ValueDouble.class);
       addRequiredState(REQ_STATE_FLOW, ValueDouble.class);
@@ -44,10 +44,18 @@ public class BehaviorSoluteFlow extends BehaviorSymmetricDouble {
    }
 
    @Override
-   protected void addProcessors() 
+   public void addProcessors() 
    {
-      addProcessor(ResourceSolute.NAME_ADVECTION, SoluteAdvection.class, SoluteAdvection.getValueClass());
-      addProcessor(ResourceSolute.NAME_DISPERSION, SoluteDispersion.class, SoluteDispersion.getValueClass());
+      addAbstractProcessor(
+            ResourceSolute.NAME_ADVECTION, 
+            SoluteAdvection.class, 
+            SoluteAdvection.getValueClass()
+            );
+      addAbstractProcessor(
+            ResourceSolute.NAME_DISPERSION, 
+            SoluteDispersion.class, 
+            SoluteDispersion.getValueClass()
+            );
    }
 
 }

@@ -32,32 +32,46 @@ public class BehaviorSoluteBoundInject extends BehaviorSoluteBoundInterp {
    /**
     * Name for state with background concentration
     */
-   public static final String REQ_STATE_BKGCONC = "Bkg" + ResourceSolute.NAME_SOLUTE_CONC;
+   public static final String NAME_BKG_CONC = "Bkg" + ResourceSolute.NAME_SOLUTE_CONC;
    
    @Override
    public void addRequiredStates()
    {
       super.addRequiredStates();
-      addRequiredState(
-            resource.getName() + REQ_STATE_MASS, 
-            ValueDouble.class
-            );
-      addRequiredState(
-            resource.getName() + REQ_STATE_START, 
-            ValueLong.class
-            );
-      addRequiredState(
-            resource.getName() + REQ_STATE_DURATION, 
-            ValueLong.class
-            );
+      addAbstractRequiredState(REQ_STATE_MASS, ValueDouble.class);
+      addAbstractRequiredState(REQ_STATE_START, ValueLong.class);
+      addAbstractRequiredState(REQ_STATE_DURATION, ValueLong.class);
    }
    
    @Override
    public void addProcessors()
    {
       super.addProcessors();
-      addProcessor(ResourceSolute.NAME_SOLUTE_CONC, SoluteConcInject.class, SoluteConcInject.getValueClass());
-      addProcessor(REQ_STATE_BKGCONC, SoluteConcInterpolate.class, SoluteConcInject.getValueClass());
+      addAbstractProcessor(
+            ResourceSolute.NAME_SOLUTE_CONC, 
+            SoluteConcInject.class, 
+            SoluteConcInject.getValueClass()
+            );
+      addAbstractProcessor(
+            NAME_BKG_CONC, 
+            SoluteConcInterpolate.class, 
+            SoluteConcInject.getValueClass()
+            );
+   }
+
+   public String getInjectMassStateName() 
+   {
+      return resource.getName() + REQ_STATE_MASS;
+   }
+
+   public String getDurationStateName() 
+   {
+      return resource.getName() + REQ_STATE_DURATION;
+   }
+
+   public String getStartIterationStateName() 
+   {
+      return resource.getName() + REQ_STATE_START;
    }
 
 }

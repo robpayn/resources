@@ -46,18 +46,18 @@ extends ProcessorLoadDouble {
       planArea = (ValueDouble)createDependency(
             BehaviorSoluteActiveMM.REQ_STATE_PLANAREA
             ).getValue();
-      bkgConc = (ValueDouble)createDependency(
+      bkgConc = (ValueDouble)createAbstractDependency(
             BehaviorSoluteActiveMM.REQ_STATE_BKG_CONC
             ).getValue();
-      maxUptake = (ValueDouble)createDependency(
+      maxUptake = (ValueDouble)createAbstractDependency(
             BehaviorSoluteActiveMM.REQ_STATE_UMAX
             ).getValue();
-      halfSat = (ValueDouble)createDependency(
+      halfSat = (ValueDouble)createAbstractDependency(
             BehaviorSoluteActiveMM.REQ_STATE_HALFSAT
             ).getValue();
-      conc = (ValueDouble)createDependency(
+      conc = (ValueDouble)createAbstractDependency(
             ((HolonBoundary)getState().getParentHolon()).getCell(),
-            getResourceName() + ResourceSolute.NAME_SOLUTE_CONC
+            ResourceSolute.NAME_SOLUTE_CONC
             ).getValue();
    }
 

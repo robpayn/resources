@@ -43,17 +43,23 @@ public class SoluteDispersionBound extends ProcessorLoadDouble {
    @Override
    public void setUpdateDependencies() throws Exception 
    {
-      extConc = (ValueDouble)createDependency(
-            getResourceName() + ResourceSolute.NAME_SOLUTE_CONC
+      extConc = (ValueDouble)createAbstractDependency(
+            ResourceSolute.NAME_SOLUTE_CONC
             ).getValue();
       HolonCell cell = ((HolonBoundary)getState().getParentHolon()).getCell();
-      concLocal = (ValueDouble)createDependency(
+      concLocal = (ValueDouble)createAbstractDependency(
             cell, 
-            getResourceName() + ResourceSolute.NAME_SOLUTE_CONC
+            ResourceSolute.NAME_SOLUTE_CONC
             ).getValue();
-      dispCoeff = (ValueDouble)createDependency(BehaviorSoluteFlow.REQ_STATE_DISP).getValue();
-      length = (ValueDouble)createDependency(BehaviorSoluteFlow.REQ_STATE_LENGTH).getValue();
-      area = (ValueDouble)createDependency(BehaviorSoluteFlow.REQ_STATE_AREA_XSECT).getValue();
+      dispCoeff = (ValueDouble)createDependency(
+            BehaviorSoluteFlow.REQ_STATE_DISP
+            ).getValue();
+      length = (ValueDouble)createDependency(
+            BehaviorSoluteFlow.REQ_STATE_LENGTH
+            ).getValue();
+      area = (ValueDouble)createDependency(
+            BehaviorSoluteFlow.REQ_STATE_AREA_XSECT
+            ).getValue();
    }
 
    @Override

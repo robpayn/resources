@@ -45,10 +45,10 @@ public class Chezey extends ProcessorDoubleTrade implements InitializerAutoSimpl
    {
       friction = (ValueDouble)createDependency(
             BehaviorDynamicWaveWiele.NAME_FRICTION
-            );
+            ).getValue();
       hydraulicRadius = (ValueDouble)createDependency(
             BehaviorDynamicWaveWiele.NAME_HYDRAULIC_RADIUS
-            );
+            ).getValue();
    }
 
    @Override

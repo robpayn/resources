@@ -11,9 +11,6 @@ public class WaterFlow extends ProcessorLoadDouble implements InitializerAutoSim
    @Override
    public void setInitDependencies() throws Exception 
    {
-      chezey = (ValueDouble)createDependency(
-            BehaviorDynamicWaveWiele.NAME_CHEZEY
-            );
    }
 
    @Override
@@ -25,7 +22,9 @@ public class WaterFlow extends ProcessorLoadDouble implements InitializerAutoSim
    @Override
    public void setUpdateDependencies() throws Exception 
    {
-      
+      chezey = (ValueDouble)createDependency(
+            BehaviorDynamicWaveWiele.NAME_CHEZEY
+            ).getValue();
    }
 
    @Override

@@ -27,7 +27,7 @@ public class XSectAreaPrevious extends ProcessorDouble implements UpdaterSimple,
    @Override
    public void initialize() throws Exception 
    {
-      State xSectionAreaState = getState().getParentHolon().getState(
+      State xSectionAreaState = state.getParentHolon().getState(
             BehaviorDynamicWave.NAME_XSECT_AREA
             );
       xSectionArea = (ValueDouble)xSectionAreaState.getValue();

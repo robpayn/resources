@@ -52,13 +52,13 @@ public class XSectAreaCurrent extends ProcessorDoubleTrade implements Initialize
    {
       depth = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_DEPTH
-            );
+            ).getValue();
       bottomWidth = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_BOTTOM_WIDTH
-            );
+            ).getValue();
       wettedWidthChange = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_WETTED_WIDTH_CHANGE
-            );
+            ).getValue();
       xSectionAreaPreviousProc = (UpdaterSimple)getState().getParentHolon().getState(
             BehaviorDynamicWave.NAME_XSECT_AREA_PREV
             ).getProcessor();

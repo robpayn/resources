@@ -29,12 +29,12 @@ public class LengthFraction extends ProcessorDouble implements InitializerAutoSi
       {
          lengthLoc = (ValueDouble)createDependency(
                BehaviorDynamicWave.REQ_STATE_LENGTH_LOC
-               );
+               ).getValue();
          try
          {
             lengthAdj = (ValueDouble)createDependency(
                   BehaviorDynamicWave.REQ_STATE_LENGTH_ADJ
-                  );
+                  ).getValue();
          }
          catch (Exception e)
          {
@@ -50,7 +50,7 @@ public class LengthFraction extends ProcessorDouble implements InitializerAutoSi
          {
             lengthAdj = (ValueDouble)createDependency(
                   BehaviorDynamicWave.REQ_STATE_LENGTH_ADJ
-                  );
+                  ).getValue();
             throw new Exception(String.format(
                   "Adjacent length is defined with local length in boundary %s.",
                   getState().getParentHolon().toString()

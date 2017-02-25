@@ -45,13 +45,13 @@ public class Friction extends ProcessorDoubleTrade implements InitializerAutoSim
    {
       wieleInt = (ValueDouble)createDependency(
             BehaviorDynamicWaveWiele.REQ_STATE_WIELEINT
-            );
+            ).getValue();
       wieleSlope = (ValueDouble)createDependency(
             BehaviorDynamicWaveWiele.REQ_STATE_WIELESLOPE
-            );
+            ).getValue();
       hydraulicRadius = (ValueDouble)createDependency(
             BehaviorDynamicWaveWiele.NAME_HYDRAULIC_RADIUS
-            );
+            ).getValue();
    }
 
    @Override

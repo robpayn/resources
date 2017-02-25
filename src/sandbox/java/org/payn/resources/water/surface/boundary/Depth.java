@@ -72,10 +72,10 @@ public class Depth extends ProcessorDoubleTrade implements InitializerAutoSimple
    {
       lengthFraction = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_LENGTH_FRACTION
-            );
+            ).getValue();
       bedElevation = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_BED_ELEVATION
-            );
+            ).getValue();
       
       HolonBoundary parentBoundary = (HolonBoundary)getState().getParentHolon();
       HolonCell cell = parentBoundary.getCell();
@@ -84,29 +84,29 @@ public class Depth extends ProcessorDoubleTrade implements InitializerAutoSimple
       cellVolumeLoc = (ValueDouble)createDependency(
             cell,
             ResourceWater.NAME_WATER_VOLUME
-            );
+            ).getValue();
       cellVolumeAdj = (ValueDouble)createDependency(
             cellAdj,
             ResourceWater.NAME_WATER_VOLUME
-            );
+            ).getValue();
       
       cellHeadLoc = (ValueDouble)createDependency(
             cell,
             ResourceWater.NAME_WATER_HEAD
-            );
+            ).getValue();
       cellHeadAdj = (ValueDouble)createDependency(
             cellAdj,
             ResourceWater.NAME_WATER_HEAD
-            );
+            ).getValue();
       
       cellDepthLoc = (ValueDouble)createDependency(
             cell,
             BehaviorDynamicWave.NAME_DEPTH
-            );
+            ).getValue();
       cellDepthAdj = (ValueDouble)createDependency(
             cellAdj,
             BehaviorDynamicWave.NAME_DEPTH
-            );
+            ).getValue();
    }
 
    @Override

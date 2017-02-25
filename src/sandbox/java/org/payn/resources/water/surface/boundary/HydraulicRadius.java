@@ -44,13 +44,13 @@ public class HydraulicRadius extends ProcessorDoubleTrade implements Initializer
    {
       depth = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_DEPTH
-            );
+            ).getValue();
       xSectionArea = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_XSECT_AREA
-            );
+            ).getValue();
       wettedWidth = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_WETTED_WIDTH
-            );
+            ).getValue();
    }
 
    @Override

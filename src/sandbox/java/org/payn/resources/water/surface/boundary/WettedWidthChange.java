@@ -24,7 +24,7 @@ public class WettedWidthChange extends ProcessorDouble implements InitializerAut
       {
          bankSlope = (ValueDouble)createDependency(
                BehaviorDynamicWave.REQ_STATE_BANK_SLOPE
-               );
+               ).getValue();
       }
       catch (Exception e)
       {

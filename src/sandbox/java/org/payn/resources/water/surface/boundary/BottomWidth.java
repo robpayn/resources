@@ -32,17 +32,17 @@ public class BottomWidth extends ProcessorDouble implements InitializerAutoSimpl
    {
       activeWidthAvg = (ValueDouble)createDependency(
             BehaviorDynamicWave.REQ_STATE_ACTIVE_WIDTH_AVG
-            );
+            ).getValue();
       try
       {
          bankSlope = (ValueDouble)createDependency(
                BehaviorDynamicWave.REQ_STATE_BANK_SLOPE
-               );
+               ).getValue();
          try
          {
             activeDepth = (ValueDouble)createDependency(
                   BehaviorDynamicWave.REQ_STATE_ACTIVE_DEPTH
-                  );
+                  ).getValue();
          }
          catch (Exception e)
          {
@@ -58,7 +58,7 @@ public class BottomWidth extends ProcessorDouble implements InitializerAutoSimpl
          {
             activeDepth = (ValueDouble)createDependency(
                   BehaviorDynamicWave.REQ_STATE_ACTIVE_DEPTH
-                  );
+                  ).getValue();
             throw new Exception(String.format(
                   "Active depth provided without a bank slope in boundary %s", 
                   getState().getParentHolon().toString()

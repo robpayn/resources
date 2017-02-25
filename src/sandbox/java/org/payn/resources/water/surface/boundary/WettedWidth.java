@@ -44,13 +44,13 @@ public class WettedWidth extends ProcessorDoubleTrade implements InitializerAuto
    {
       depth = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_DEPTH
-            );
+            ).getValue();
       bottomWidth = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_BOTTOM_WIDTH
-            );
+            ).getValue();
       wettedWidthChange = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_WETTED_WIDTH_CHANGE
-            );
+            ).getValue();
    }
 
    @Override

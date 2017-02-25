@@ -1,8 +1,8 @@
 package org.payn.resources.water;
 
 import org.payn.chsm.ResourceAbstract;
-import org.payn.resources.water.surface.boundary.BedElevation;
-import org.payn.resources.water.surface.boundary.BehaviorDynamicWave;
+import org.payn.resources.water.surface.boundary.dynamicwave.BehaviorDynamicWave;
+import org.payn.resources.water.surface.boundary.dynamicwave.WaterFlow;
 import org.payn.resources.water.surface.cell.WaterHead;
 import org.payn.resources.water.surface.cell.WaterVolume;
 
@@ -30,11 +30,6 @@ public class ResourceWater extends ResourceAbstract {
    public static final String NAME_WATER_HEAD = WaterHead.class.getSimpleName();
 
    /**
-    * Name of the state for channel elevation
-    */
-   public static final String NAME_ELEVATION = BedElevation.class.getSimpleName();
-
-   /**
     * Name of behavior for dynamic wave routing
     */
    private static final String BEHAVIOR_DYNAMIC_WAVE = "dynamicwave";
@@ -44,6 +39,43 @@ public class ResourceWater extends ResourceAbstract {
     */
    private static final String BEHAVIOR_DYNAMIC_WAVE_WIELE = "dynamicwavewiele";
 
+   /**
+    * Name of the state for water flow
+    */
+   public static final String NAME_WATER_FLOW = WaterFlow.class.getSimpleName();
+
+   /**
+    * X coordinate
+    */
+   public static final String NAME_X = "X";
+
+   /**
+    * Y coordinate
+    */
+   public static final String NAME_Y = "Y";
+
+   /**
+    * Get the Euclidian distance on a two-dimensional plane
+    * 
+    * @param x1
+    *       First x coordinate
+    * @param y1
+    *       First y coordinate
+    * @param x2
+    *       Second x coordinate
+    * @param y2
+    *       Second y coordinate
+    * @return
+    *       Euclidian distance between first and second coordinates
+    */
+   public static double getHorizontalDistance(
+         double x1, double y1, double x2, double y2) 
+   {
+      double x = x1 - x2;
+      double y = y1 - y2;
+      return Math.sqrt(x * x + y * y);
+   }
+   
    @Override
    public void addBehaviors()
    {

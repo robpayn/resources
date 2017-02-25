@@ -3,6 +3,7 @@ package org.payn.resources.water.surface.boundary;
 import org.payn.chsm.processors.ProcessorDouble;
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
+import org.payn.resources.water.surface.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Width of the bottom of a trapezoidal channel
@@ -31,17 +32,17 @@ public class BottomWidth extends ProcessorDouble implements InitializerAutoSimpl
    public void setInitDependencies() throws Exception 
    {
       activeWidthAvg = (ValueDouble)createDependency(
-            BehaviorDynamicWave.REQ_STATE_ACTIVE_WIDTH_AVG
+            BehaviorDynamicWave.NAME_ACTIVE_WIDTH_AVG
             ).getValue();
       try
       {
          bankSlope = (ValueDouble)createDependency(
-               BehaviorDynamicWave.REQ_STATE_BANK_SLOPE
+               BehaviorDynamicWave.NAME_BANK_SLOPE
                ).getValue();
          try
          {
             activeDepth = (ValueDouble)createDependency(
-                  BehaviorDynamicWave.REQ_STATE_ACTIVE_DEPTH
+                  BehaviorDynamicWave.NAME_ACTIVE_DEPTH
                   ).getValue();
          }
          catch (Exception e)
@@ -57,7 +58,7 @@ public class BottomWidth extends ProcessorDouble implements InitializerAutoSimpl
          try
          {
             activeDepth = (ValueDouble)createDependency(
-                  BehaviorDynamicWave.REQ_STATE_ACTIVE_DEPTH
+                  BehaviorDynamicWave.NAME_ACTIVE_DEPTH
                   ).getValue();
             throw new Exception(String.format(
                   "Active depth provided without a bank slope in boundary %s", 

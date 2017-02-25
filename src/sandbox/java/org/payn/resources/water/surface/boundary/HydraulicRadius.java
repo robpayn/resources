@@ -3,6 +3,7 @@ package org.payn.resources.water.surface.boundary;
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleTrade;
+import org.payn.resources.water.surface.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calculates the hydraulic radius of channel flow

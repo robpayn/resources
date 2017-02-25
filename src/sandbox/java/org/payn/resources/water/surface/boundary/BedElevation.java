@@ -6,7 +6,8 @@ import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
-import org.payn.resources.water.ResourceWater;
+import org.payn.resources.water.surface.boundary.dynamicwave.BehaviorDynamicWave;
+import org.payn.resources.water.surface.cell.BehaviorChannelStorage;
 
 /**
  * Calculates the bed elevation for the boundary
@@ -43,11 +44,11 @@ public class BedElevation extends ProcessorDouble implements InitializerAutoSimp
       HolonCell cellAdj = parentBoundary.getAdjacentBoundary().getCell();
       cellElevationLocState = createDependency(
             cell,
-            ResourceWater.NAME_ELEVATION
+            BehaviorChannelStorage.NAME_ELEVATION
             );
       cellElevationAdjState = createDependency(
             cellAdj,
-            ResourceWater.NAME_ELEVATION
+            BehaviorChannelStorage.NAME_ELEVATION
             );
    }
 

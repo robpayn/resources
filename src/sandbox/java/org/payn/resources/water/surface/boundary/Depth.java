@@ -6,6 +6,7 @@ import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
 import org.payn.neoch.processors.ProcessorDoubleTrade;
 import org.payn.resources.water.ResourceWater;
+import org.payn.resources.water.surface.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calculates the depth of water in the channel flow

@@ -1,4 +1,4 @@
-package org.payn.resources.water.surface.boundary;
+package org.payn.resources.water.surface.boundary.dynamicwave;
 
 import org.payn.chsm.values.ValueDouble;
 
@@ -9,11 +9,6 @@ import org.payn.chsm.values.ValueDouble;
  *
  */
 public class BehaviorDynamicWaveWiele extends BehaviorDynamicWave {
-
-   /**
-    * Name of the state for the Chezey coefficient
-    */
-   public static final String NAME_CHEZEY = Chezey.class.getSimpleName();
 
    /**
     * Name of the state for the friction factor
@@ -41,7 +36,7 @@ public class BehaviorDynamicWaveWiele extends BehaviorDynamicWave {
    @Override
    protected void addRequiredStates() 
    {
-      super.addRequiredStates();
+      super.addRequiredStatesChannelFlow();
       addRequiredState(REQ_STATE_WIELEINT, ValueDouble.class);
       addRequiredState(REQ_STATE_WIELESLOPE, ValueDouble.class);
    }

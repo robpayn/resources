@@ -3,6 +3,7 @@ package org.payn.resources.water.surface.boundary;
 import org.payn.chsm.processors.ProcessorDouble;
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
+import org.payn.resources.water.surface.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calculates the change in the width of the wetted channel with depth for a trapezoidal channel
@@ -23,7 +24,7 @@ public class WettedWidthChange extends ProcessorDouble implements InitializerAut
       try
       {
          bankSlope = (ValueDouble)createDependency(
-               BehaviorDynamicWave.REQ_STATE_BANK_SLOPE
+               BehaviorDynamicWave.NAME_BANK_SLOPE
                ).getValue();
       }
       catch (Exception e)

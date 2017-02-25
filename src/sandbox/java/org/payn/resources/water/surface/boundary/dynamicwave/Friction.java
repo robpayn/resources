@@ -1,4 +1,4 @@
-package org.payn.resources.water.surface.boundary;
+package org.payn.resources.water.surface.boundary.dynamicwave;
 
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;

@@ -3,15 +3,18 @@ package org.payn.resources.water.surface.boundary;
 import org.payn.chsm.processors.ProcessorDouble;
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
+import org.payn.neoch.HolonBoundary;
+import org.payn.neoch.HolonCell;
+import org.payn.resources.water.ResourceWater;
 import org.payn.resources.water.surface.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
- * Calculates the fraction of the length between the adjacent cells
+ * Calculate the length of the link
  * 
- * @author v78h241
+ * @author robpayn
  *
  */
-public class LengthFraction extends ProcessorDouble implements InitializerAutoSimple {
+public class LinkLength extends ProcessorDouble implements InitializerAutoSimple {
 
    /**
     * Length in local cell
@@ -22,10 +25,51 @@ public class LengthFraction extends ProcessorDouble implements InitializerAutoSi
     * Length in adjacent cell
     */
    private ValueDouble lengthAdj;
+   
+   /**
+    * X coordinate of local cell
+    */
+   private ValueDouble xLocal;
+   
+   /**
+    * X coordinate in adjacent cell
+    */
+   private ValueDouble xAdjacent;
+   
+   /**
+    * Y coordinate in local cell
+    */
+   private ValueDouble yLocal;
+   
+   /**
+    * Y coordinate in adjacent cell
+    */
+   private ValueDouble yAdjacent;
 
    @Override
    public void setInitDependencies() throws Exception 
    {
+      HolonBoundary parentBoundary = (HolonBoundary)getState().getParentHolon();
+      HolonCell cellLocal = parentBoundary.getCell();
+      HolonCell cellAdj = parentBoundary.getAdjacentBoundary().getCell();
+      
+      xLocal = (ValueDouble)createDependency(
+            cellLocal,
+            ResourceWater.NAME_X
+            ).getValue();
+      xAdjacent = (ValueDouble)createDependency(
+            cellAdj,
+            ResourceWater.NAME_X
+            ).getValue();
+      yLocal = (ValueDouble)createDependency(
+            cellLocal,
+            ResourceWater.NAME_Y
+            ).getValue();
+      yAdjacent = (ValueDouble)createDependency(
+            cellAdj,
+            ResourceWater.NAME_Y
+            ).getValue();
+
       try
       {
          lengthLoc = (ValueDouble)createDependency(
@@ -70,11 +114,13 @@ public class LengthFraction extends ProcessorDouble implements InitializerAutoSi
    {
       if (lengthLoc == null)
       {
-         value.n = 0.5;
+         value.n = ResourceWater.getHorizontalDistance(
+               xLocal.n, yLocal.n, xAdjacent.n, yAdjacent.n
+               );
       }
       else if (lengthLoc.n > 0 && lengthAdj.n > 0)
       {
-         value.n = lengthLoc.n / (lengthLoc.n + lengthAdj.n);
+         value.n = lengthLoc.n + lengthAdj.n;
       }
       else
       {

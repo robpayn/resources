@@ -1,8 +1,7 @@
-package org.payn.resources.water.surface.boundary;
+package org.payn.resources.water.surface.boundary.dynamicwave;
 
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.processors.interfaces.InitializerSimple;
-import org.payn.chsm.processors.interfaces.UpdaterSimple;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleTrade;
 
@@ -17,7 +16,7 @@ public class XSectAreaCurrent extends ProcessorDoubleTrade implements Initialize
    /**
     * Processor for the previous cross sectional area state
     */
-   private UpdaterSimple xSectionAreaPreviousProc;
+   private XSectAreaPrevious xSectionAreaPreviousProc;
    
    /**
     * Depth of the channel flow
@@ -59,9 +58,10 @@ public class XSectAreaCurrent extends ProcessorDoubleTrade implements Initialize
       wettedWidthChange = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_WETTED_WIDTH_CHANGE
             ).getValue();
-      xSectionAreaPreviousProc = (UpdaterSimple)getState().getParentHolon().getState(
+      xSectionAreaPreviousProc = (XSectAreaPrevious)getState().getParentHolon().getState(
             BehaviorDynamicWave.NAME_XSECT_AREA_PREV
             ).getProcessor();
+      xSectionAreaPreviousProc.setDependencies(this);
    }
 
    @Override
@@ -84,17 +84,6 @@ public class XSectAreaCurrent extends ProcessorDoubleTrade implements Initialize
       {
          value.n = (bottomWidth.n + (wettedWidthChange.n * depth.n) / 2) * depth.n;
       }
-   }
-
-   /**
-    * Get the depth value
-    * 
-    * @return
-    *       ValueDouble object for depth
-    */
-   public ValueDouble getDepthValue() 
-   {
-      return depth;
    }
 
 }

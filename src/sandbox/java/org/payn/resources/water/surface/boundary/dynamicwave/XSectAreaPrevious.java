@@ -1,6 +1,5 @@
-package org.payn.resources.water.surface.boundary;
+package org.payn.resources.water.surface.boundary.dynamicwave;
 
-import org.payn.chsm.State;
 import org.payn.chsm.processors.ProcessorDouble;
 import org.payn.chsm.processors.interfaces.InitializerSimple;
 import org.payn.chsm.processors.interfaces.UpdaterSimple;
@@ -24,14 +23,26 @@ public class XSectAreaPrevious extends ProcessorDouble implements UpdaterSimple,
     */
    private ValueDouble xSectionArea;
 
+   /**
+    * Set the dependencies
+    * 
+    * @param xSectAreaCurrent
+    *       xSectArea processor controlling this processor
+    * @throws Exception
+    *       if error in creating dependencies
+    */
+   public void setDependencies(XSectAreaCurrent xSectAreaCurrent) 
+         throws Exception 
+   {
+      xSectionArea = (ValueDouble)xSectAreaCurrent.getValue();
+      depth = (ValueDouble)xSectAreaCurrent.createDependency(
+            BehaviorDynamicWave.NAME_DEPTH
+            ).getValue();
+   }
+
    @Override
    public void initialize() throws Exception 
    {
-      State xSectionAreaState = state.getParentHolon().getState(
-            BehaviorDynamicWave.NAME_XSECT_AREA
-            );
-      xSectionArea = (ValueDouble)xSectionAreaState.getValue();
-      depth = ((XSectAreaCurrent)xSectionAreaState.getProcessor()).getDepthValue();
       update();
    }
 

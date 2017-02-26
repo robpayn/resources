@@ -1,9 +1,10 @@
-package org.payn.resources.water.surface.boundary;
+package org.payn.resources.water.channel.boundary;
 
 import org.payn.chsm.processors.ProcessorDouble;
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.resources.water.surface.boundary.dynamicwave.BehaviorDynamicWave;
+import org.payn.resources.water.ResourceWater;
+import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Width of the bottom of a trapezoidal channel
@@ -31,19 +32,19 @@ public class BottomWidth extends ProcessorDouble implements InitializerAutoSimpl
    @Override
    public void setInitDependencies() throws Exception 
    {
-      activeWidthAvg = (ValueDouble)createDependency(
-            BehaviorDynamicWave.NAME_ACTIVE_WIDTH_AVG
-            ).getValue();
+      activeWidthAvg = (ValueDouble)createDependencyOnValue(
+            ResourceWater.NAME_ACTIVE_WIDTH_AVG
+            );
       try
       {
-         bankSlope = (ValueDouble)createDependency(
-               BehaviorDynamicWave.NAME_BANK_SLOPE
-               ).getValue();
+         bankSlope = (ValueDouble)createDependencyOnValue(
+               ResourceWater.NAME_BANK_SLOPE
+               );
          try
          {
-            activeDepth = (ValueDouble)createDependency(
+            activeDepth = (ValueDouble)createDependencyOnValue(
                   BehaviorDynamicWave.NAME_ACTIVE_DEPTH
-                  ).getValue();
+                  );
          }
          catch (Exception e)
          {
@@ -57,9 +58,9 @@ public class BottomWidth extends ProcessorDouble implements InitializerAutoSimpl
       {
          try
          {
-            activeDepth = (ValueDouble)createDependency(
+            activeDepth = (ValueDouble)createDependencyOnValue(
                   BehaviorDynamicWave.NAME_ACTIVE_DEPTH
-                  ).getValue();
+                  );
             throw new Exception(String.format(
                   "Active depth provided without a bank slope in boundary %s", 
                   getState().getParentHolon().toString()

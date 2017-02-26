@@ -1,4 +1,4 @@
-package org.payn.resources.water.surface.boundary;
+package org.payn.resources.water.channel.boundary;
 
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
@@ -6,7 +6,7 @@ import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
 import org.payn.neoch.processors.ProcessorDoubleTrade;
 import org.payn.resources.water.ResourceWater;
-import org.payn.resources.water.surface.boundary.dynamicwave.BehaviorDynamicWave;
+import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calculates the depth of water in the channel flow
@@ -71,43 +71,43 @@ public class Depth extends ProcessorDoubleTrade implements InitializerAutoSimple
    @Override
    public void setUpdateDependencies() throws Exception 
    {
-      lengthFraction = (ValueDouble)createDependency(
+      lengthFraction = (ValueDouble)createDependencyOnValue(
             BehaviorDynamicWave.NAME_LENGTH_FRACTION
-            ).getValue();
-      bedElevation = (ValueDouble)createDependency(
-            BehaviorDynamicWave.NAME_BED_ELEVATION
-            ).getValue();
+            );
+      bedElevation = (ValueDouble)createDependencyOnValue(
+            ResourceWater.NAME_BED_ELEVATION
+            );
       
       HolonBoundary parentBoundary = (HolonBoundary)getState().getParentHolon();
       HolonCell cell = parentBoundary.getCell();
       HolonCell cellAdj = parentBoundary.getAdjacentBoundary().getCell();
       
-      cellVolumeLoc = (ValueDouble)createDependency(
+      cellVolumeLoc = (ValueDouble)createDependencyOnValue(
             cell,
             ResourceWater.NAME_WATER_VOLUME
-            ).getValue();
-      cellVolumeAdj = (ValueDouble)createDependency(
+            );
+      cellVolumeAdj = (ValueDouble)createDependencyOnValue(
             cellAdj,
             ResourceWater.NAME_WATER_VOLUME
-            ).getValue();
+            );
       
-      cellHeadLoc = (ValueDouble)createDependency(
+      cellHeadLoc = (ValueDouble)createDependencyOnValue(
             cell,
             ResourceWater.NAME_WATER_HEAD
-            ).getValue();
-      cellHeadAdj = (ValueDouble)createDependency(
+            );
+      cellHeadAdj = (ValueDouble)createDependencyOnValue(
             cellAdj,
             ResourceWater.NAME_WATER_HEAD
-            ).getValue();
+            );
       
-      cellDepthLoc = (ValueDouble)createDependency(
+      cellDepthLoc = (ValueDouble)createDependencyOnValue(
             cell,
-            BehaviorDynamicWave.NAME_DEPTH
-            ).getValue();
-      cellDepthAdj = (ValueDouble)createDependency(
+            ResourceWater.NAME_DEPTH
+            );
+      cellDepthAdj = (ValueDouble)createDependencyOnValue(
             cellAdj,
-            BehaviorDynamicWave.NAME_DEPTH
-            ).getValue();
+            ResourceWater.NAME_DEPTH
+            );
    }
 
    @Override

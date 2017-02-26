@@ -1,4 +1,4 @@
-package org.payn.resources.water.surface.boundary;
+package org.payn.resources.water.channel.boundary;
 
 import org.payn.chsm.processors.ProcessorDouble;
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
@@ -6,7 +6,7 @@ import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
 import org.payn.resources.water.ResourceWater;
-import org.payn.resources.water.surface.boundary.dynamicwave.BehaviorDynamicWave;
+import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calculate the length of the link
@@ -53,33 +53,33 @@ public class LinkLength extends ProcessorDouble implements InitializerAutoSimple
       HolonCell cellLocal = parentBoundary.getCell();
       HolonCell cellAdj = parentBoundary.getAdjacentBoundary().getCell();
       
-      xLocal = (ValueDouble)createDependency(
+      xLocal = (ValueDouble)createDependencyOnValue(
             cellLocal,
             ResourceWater.NAME_X
-            ).getValue();
-      xAdjacent = (ValueDouble)createDependency(
+            );
+      xAdjacent = (ValueDouble)createDependencyOnValue(
             cellAdj,
             ResourceWater.NAME_X
-            ).getValue();
-      yLocal = (ValueDouble)createDependency(
+            );
+      yLocal = (ValueDouble)createDependencyOnValue(
             cellLocal,
             ResourceWater.NAME_Y
-            ).getValue();
-      yAdjacent = (ValueDouble)createDependency(
+            );
+      yAdjacent = (ValueDouble)createDependencyOnValue(
             cellAdj,
             ResourceWater.NAME_Y
-            ).getValue();
+            );
 
       try
       {
-         lengthLoc = (ValueDouble)createDependency(
+         lengthLoc = (ValueDouble)createDependencyOnValue(
                BehaviorDynamicWave.NAME_LENGTH_LOC
-               ).getValue();
+               );
          try
          {
-            lengthAdj = (ValueDouble)createDependency(
+            lengthAdj = (ValueDouble)createDependencyOnValue(
                   BehaviorDynamicWave.NAME_LENGTH_ADJ
-                  ).getValue();
+                  );
          }
          catch (Exception e)
          {
@@ -93,9 +93,9 @@ public class LinkLength extends ProcessorDouble implements InitializerAutoSimple
       {
          try
          {
-            lengthAdj = (ValueDouble)createDependency(
+            lengthAdj = (ValueDouble)createDependencyOnValue(
                   BehaviorDynamicWave.NAME_LENGTH_ADJ
-                  ).getValue();
+                  );
             throw new Exception(String.format(
                   "Adjacent length is defined with local length in boundary %s.",
                   getState().getParentHolon().toString()

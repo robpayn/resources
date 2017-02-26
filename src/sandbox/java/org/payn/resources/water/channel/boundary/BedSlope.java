@@ -1,12 +1,12 @@
-package org.payn.resources.water.surface.boundary;
+package org.payn.resources.water.channel.boundary;
 
 import org.payn.chsm.processors.ProcessorDouble;
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
-import org.payn.resources.water.surface.boundary.dynamicwave.BehaviorDynamicWave;
-import org.payn.resources.water.surface.cell.BehaviorChannelStorage;
+import org.payn.resources.water.ResourceWater;
+import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calculate the bed slope
@@ -34,22 +34,22 @@ public class BedSlope extends ProcessorDouble implements InitializerAutoSimple {
    @Override
    public void setInitDependencies() throws Exception 
    {
-      linkLength = (ValueDouble)createDependency(
+      linkLength = (ValueDouble)createDependencyOnValue(
             BehaviorDynamicWave.NAME_LINK_LENGTH
-            ).getValue();
+            );
 
       HolonBoundary parentBoundary = (HolonBoundary)getState().getParentHolon();
       HolonCell cell = parentBoundary.getCell();
       HolonCell cellAdj = parentBoundary.getAdjacentBoundary().getCell();
       
-      cellElevationLoc = (ValueDouble)createDependency(
+      cellElevationLoc = (ValueDouble)createDependencyOnValue(
             cell,
-            BehaviorChannelStorage.NAME_ELEVATION
-            ).getValue();
-      cellElevationAdj = (ValueDouble)createDependency(
+            ResourceWater.NAME_BED_ELEVATION
+            );
+      cellElevationAdj = (ValueDouble)createDependencyOnValue(
             cellAdj,
-            BehaviorChannelStorage.NAME_ELEVATION
-            ).getValue();
+            ResourceWater.NAME_BED_ELEVATION
+            );
    }
 
    @Override

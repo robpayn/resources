@@ -1,9 +1,10 @@
-package org.payn.resources.water.surface.boundary.dynamicwave;
+package org.payn.resources.water.channel.boundary.dynamicwave;
 
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.processors.interfaces.InitializerSimple;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleTrade;
+import org.payn.resources.water.ResourceWater;
 
 /**
  * Calculates the current cross-sectional area of channel flow
@@ -50,7 +51,7 @@ public class XSectAreaCurrent extends ProcessorDoubleTrade implements Initialize
    public void setUpdateDependencies() throws Exception 
    {
       depth = (ValueDouble)createDependency(
-            BehaviorDynamicWave.NAME_DEPTH
+            ResourceWater.NAME_DEPTH
             ).getValue();
       bottomWidth = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_BOTTOM_WIDTH

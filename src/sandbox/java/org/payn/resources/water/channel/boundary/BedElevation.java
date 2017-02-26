@@ -1,4 +1,4 @@
-package org.payn.resources.water.surface.boundary;
+package org.payn.resources.water.channel.boundary;
 
 import org.payn.chsm.State;
 import org.payn.chsm.processors.ProcessorDouble;
@@ -6,8 +6,8 @@ import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
-import org.payn.resources.water.surface.boundary.dynamicwave.BehaviorDynamicWave;
-import org.payn.resources.water.surface.cell.BehaviorChannelStorage;
+import org.payn.resources.water.ResourceWater;
+import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calculates the bed elevation for the boundary
@@ -35,33 +35,39 @@ public class BedElevation extends ProcessorDouble implements InitializerAutoSimp
    @Override
    public void setInitDependencies() throws Exception 
    {
-      lengthFraction = (ValueDouble)createDependency(
+      lengthFraction = (ValueDouble)createDependencyOnValue(
             BehaviorDynamicWave.NAME_LENGTH_FRACTION
-            ).getValue();
+            );
 
       HolonBoundary parentBoundary = (HolonBoundary)getState().getParentHolon();
       HolonCell cell = parentBoundary.getCell();
       HolonCell cellAdj = parentBoundary.getAdjacentBoundary().getCell();
+      
       cellElevationLocState = createDependency(
             cell,
-            BehaviorChannelStorage.NAME_ELEVATION
+            ResourceWater.NAME_BED_ELEVATION
             );
       cellElevationAdjState = createDependency(
             cellAdj,
-            BehaviorChannelStorage.NAME_ELEVATION
+            ResourceWater.NAME_BED_ELEVATION
             );
    }
 
    @Override
    public void initialize() throws Exception 
    {
-      ValueDouble cellElevationLoc = (ValueDouble)cellElevationLocState.getValue();
-      ValueDouble cellElevationAdj = (ValueDouble)cellElevationAdjState.getValue();
-      double defaultValue = (1 - lengthFraction.n) * cellElevationLoc.n + lengthFraction.n * cellElevationAdj.n;
+      ValueDouble cellElevationLoc = 
+            (ValueDouble)cellElevationLocState.getValue();
+      ValueDouble cellElevationAdj = 
+            (ValueDouble)cellElevationAdjState.getValue();
+      double defaultValue = 
+            (1 - lengthFraction.n) * cellElevationLoc.n 
+            + lengthFraction.n * cellElevationAdj.n;
       if (!value.isNoValue() && defaultValue > value.n)
       {
          throw new Exception(String.format(
-               "Channel elevation(%s) = %f < IDW average of adjacent cell elevations: Local(%s) = %f, Adjacent(%s) = %f", 
+               "Channel elevation(%s) = %f < IDW average of adjacent cell elevations: "
+                     + "Local(%s) = %f, Adjacent(%s) = %f", 
                state.getParentHolon().toString(),
                value.n,
                cellElevationLocState.getParentHolon().toString(),

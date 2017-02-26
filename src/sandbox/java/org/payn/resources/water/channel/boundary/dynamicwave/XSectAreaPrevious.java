@@ -1,9 +1,10 @@
-package org.payn.resources.water.surface.boundary.dynamicwave;
+package org.payn.resources.water.channel.boundary.dynamicwave;
 
 import org.payn.chsm.processors.ProcessorDouble;
 import org.payn.chsm.processors.interfaces.InitializerSimple;
 import org.payn.chsm.processors.interfaces.UpdaterSimple;
 import org.payn.chsm.values.ValueDouble;
+import org.payn.resources.water.ResourceWater;
 
 /**
  * Stores the previous cross sectional area for calculations during the next time step
@@ -36,7 +37,7 @@ public class XSectAreaPrevious extends ProcessorDouble implements UpdaterSimple,
    {
       xSectionArea = (ValueDouble)xSectAreaCurrent.getValue();
       depth = (ValueDouble)xSectAreaCurrent.createDependency(
-            BehaviorDynamicWave.NAME_DEPTH
+            ResourceWater.NAME_DEPTH
             ).getValue();
    }
 

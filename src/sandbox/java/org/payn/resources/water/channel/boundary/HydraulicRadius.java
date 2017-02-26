@@ -1,9 +1,10 @@
-package org.payn.resources.water.surface.boundary;
+package org.payn.resources.water.channel.boundary;
 
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleTrade;
-import org.payn.resources.water.surface.boundary.dynamicwave.BehaviorDynamicWave;
+import org.payn.resources.water.ResourceWater;
+import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calculates the hydraulic radius of channel flow
@@ -43,15 +44,15 @@ public class HydraulicRadius extends ProcessorDoubleTrade implements Initializer
    @Override
    public void setUpdateDependencies() throws Exception 
    {
-      depth = (ValueDouble)createDependency(
-            BehaviorDynamicWave.NAME_DEPTH
-            ).getValue();
-      xSectionArea = (ValueDouble)createDependency(
+      depth = (ValueDouble)createDependencyOnValue(
+            ResourceWater.NAME_DEPTH
+            );
+      xSectionArea = (ValueDouble)createDependencyOnValue(
             BehaviorDynamicWave.NAME_XSECT_AREA
-            ).getValue();
-      wettedWidth = (ValueDouble)createDependency(
+            );
+      wettedWidth = (ValueDouble)createDependencyOnValue(
             BehaviorDynamicWave.NAME_WETTED_WIDTH
-            ).getValue();
+            );
    }
 
    @Override

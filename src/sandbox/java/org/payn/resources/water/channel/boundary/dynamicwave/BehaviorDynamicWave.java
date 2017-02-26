@@ -1,8 +1,8 @@
-package org.payn.resources.water.surface.boundary.dynamicwave;
+package org.payn.resources.water.channel.boundary.dynamicwave;
 
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.water.ResourceWater;
-import org.payn.resources.water.surface.boundary.BehaviorChannelFlow;
+import org.payn.resources.water.channel.boundary.BehaviorChannelFlow;
 
 /**
  * Behavior of surface water according to the dynamic wave equations

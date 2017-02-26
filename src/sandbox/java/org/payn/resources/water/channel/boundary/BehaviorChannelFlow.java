@@ -1,7 +1,8 @@
-package org.payn.resources.water.surface.boundary;
+package org.payn.resources.water.channel.boundary;
 
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.behavior.symmetric.symmdouble.BehaviorSymmetricDouble;
+import org.payn.resources.water.ResourceWater;
 
 /**
  * Behavior for channel flow
@@ -27,11 +28,6 @@ public abstract class BehaviorChannelFlow extends BehaviorSymmetricDouble {
    public static final String NAME_HYDRAULIC_RADIUS = HydraulicRadius.class.getSimpleName();
 
    /**
-    * Name of the state for the depth of the channel flow
-    */
-   public static final String NAME_DEPTH = Depth.class.getSimpleName();
-
-   /**
     * Name of the state for the wetted with of channel flow
     */
    public static final String NAME_WETTED_WIDTH = WettedWidth.class.getSimpleName();
@@ -40,11 +36,6 @@ public abstract class BehaviorChannelFlow extends BehaviorSymmetricDouble {
     * Name of the state for the fraction of the length between cells
     */
    public static final String NAME_LENGTH_FRACTION = LengthFraction.class.getSimpleName();
-
-   /**
-    * Name of the state for the bed elevation
-    */
-   public static final String NAME_BED_ELEVATION = BedElevation.class.getSimpleName();
 
    /**
     * Name of the state for the width of the bottom of the channel
@@ -57,11 +48,6 @@ public abstract class BehaviorChannelFlow extends BehaviorSymmetricDouble {
    public static final String NAME_WETTED_WIDTH_CHANGE = WettedWidthChange.class.getSimpleName();
 
    /**
-    * Name of the state for the average width of the active channel
-    */
-   public static final String NAME_ACTIVE_WIDTH_AVG = "ActiveWidthAverage";
-
-   /**
     * Name of optional state for specifying the length within the associated cell
     */
    public static final String NAME_LENGTH_LOC = "LengthLoc";
@@ -70,11 +56,6 @@ public abstract class BehaviorChannelFlow extends BehaviorSymmetricDouble {
     * Name of the optional state for specifying the length within the adjacent cell
     */
    public static final String NAME_LENGTH_ADJ = "LengthAdj";
-
-   /**
-    * Name of the optional state for bank slope
-    */
-   public static final String NAME_BANK_SLOPE = "BankSlope";
 
    /**
     * Name fo the state for the depth of the active channel
@@ -100,10 +81,10 @@ public abstract class BehaviorChannelFlow extends BehaviorSymmetricDouble {
    protected void addProcessors()
    {
       addProcessor(NAME_HYDRAULIC_RADIUS, HydraulicRadius.class, ValueDouble.class);
-      addProcessor(NAME_DEPTH, Depth.class, ValueDouble.class);
+      addProcessor(ResourceWater.NAME_DEPTH, Depth.class, ValueDouble.class);
       addProcessor(NAME_WETTED_WIDTH, WettedWidth.class, ValueDouble.class);
       addProcessor(NAME_LENGTH_FRACTION, LengthFraction.class, ValueDouble.class);
-      addProcessor(NAME_BED_ELEVATION, BedElevation.class, ValueDouble.class);
+      addProcessor(ResourceWater.NAME_BED_ELEVATION, BedElevation.class, ValueDouble.class);
       addProcessor(NAME_BOTTOM_WIDTH, BottomWidth.class, ValueDouble.class);
       addProcessor(NAME_WETTED_WIDTH_CHANGE, WettedWidthChange.class, ValueDouble.class);
       addProcessor(NAME_BED_SLOPE, BedSlope.class, ValueDouble.class);
@@ -116,10 +97,10 @@ public abstract class BehaviorChannelFlow extends BehaviorSymmetricDouble {
     */
    protected void addRequiredStatesChannelFlow()
    {
-      addRequiredState(NAME_ACTIVE_WIDTH_AVG, ValueDouble.class);
+      addRequiredState(ResourceWater.NAME_ACTIVE_WIDTH_AVG, ValueDouble.class);
       addRequiredState(NAME_LENGTH_LOC, ValueDouble.class);
       addRequiredState(NAME_LENGTH_ADJ, ValueDouble.class);
-      addRequiredState(NAME_BANK_SLOPE, ValueDouble.class);
+      addRequiredState(ResourceWater.NAME_BANK_SLOPE, ValueDouble.class);
       addRequiredState(NAME_ACTIVE_DEPTH, ValueDouble.class);
    }
 

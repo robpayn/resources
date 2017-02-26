@@ -1,4 +1,4 @@
-package org.payn.resources.water.surface.boundary.dynamicwave;
+package org.payn.resources.water.channel.boundary.dynamicwave;
 
 import org.payn.chsm.Holon;
 import org.payn.chsm.State;

@@ -3,7 +3,6 @@ package org.payn.resources.water.channel.boundary.dynamicwave;
 import org.payn.chsm.Holon;
 import org.payn.chsm.State;
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
-import org.payn.chsm.processors.interfaces.InitializerSimple;
 import org.payn.chsm.resources.time.BehaviorTime;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorLoadDouble;
@@ -106,7 +105,7 @@ public class WaterFlow extends ProcessorLoadDouble implements InitializerAutoSim
           velocityExp = velocityExponent.n;
           radiusExp = radiusExponent.n;
       }
-      ((InitializerSimple)velocityProc).initialize();
+      velocityProc.initialize();
       value.n = calculate(value.n);
    }
    
@@ -143,43 +142,10 @@ public class WaterFlow extends ProcessorLoadDouble implements InitializerAutoSim
       hydraulicGradient = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_HYDRAULIC_GRADIENT
             ).getValue();
-      try
-      {
-         velocityExponent = (ValueDouble)createDependency(
-               BehaviorDynamicWave.REQ_STATE_VELOCITY_EXP
-               ).getValue();
-         try
-         {
-            radiusExponent = (ValueDouble)createDependency(
-                  BehaviorDynamicWave.REQ_STATE_RADIUS_EXP
-                  ).getValue();
-         }
-         catch (Exception e)
-         {
-            throw new Exception(String.format(
-                  "Radius exponent not available when velocity exponent provided in boundary %s", 
-                  state.getParentHolon().toString()
-                  ));
-         }
-      }
-      catch (Exception e)
-      {
-         try
-         {
-            radiusExponent = (ValueDouble)createDependency(
-                  BehaviorDynamicWave.REQ_STATE_RADIUS_EXP
-                  ).getValue();
-            throw new Exception(String.format(
-                  "Radius exponent provided but velocity exponent not available in boundary %s", 
-                  state.getParentHolon().toString()
-                  ));
-         }
-         catch (Exception e2)
-         {
-            velocityExponent = null;
-            radiusExponent = null;
-         }
-      }
+      ValueDouble[] exponents = ResourceWater.getChezeyExponentValues(
+            state.getParentHolon(), this);
+      velocityExponent = exponents[0];
+      radiusExponent = exponents[1];
    }
 
    @Override
@@ -201,7 +167,7 @@ public class WaterFlow extends ProcessorLoadDouble implements InitializerAutoSim
       double a, b;
 
       // short-circuit test
-      if (xSectionArea.n == 0)
+      if (xSectionArea.n <= 0)
       {
           return 0.;
       }

@@ -1,11 +1,15 @@
 package org.payn.resources.water;
 
+import org.payn.chsm.Holon;
+import org.payn.chsm.Processor;
 import org.payn.chsm.ResourceAbstract;
+import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.water.channel.boundary.BedElevation;
 import org.payn.resources.water.channel.boundary.Depth;
 import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
 import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWaveWiele;
 import org.payn.resources.water.channel.boundary.dynamicwave.WaterFlow;
+import org.payn.resources.water.channel.boundary.dynamicwave.downstream.BehaviorDynamicWaveDownstream;
 import org.payn.resources.water.channel.cell.BehaviorChannelStorage;
 import org.payn.resources.water.channel.cell.WaterHead;
 import org.payn.resources.water.channel.cell.WaterVolume;
@@ -47,6 +51,11 @@ public class ResourceWater extends ResourceAbstract {
     * Name of behavior for dynamic wave routing with the Wiele model for variable friction
     */
    public static final String BEHAVIOR_DYNAMIC_WAVE_WIELE = "dynamicwavewiele";
+
+   /**
+    * Name of the behavior for the downstream boundary condition of a dynamic wave channel
+    */
+   public static final String BEHAVIOR_DYNAMIC_WAVE_DOWNSTREAM = "dynamicwavedownstream";
 
    /**
     * Name of the state for water flow
@@ -105,12 +114,71 @@ public class ResourceWater extends ResourceAbstract {
       return Math.sqrt(x * x + y * y);
    }
    
+   /**
+    * Function for getting exponents for Chezey equation
+    * 
+    * @param holon 
+    *       holon to search for the exponents
+    * @param processor
+    *       processor requesting the exponents
+    * @return
+    *       array of exponents: first element is velocity exponent,
+    *       second element is radius exponent
+    */
+   public static ValueDouble[] getChezeyExponentValues(
+         Holon holon, Processor processor)
+   {
+      ValueDouble[] exponents = new ValueDouble[2];
+      try
+      {
+         exponents[0] = (ValueDouble)processor.createDependencyOnValue(
+               holon,
+               BehaviorDynamicWave.REQ_STATE_VELOCITY_EXP
+               );
+         try
+         {
+            exponents[1] = (ValueDouble)processor.createDependencyOnValue(
+                  holon,
+                  BehaviorDynamicWave.REQ_STATE_RADIUS_EXP
+                  );
+         }
+         catch (Exception e)
+         {
+            throw new Exception(String.format(
+                  "Radius exponent not available when velocity exponent provided in boundary %s", 
+                  processor.getState().getParentHolon().toString()
+                  ));
+         }
+      }
+      catch (Exception e)
+      {
+         try
+         {
+            exponents[1] = (ValueDouble)processor.createDependencyOnValue(
+                  holon,
+                  BehaviorDynamicWave.REQ_STATE_RADIUS_EXP
+                  );
+            throw new Exception(String.format(
+                  "Radius exponent provided but velocity exponent not available in boundary %s", 
+                  processor.getState().getParentHolon().toString()
+                  ));
+         }
+         catch (Exception e2)
+         {
+            exponents[0] = null;
+            exponents[1] = null;
+         }
+      }
+      return exponents;
+   }
+   
    @Override
    public void addBehaviors()
    {
       addBehavior(BEHAVIOR_CHANNEL_STORAGE, BehaviorChannelStorage.class.getCanonicalName());
       addBehavior(BEHAVIOR_DYNAMIC_WAVE, BehaviorDynamicWave.class.getCanonicalName());
       addBehavior(BEHAVIOR_DYNAMIC_WAVE_WIELE, BehaviorDynamicWaveWiele.class.getCanonicalName());
+      addBehavior(BEHAVIOR_DYNAMIC_WAVE_DOWNSTREAM, BehaviorDynamicWaveDownstream.class.getCanonicalName());
    }
 
 }

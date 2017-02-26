@@ -39,11 +39,11 @@ public class BedSlope extends ProcessorDouble implements InitializerAutoSimple {
             );
 
       HolonBoundary parentBoundary = (HolonBoundary)getState().getParentHolon();
-      HolonCell cell = parentBoundary.getCell();
+      HolonCell cellLoc = parentBoundary.getCell();
       HolonCell cellAdj = parentBoundary.getAdjacentBoundary().getCell();
       
       cellElevationLoc = (ValueDouble)createDependencyOnValue(
-            cell,
+            cellLoc,
             ResourceWater.NAME_BED_ELEVATION
             );
       cellElevationAdj = (ValueDouble)createDependencyOnValue(
@@ -62,7 +62,7 @@ public class BedSlope extends ProcessorDouble implements InitializerAutoSimple {
                state.getParentHolon().toString()
                ));
       }
-      value.n = (cellElevationLoc.n - cellElevationAdj.n) / linkLength.n;
+      value.n = (cellElevationAdj.n - cellElevationLoc.n) / linkLength.n;
    }
 
 }

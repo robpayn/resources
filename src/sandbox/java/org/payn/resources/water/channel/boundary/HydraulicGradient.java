@@ -81,7 +81,7 @@ public class HydraulicGradient extends ProcessorDoubleTrade implements Initializ
       }
       else
       {
-         value.n = (headLocal.n - headAdjacent.n) / linkLength.n;
+         value.n = (headAdjacent.n - headLocal.n) / linkLength.n;
       }
    }
 

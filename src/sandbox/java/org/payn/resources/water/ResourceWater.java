@@ -4,6 +4,7 @@ import org.payn.chsm.ResourceAbstract;
 import org.payn.resources.water.channel.boundary.BedElevation;
 import org.payn.resources.water.channel.boundary.Depth;
 import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
+import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWaveWiele;
 import org.payn.resources.water.channel.boundary.dynamicwave.WaterFlow;
 import org.payn.resources.water.channel.cell.BehaviorChannelStorage;
 import org.payn.resources.water.channel.cell.WaterHead;
@@ -109,7 +110,7 @@ public class ResourceWater extends ResourceAbstract {
    {
       addBehavior(BEHAVIOR_CHANNEL_STORAGE, BehaviorChannelStorage.class.getCanonicalName());
       addBehavior(BEHAVIOR_DYNAMIC_WAVE, BehaviorDynamicWave.class.getCanonicalName());
-      addBehavior(BEHAVIOR_DYNAMIC_WAVE_WIELE, BehaviorDynamicWave.class.getCanonicalName());
+      addBehavior(BEHAVIOR_DYNAMIC_WAVE_WIELE, BehaviorDynamicWaveWiele.class.getCanonicalName());
    }
 
 }

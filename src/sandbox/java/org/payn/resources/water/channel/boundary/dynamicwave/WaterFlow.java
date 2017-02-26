@@ -122,9 +122,9 @@ public class WaterFlow extends ProcessorLoadDouble implements InitializerAutoSim
       velocity = (ValueDouble)velocityState.getValue();
       velocityProc = (Velocity)velocityState.getProcessor();
       velocityProc.setDependencies(this);
-      chezey = (ValueDouble)createDependency(
+      chezey = (ValueDouble)createDependencyOnValue(
             BehaviorDynamicWave.NAME_CHEZEY
-            ).getValue();
+            );
       xSectionArea = (ValueDouble)createDependency(
             BehaviorDynamicWave.NAME_XSECT_AREA
             ).getValue();

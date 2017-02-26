@@ -29,8 +29,8 @@ public class BehaviorDynamicWaveWiele extends BehaviorDynamicWave {
    protected void addProcessors() 
    {
       super.addProcessors();
-      addProcessor(NAME_CHEZEY, Chezey.class, ValueDouble.class);
-      addProcessor(NAME_FRICTION, Friction.class, ValueDouble.class);
+      addProcessor(NAME_CHEZEY, Chezey.class, Chezey.getValueClass());
+      addProcessor(NAME_FRICTION, Friction.class, Friction.getValueClass());
    }
 
    @Override

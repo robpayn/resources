@@ -10,6 +10,7 @@ import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave
 import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWaveWiele;
 import org.payn.resources.water.channel.boundary.dynamicwave.WaterFlow;
 import org.payn.resources.water.channel.boundary.dynamicwave.downstream.BehaviorDynamicWaveDownstream;
+import org.payn.resources.water.channel.boundary.flowinterpolate.BehaviorFlowInterpolate;
 import org.payn.resources.water.channel.cell.BehaviorChannelStorage;
 import org.payn.resources.water.channel.cell.WaterHead;
 import org.payn.resources.water.channel.cell.WaterVolume;
@@ -56,6 +57,11 @@ public class ResourceWater extends ResourceAbstract {
     * Name of the behavior for the downstream boundary condition of a dynamic wave channel
     */
    public static final String BEHAVIOR_DYNAMIC_WAVE_DOWNSTREAM = "dynamicwavedownstream";
+
+   /**
+    * Behavior flow flow interpolation at boundary
+    */
+   public static final String BEHAVIOR_FLOW_INTERPOLATE = "flowinterpolate";
 
    /**
     * Name of the state for water flow
@@ -178,6 +184,7 @@ public class ResourceWater extends ResourceAbstract {
       addBehavior(BEHAVIOR_CHANNEL_STORAGE, BehaviorChannelStorage.class.getCanonicalName());
       addBehavior(BEHAVIOR_DYNAMIC_WAVE, BehaviorDynamicWave.class.getCanonicalName());
       addBehavior(BEHAVIOR_DYNAMIC_WAVE_WIELE, BehaviorDynamicWaveWiele.class.getCanonicalName());
+      addBehavior(BEHAVIOR_FLOW_INTERPOLATE, BehaviorFlowInterpolate.class.getCanonicalName());
       addBehavior(BEHAVIOR_DYNAMIC_WAVE_DOWNSTREAM, BehaviorDynamicWaveDownstream.class.getCanonicalName());
    }
 

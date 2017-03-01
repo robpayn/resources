@@ -1,6 +1,8 @@
 package org.payn.resources.water.channel.cell;
 
+import org.payn.chsm.io.file.initialize.InitialConditionTable;
 import org.payn.chsm.values.ValueDouble;
+import org.payn.chsm.values.ValueString;
 import org.payn.neoch.behavior.BehaviorMatrix;
 import org.payn.resources.water.ResourceWater;
 
@@ -33,6 +35,8 @@ public class BehaviorChannelStorage extends BehaviorMatrix {
       addRequiredState(ResourceWater.NAME_BANK_ELEVATION, ValueDouble.class);
       addRequiredState(ResourceWater.NAME_LENGTH, ValueDouble.class);
       addRequiredState(ResourceWater.NAME_ACTIVE_CHANNEL_WIDTH_AVERAGE, ValueDouble.class);
+      addRequiredState(InitialConditionTable.NAME_INITIAL_CONDITION_PATH, ValueString.class);
+      addRequiredState(InitialConditionTable.NAME_INITIAL_CONDITION_DELIMITER, ValueString.class);
    }
 
 }

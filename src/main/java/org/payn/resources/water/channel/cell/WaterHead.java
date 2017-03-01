@@ -1,7 +1,8 @@
 package org.payn.resources.water.channel.cell;
 
+import org.payn.chsm.io.file.initialize.ProcessorInitialConditionInit;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.processors.ProcessorDoubleStateInitRequired;
+import org.payn.neoch.UpdaterState;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -10,7 +11,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class WaterHead extends ProcessorDoubleStateInitRequired {
+public class WaterHead extends ProcessorInitialConditionInit implements UpdaterState {
 
    /**
     * Volume of water

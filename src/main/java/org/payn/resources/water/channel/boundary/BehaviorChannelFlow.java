@@ -1,6 +1,8 @@
 package org.payn.resources.water.channel.boundary;
 
+import org.payn.chsm.io.file.initialize.InitialConditionTable;
 import org.payn.chsm.values.ValueDouble;
+import org.payn.chsm.values.ValueString;
 import org.payn.neoch.behavior.symmetric.symmdouble.BehaviorSymmetricDouble;
 import org.payn.resources.water.ResourceWater;
 
@@ -37,6 +39,8 @@ public abstract class BehaviorChannelFlow extends BehaviorSymmetricDouble {
       addRequiredState(ResourceWater.NAME_LENGTH_ADJACENT, ValueDouble.class);
       addRequiredState(ResourceWater.NAME_BANK_SLOPE, ValueDouble.class);
       addRequiredState(ResourceWater.NAME_ACTIVE_CHANNEL_DEPTH, ValueDouble.class);
+      addRequiredState(InitialConditionTable.NAME_INITIAL_CONDITION_PATH, ValueString.class);
+      addRequiredState(InitialConditionTable.NAME_INITIAL_CONDITION_DELIMITER, ValueString.class);
    }
 
 }

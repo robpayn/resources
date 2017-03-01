@@ -1,6 +1,6 @@
 package org.payn.resources.water.channel.boundary.dynamicwave;
 
-import org.payn.chsm.processors.ProcessorDouble;
+import org.payn.chsm.io.file.initialize.ProcessorInitialCondition;
 import org.payn.chsm.processors.interfaces.InitializerSimple;
 import org.payn.chsm.processors.interfaces.UpdaterSimple;
 import org.payn.chsm.values.ValueDouble;
@@ -12,7 +12,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class Velocity extends ProcessorDouble implements UpdaterSimple, InitializerSimple {
+public class Velocity extends ProcessorInitialCondition implements InitializerSimple, UpdaterSimple {
 
    /**
     * Channel flow
@@ -34,7 +34,14 @@ public class Velocity extends ProcessorDouble implements UpdaterSimple, Initiali
    {
       if (value.isNoValue())
       {
-         update();
+         if (initialConditionTable != null)
+         {
+            super.initialize();
+         }
+         else
+         {
+            update();
+         }
       }
    }
    

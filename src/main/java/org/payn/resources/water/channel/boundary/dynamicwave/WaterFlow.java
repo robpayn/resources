@@ -2,9 +2,10 @@ package org.payn.resources.water.channel.boundary.dynamicwave;
 
 import org.payn.chsm.Holon;
 import org.payn.chsm.State;
+import org.payn.chsm.io.file.initialize.ProcessorInitialConditionInit;
 import org.payn.chsm.resources.time.BehaviorTime;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.processors.ProcessorDoubleLoadInitRequired;
+import org.payn.neoch.UpdaterLoad;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -13,7 +14,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class WaterFlow extends ProcessorDoubleLoadInitRequired {
+public class WaterFlow extends ProcessorInitialConditionInit implements UpdaterLoad {
 
    /**
     * Chezey coefficient
@@ -88,7 +89,9 @@ public class WaterFlow extends ProcessorDoubleLoadInitRequired {
    @Override
    public void setInitDependencies() throws Exception 
    {
+      super.setInitDependencies();
       setUpdateDependencies();
+      velocityProc.setInitDependencies();
    }
 
    @Override

@@ -3,7 +3,7 @@ package org.payn.resources.water.channel.boundary.dynamicwave.downstream;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
 import org.payn.neoch.HolonBoundary;
-import org.payn.neoch.processors.ProcessorLoadDoubleInit;
+import org.payn.neoch.processors.ProcessorDoubleLoadInit;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -13,7 +13,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class WaterFlow extends ProcessorLoadDoubleInit {
+public class WaterFlow extends ProcessorDoubleLoadInit {
 
    /**
     * Bed slope

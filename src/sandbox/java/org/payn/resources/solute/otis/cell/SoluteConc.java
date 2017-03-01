@@ -1,10 +1,10 @@
 package org.payn.resources.solute.otis.cell;
 
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.processors.ProcessorStorageDouble;
+import org.payn.neoch.processors.ProcessorDoubleStorage;
 import org.payn.resources.solute.otis.ResourceSoluteOTIS;
 
-public class SoluteConc extends ProcessorStorageDouble {
+public class SoluteConc extends ProcessorDoubleStorage {
    
    @Override
    public void setUpdateDependencies() 

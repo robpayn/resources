@@ -1,8 +1,8 @@
 package org.payn.resources.solute.otis.cell;
 
-import org.payn.neoch.processors.ProcessorLoadDouble;
+import org.payn.neoch.processors.ProcessorDoubleLoad;
 
-public class SoluteUptake extends ProcessorLoadDouble {
+public class SoluteUptake extends ProcessorDoubleLoad {
 
    @Override
    public void setUpdateDependencies() throws Exception {

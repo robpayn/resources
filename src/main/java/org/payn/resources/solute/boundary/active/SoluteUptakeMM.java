@@ -2,7 +2,7 @@ package org.payn.resources.solute.boundary.active;
 
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
-import org.payn.neoch.processors.ProcessorLoadDouble;
+import org.payn.neoch.processors.ProcessorDoubleLoad;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.BehaviorSoluteActiveMM;
 
@@ -13,7 +13,7 @@ import org.payn.resources.solute.boundary.BehaviorSoluteActiveMM;
  *
  */
 public class SoluteUptakeMM 
-extends ProcessorLoadDouble {
+extends ProcessorDoubleLoad {
 
    /**
     * Maximum uptake

@@ -4,7 +4,7 @@ import org.payn.chsm.Holon;
 import org.payn.chsm.State;
 import org.payn.chsm.resources.time.BehaviorTime;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.processors.ProcessorLoadDoubleInit;
+import org.payn.neoch.processors.ProcessorDoubleLoadInitRequired;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -13,7 +13,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class WaterFlow extends ProcessorLoadDoubleInit {
+public class WaterFlow extends ProcessorDoubleLoadInitRequired {
 
    /**
     * Chezey coefficient
@@ -94,6 +94,7 @@ public class WaterFlow extends ProcessorLoadDoubleInit {
    @Override
    public void initialize() throws Exception 
    {
+      super.initialize();
       if (velocityExponent == null)
       {
           velocityExp = 2.0;

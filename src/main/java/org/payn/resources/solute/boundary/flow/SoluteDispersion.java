@@ -3,7 +3,7 @@ package org.payn.resources.solute.boundary.flow;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
-import org.payn.neoch.processors.ProcessorLoadDouble;
+import org.payn.neoch.processors.ProcessorDoubleLoad;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
 
@@ -13,7 +13,7 @@ import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
  * @author v78h241
  *
  */
-public class SoluteDispersion extends ProcessorLoadDouble {
+public class SoluteDispersion extends ProcessorDoubleLoad {
 
    /**
     * Value of concentration in local cell

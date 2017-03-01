@@ -1,6 +1,7 @@
 package org.payn.resources.water.channel.boundary;
 
 import org.payn.chsm.processors.ProcessorDouble;
+import org.payn.chsm.processors.auto.ProcessorDoubleInit;
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.water.ResourceWater;
@@ -11,7 +12,7 @@ import org.payn.resources.water.ResourceWater;
  * @author v78h241
  *
  */
-public class WettedWidthChange extends ProcessorDouble implements InitializerAutoSimple {
+public class WettedWidthChange extends ProcessorDoubleInit {
 
    /**
     * Angle of the bank slope

@@ -2,10 +2,9 @@ package org.payn.resources.water.channel.boundary.dynamicwave;
 
 import org.payn.chsm.Holon;
 import org.payn.chsm.State;
-import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.resources.time.BehaviorTime;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.processors.ProcessorLoadDouble;
+import org.payn.neoch.processors.ProcessorLoadDoubleInit;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -14,7 +13,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class WaterFlow extends ProcessorLoadDouble implements InitializerAutoSimple {
+public class WaterFlow extends ProcessorLoadDoubleInit {
 
    /**
     * Chezey coefficient

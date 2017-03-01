@@ -1,8 +1,7 @@
 package org.payn.resources.water.channel.boundary;
 
 import org.payn.chsm.State;
-import org.payn.chsm.processors.ProcessorDouble;
-import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
+import org.payn.chsm.processors.auto.ProcessorDoubleInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
@@ -14,7 +13,7 @@ import org.payn.resources.water.ResourceWater;
  * @author v78h241
  *
  */
-public class BedElevation extends ProcessorDouble implements InitializerAutoSimple {
+public class BedElevation extends ProcessorDoubleInit {
 
    /**
     * Fraction of the length in the local cell

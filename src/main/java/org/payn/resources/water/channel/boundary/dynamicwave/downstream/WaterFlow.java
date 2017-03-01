@@ -1,10 +1,9 @@
 package org.payn.resources.water.channel.boundary.dynamicwave.downstream;
 
-import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
 import org.payn.neoch.HolonBoundary;
-import org.payn.neoch.processors.ProcessorLoadDouble;
+import org.payn.neoch.processors.ProcessorLoadDoubleInit;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -14,8 +13,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class WaterFlow extends ProcessorLoadDouble 
-implements InitializerAutoSimple {
+public class WaterFlow extends ProcessorLoadDoubleInit {
 
    /**
     * Bed slope

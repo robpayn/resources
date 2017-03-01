@@ -6,8 +6,6 @@ import org.payn.chsm.values.ValueString;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.processors.ProcessorLoadDouble;
 import org.payn.resources.water.ResourceWater;
-import org.payn.resources.water.channel.boundary.BehaviorChannelFlow;
-import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calculates the flow of water out the downstream end of
@@ -75,7 +73,7 @@ implements InitializerAutoSimple {
       HolonBoundary thisBoundary = 
             ((HolonBoundary)state.getParentHolon());
       ValueString upstreamBoundaryName = (ValueString)createDependencyOnValue(
-            BehaviorDynamicWaveDownstream.NAME_UPSTREAM_BOUNDARY
+            ResourceWater.NAME_UPSTREAM_BOUNDARY_NAME
             );
       HolonBoundary upstreamBoundary = thisBoundary.getCell().getBoundary(
             upstreamBoundaryName.string
@@ -83,15 +81,15 @@ implements InitializerAutoSimple {
 
       hydraulicGradient = (ValueDouble)createDependencyOnValue(
             upstreamBoundary,
-            BehaviorChannelFlow.NAME_HYDRAULIC_GRADIENT
+            ResourceWater.NAME_HYDRAULIC_GRADIENT
             );
       xSectionArea = (ValueDouble)createDependencyOnValue(
             upstreamBoundary,
-            BehaviorDynamicWave.NAME_XSECT_AREA
+            ResourceWater.NAME_WETTED_XSECT_AREA
             );
       hydraulicRadius = (ValueDouble)createDependencyOnValue(
             upstreamBoundary,
-            BehaviorChannelFlow.NAME_HYDRAULIC_RADIUS
+            ResourceWater.NAME_HYDRAULIC_RADIUS
             );
 
       // Get bed slope and Chezey coefficient from this boundary
@@ -99,27 +97,27 @@ implements InitializerAutoSimple {
       try 
       {
          bedSlope = (ValueDouble)createDependencyOnValue(
-               BehaviorChannelFlow.NAME_BED_SLOPE
+               ResourceWater.NAME_BED_SLOPE
                );
       }
       catch (Exception e)
       {
          bedSlope = (ValueDouble)createDependencyOnValue(
                upstreamBoundary,
-               BehaviorChannelFlow.NAME_BED_SLOPE
+               ResourceWater.NAME_BED_SLOPE
                );
       }
       try 
       {
          chezey = (ValueDouble)createDependencyOnValue(
-               BehaviorDynamicWave.NAME_CHEZEY
+               ResourceWater.NAME_CHEZEY
                );
       }
       catch (Exception e)
       {
          chezey = (ValueDouble)createDependencyOnValue(
                upstreamBoundary,
-               BehaviorDynamicWave.NAME_CHEZEY
+               ResourceWater.NAME_CHEZEY
                );
       }
       

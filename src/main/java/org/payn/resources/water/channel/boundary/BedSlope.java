@@ -6,7 +6,6 @@ import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
 import org.payn.resources.water.ResourceWater;
-import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calculate the bed slope
@@ -35,7 +34,7 @@ public class BedSlope extends ProcessorDouble implements InitializerAutoSimple {
    public void setInitDependencies() throws Exception 
    {
       linkLength = (ValueDouble)createDependencyOnValue(
-            BehaviorDynamicWave.NAME_LINK_LENGTH
+            ResourceWater.NAME_LENGTH_BOUND
             );
 
       HolonBoundary parentBoundary = (HolonBoundary)getState().getParentHolon();

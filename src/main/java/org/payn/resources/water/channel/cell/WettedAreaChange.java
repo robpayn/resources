@@ -38,7 +38,7 @@ public class WettedAreaChange extends ProcessorDouble implements InitializerAuto
       }
       
       length = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_LENGTH
+            ResourceWater.NAME_LENGTH
             );
    }
 
@@ -51,7 +51,7 @@ public class WettedAreaChange extends ProcessorDouble implements InitializerAuto
           {
               value.n = 0.0;
           }
-          else if (bankSlope.n > Math.PI / 2)
+          else if (bankSlope.n > Math.PI / 2.0)
           {
              throw new Exception(String.format(
                    "Invalid bank slope in cell %s", 
@@ -60,7 +60,7 @@ public class WettedAreaChange extends ProcessorDouble implements InitializerAuto
           }
           else
           {
-              value.n = (2 / Math.tan(bankSlope.n)) 
+              value.n = (2.0 / Math.tan(bankSlope.n)) 
                     * length.n;
           }
       }

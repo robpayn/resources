@@ -44,10 +44,10 @@ public class Chezey extends ProcessorDoubleTrade implements InitializerAutoSimpl
    public void setUpdateDependencies() throws Exception 
    {
       friction = (ValueDouble)createDependency(
-            BehaviorDynamicWaveWiele.NAME_FRICTION
+            ResourceWater.NAME_FRICTION_FACTOR
             ).getValue();
       hydraulicRadius = (ValueDouble)createDependency(
-            BehaviorDynamicWaveWiele.NAME_HYDRAULIC_RADIUS
+            ResourceWater.NAME_HYDRAULIC_RADIUS
             ).getValue();
    }
 
@@ -55,7 +55,7 @@ public class Chezey extends ProcessorDoubleTrade implements InitializerAutoSimpl
    public void update() throws Exception 
    {
       value.n = Math.pow(hydraulicRadius.n, ONE_THIRD) 
-            / (ResourceWater.GRAVITY_ACC * Math.pow(friction.n, 2.0));
+            / (ResourceWater.CONSTANT_GRAVITY_ACC * Math.pow(friction.n, 2.0));
    }
 
 }

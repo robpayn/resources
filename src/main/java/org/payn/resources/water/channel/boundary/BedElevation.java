@@ -7,7 +7,6 @@ import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
 import org.payn.resources.water.ResourceWater;
-import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calculates the bed elevation for the boundary
@@ -36,7 +35,7 @@ public class BedElevation extends ProcessorDouble implements InitializerAutoSimp
    public void setInitDependencies() throws Exception 
    {
       lengthFraction = (ValueDouble)createDependencyOnValue(
-            BehaviorDynamicWave.NAME_LENGTH_FRACTION
+            ResourceWater.NAME_LENGTH_FRACTION
             );
 
       HolonBoundary parentBoundary = (HolonBoundary)getState().getParentHolon();

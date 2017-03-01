@@ -12,53 +12,23 @@ import org.payn.resources.water.channel.boundary.BehaviorChannelFlow;
  */
 public class BehaviorDynamicWave extends BehaviorChannelFlow {
 
-   /**
-    * Name of the state for cross-sectional area of channel flow
-    */
-   public static final String NAME_XSECT_AREA = XSectAreaCurrent.class.getSimpleName();
-
-   /**
-    * Name of the state for the previous cross-sectional area
-    */
-   public static final String NAME_XSECT_AREA_PREV = XSectAreaPrevious.class.getSimpleName();
-
-   /**
-    * Name of the state for velocity
-    */
-   public static final String NAME_VELOCITY = Velocity.class.getSimpleName();
-
-   /**
-    * Name of the state for the Chezey coefficient
-    */
-   public static final String NAME_CHEZEY = Chezey.class.getSimpleName();
-
-   /**
-    * Name of the state for the velocity exponent
-    */
-   public static final String REQ_STATE_VELOCITY_EXP = "VelocityExp";
-
-   /**
-    * Name of the state for the radius exponent
-    */
-   public static final String REQ_STATE_RADIUS_EXP = "RadiusExp";
-
    @Override
    protected void addProcessors() 
    {
       super.addProcessors();
       addProcessor(ResourceWater.NAME_WATER_FLOW, WaterFlow.class, ValueDouble.class);
-      addProcessor(NAME_XSECT_AREA, XSectAreaCurrent.class, ValueDouble.class);
-      addProcessor(NAME_XSECT_AREA_PREV, XSectAreaPrevious.class, ValueDouble.class);
-      addProcessor(NAME_VELOCITY, Velocity.class, ValueDouble.class);
+      addProcessor(ResourceWater.NAME_WETTED_XSECT_AREA, XSectAreaCurrent.class, ValueDouble.class);
+      addProcessor(ResourceWater.NAME_WETTER_XSECT_AREA_PREV, XSectAreaPrevious.class, ValueDouble.class);
+      addProcessor(ResourceWater.NAME_WATER_VELOCITY, Velocity.class, ValueDouble.class);
    }
 
    @Override
    protected void addRequiredStates() 
    {
       addRequiredStatesChannelFlow();
-      addRequiredState(NAME_CHEZEY, ValueDouble.class);
-      addRequiredState(REQ_STATE_VELOCITY_EXP, ValueDouble.class);
-      addRequiredState(REQ_STATE_RADIUS_EXP, ValueDouble.class);
+      addRequiredState(ResourceWater.NAME_CHEZEY, ValueDouble.class);
+      addRequiredState(ResourceWater.NAME_CHEZEY_EXPONENT_VELOCITY, ValueDouble.class);
+      addRequiredState(ResourceWater.NAME_CHEZEY_EXPONENT_RADIUS, ValueDouble.class);
    }
    
 }

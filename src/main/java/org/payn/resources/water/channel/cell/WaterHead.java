@@ -37,14 +37,14 @@ public class WaterHead extends ProcessorDoubleState {
             ResourceWater.NAME_BED_ELEVATION
             );
       depth = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_DEPTH
+            ResourceWater.NAME_WATER_DEPTH
             );
    }
 
    @Override
    public void update() throws Exception 
    {
-      if (volume.n <= 0)
+      if (volume.n <= 0.0)
       {
          value.n = bedElevation.n;
       }

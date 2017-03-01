@@ -4,6 +4,7 @@ import org.payn.chsm.processors.ProcessorDouble;
 import org.payn.chsm.processors.interfaces.InitializerSimple;
 import org.payn.chsm.processors.interfaces.UpdaterSimple;
 import org.payn.chsm.values.ValueDouble;
+import org.payn.resources.water.ResourceWater;
 
 /**
  * Calculate the velocity of the channel flow
@@ -49,10 +50,10 @@ public class Velocity extends ProcessorDouble implements UpdaterSimple, Initiali
    {
       waterFlow = (ValueDouble)waterFlowProc.getState().getValue();
       xSectionArea = (ValueDouble)waterFlowProc.createDependency(
-            BehaviorDynamicWave.NAME_XSECT_AREA
+            ResourceWater.NAME_WETTED_XSECT_AREA
             ).getValue();
       xSectionAreaPrev = (ValueDouble)waterFlowProc.createDependency(
-            BehaviorDynamicWave.NAME_XSECT_AREA_PREV
+            ResourceWater.NAME_WETTER_XSECT_AREA_PREV
             ).getValue();
    }
 
@@ -69,7 +70,7 @@ public class Velocity extends ProcessorDouble implements UpdaterSimple, Initiali
       {
          v = 0.0;
       }
-      if (Math.abs(v) > BehaviorDynamicWave.MAX_VELOCITY)
+      if (Math.abs(v) > ResourceWater.CONSTANT_MAX_VELOCITY)
       {
          throw new Exception(String.format(
                "Velocity > MaxVelocity in boundary %s", 

@@ -3,6 +3,7 @@ package org.payn.resources.water.channel.boundary.dynamicwave;
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleTrade;
+import org.payn.resources.water.ResourceWater;
 
 /**
  * Determines the friction factor based on the Wiele model for
@@ -44,13 +45,13 @@ public class Friction extends ProcessorDoubleTrade implements InitializerAutoSim
    public void setUpdateDependencies() throws Exception 
    {
       wieleInt = (ValueDouble)createDependency(
-            BehaviorDynamicWaveWiele.REQ_STATE_WIELEINT
+            ResourceWater.NAME_WIELE_MODEL_INTERCEPT
             ).getValue();
       wieleSlope = (ValueDouble)createDependency(
-            BehaviorDynamicWaveWiele.REQ_STATE_WIELESLOPE
+            ResourceWater.NAME_WIELE_MODEL_SLOPE
             ).getValue();
       hydraulicRadius = (ValueDouble)createDependency(
-            BehaviorDynamicWaveWiele.NAME_HYDRAULIC_RADIUS
+            ResourceWater.NAME_HYDRAULIC_RADIUS
             ).getValue();
    }
 

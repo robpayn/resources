@@ -62,45 +62,45 @@ public class Depth extends ProcessorDoubleState implements InitializerAutoSimple
             ResourceWater.NAME_WATER_VOLUME
             );
       bankElevation = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_BANK_ELEVATION
+            ResourceWater.NAME_BANK_ELEVATION
             );
       bedElevation = (ValueDouble)createDependencyOnValue(
             ResourceWater.NAME_BED_ELEVATION
             );
       wettedAreaChange = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_WETTED_AREA_CHANGE
+            ResourceWater.NAME_WETTED_AREA_CHANGE
             );
       wettedAreaMax = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_WETTED_AREA_MAX
+            ResourceWater.NAME_WETTED_AREA_MAX
             );
       bottomArea = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_BOTTOM_AREA
+            ResourceWater.NAME_ACTIVE_CHANNEL_BOTTOM_AREA
             );
    }
 
    @Override
    public void update() throws Exception 
    {
-      if (volume.n == 0.)
+      if (volume.n == 0.0)
       {
          value.n = 0.0;
       }
       else
       {
          double maxdepth = bankElevation.n - bedElevation.n;
-         if (wettedAreaChange.n == 0)
+         if (wettedAreaChange.n == 0.0)
          {
             value.n = volume.n / bottomArea.n;
          }
          else
          {
-            value.n = (Math.sqrt(bottomArea.n * bottomArea.n + 2 * wettedAreaChange.n * volume.n) - bottomArea.n) 
+            value.n = (Math.sqrt(bottomArea.n * bottomArea.n + 2.0 * wettedAreaChange.n * volume.n) - bottomArea.n) 
                   / wettedAreaChange.n;
          }
          
          if (value.n > maxdepth)
          {
-            double vol = (maxdepth * bottomArea.n) + (maxdepth * maxdepth * wettedAreaChange.n / 2);
+            double vol = (maxdepth * bottomArea.n) + (maxdepth * maxdepth * wettedAreaChange.n / 2.0);
             value.n = maxdepth + (volume.n - vol) / wettedAreaMax.n;
          }
       }

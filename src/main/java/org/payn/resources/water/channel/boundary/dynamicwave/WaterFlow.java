@@ -116,31 +116,31 @@ public class WaterFlow extends ProcessorLoadDouble implements InitializerAutoSim
             BehaviorTime.ITERATION_INTERVAL
             ).getValue();
       State velocityState = createDependency(
-            BehaviorDynamicWave.NAME_VELOCITY
+            ResourceWater.NAME_WATER_VELOCITY
             );
       velocity = (ValueDouble)velocityState.getValue();
       velocityProc = (Velocity)velocityState.getProcessor();
       velocityProc.setDependencies(this);
       chezey = (ValueDouble)createDependencyOnValue(
-            BehaviorDynamicWave.NAME_CHEZEY
+            ResourceWater.NAME_CHEZEY
             );
       xSectionArea = (ValueDouble)createDependency(
-            BehaviorDynamicWave.NAME_XSECT_AREA
+            ResourceWater.NAME_WETTED_XSECT_AREA
             ).getValue();
       xSectionAreaPrev = (ValueDouble)createDependency(
-            BehaviorDynamicWave.NAME_XSECT_AREA_PREV
+            ResourceWater.NAME_WETTER_XSECT_AREA_PREV
             ).getValue();
       hydraulicRadius = (ValueDouble)createDependency(
-            BehaviorDynamicWave.NAME_HYDRAULIC_RADIUS
+            ResourceWater.NAME_HYDRAULIC_RADIUS
             ).getValue();
       wettedWidth = (ValueDouble)createDependency(
-            BehaviorDynamicWave.NAME_WETTED_WIDTH
+            ResourceWater.NAME_WETTED_WIDTH
             ).getValue();
       bedSlope = (ValueDouble)createDependency(
-            BehaviorDynamicWave.NAME_BED_SLOPE
+            ResourceWater.NAME_BED_SLOPE
             ).getValue();
       hydraulicGradient = (ValueDouble)createDependency(
-            BehaviorDynamicWave.NAME_HYDRAULIC_GRADIENT
+            ResourceWater.NAME_HYDRAULIC_GRADIENT
             ).getValue();
       ValueDouble[] exponents = ResourceWater.getChezeyExponentValues(
             state.getParentHolon(), this);
@@ -187,8 +187,8 @@ public class WaterFlow extends ProcessorLoadDouble implements InitializerAutoSim
       flow = (flow 
             + (2.0 * velocity.n * (xSectionArea.n - xSectionAreaPrev.n))
             + (timeStep.n * velocity.n * velocity.n * wettedWidth.n * (bedSlope.n - hydraulicGradient.n)) 
-            + (timeStep.n * ResourceWater.GRAVITY_ACC * (xSectionArea.n * hydraulicGradient.n)))
-            / (1.0 + (timeStep.n * ResourceWater.GRAVITY_ACC * chezey.n * a / b));
+            + (timeStep.n * ResourceWater.CONSTANT_GRAVITY_ACC * (xSectionArea.n * hydraulicGradient.n)))
+            / (1.0 + (timeStep.n * ResourceWater.CONSTANT_GRAVITY_ACC * chezey.n * a / b));
       
       if (Double.isNaN(flow))
       {

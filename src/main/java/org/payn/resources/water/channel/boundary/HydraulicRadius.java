@@ -4,7 +4,6 @@ import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleTrade;
 import org.payn.resources.water.ResourceWater;
-import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calculates the hydraulic radius of channel flow
@@ -45,13 +44,13 @@ public class HydraulicRadius extends ProcessorDoubleTrade implements Initializer
    public void setUpdateDependencies() throws Exception 
    {
       depth = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_DEPTH
+            ResourceWater.NAME_WATER_DEPTH
             );
       xSectionArea = (ValueDouble)createDependencyOnValue(
-            BehaviorDynamicWave.NAME_XSECT_AREA
+            ResourceWater.NAME_WETTED_XSECT_AREA
             );
       wettedWidth = (ValueDouble)createDependencyOnValue(
-            BehaviorDynamicWave.NAME_WETTED_WIDTH
+            ResourceWater.NAME_WETTED_WIDTH
             );
    }
 
@@ -65,7 +64,7 @@ public class HydraulicRadius extends ProcessorDoubleTrade implements Initializer
       else
       {
          double hydraulicRadius = xSectionArea.n / wettedWidth.n;
-         if (hydraulicRadius > BehaviorDynamicWave.MAX_HYDRAULIC_RADIUS)
+         if (hydraulicRadius > ResourceWater.CONSTANT_MAX_HYDRAULIC_RADIUS)
          {
             throw new Exception(String.format(
                   "Hydraulic radius is larger than maximum allowed by the behavior in boundary %s",

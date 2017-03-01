@@ -52,13 +52,13 @@ public class BottomArea extends ProcessorDouble implements InitializerAutoSimple
          bankSlope = null;
       }
       activeWidthAvg = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_ACTIVE_WIDTH_AVG
+            ResourceWater.NAME_ACTIVE_CHANNEL_WIDTH_AVERAGE
             );
       length = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_LENGTH
+            ResourceWater.NAME_LENGTH
             );
       bankElevation = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_BANK_ELEVATION
+            ResourceWater.NAME_BANK_ELEVATION
             );
       bedElevation = (ValueDouble)createDependencyOnValue(
             ResourceWater.NAME_BED_ELEVATION

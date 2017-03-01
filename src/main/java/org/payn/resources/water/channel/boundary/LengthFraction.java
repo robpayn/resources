@@ -3,7 +3,7 @@ package org.payn.resources.water.channel.boundary;
 import org.payn.chsm.processors.ProcessorDouble;
 import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
+import org.payn.resources.water.ResourceWater;
 
 /**
  * Calculates the fraction of the length between the adjacent cells
@@ -29,12 +29,12 @@ public class LengthFraction extends ProcessorDouble implements InitializerAutoSi
       try
       {
          lengthLoc = (ValueDouble)createDependencyOnValue(
-               BehaviorDynamicWave.NAME_LENGTH_LOC
+               ResourceWater.NAME_LENGTH_LOCAL
                );
          try
          {
             lengthAdj = (ValueDouble)createDependencyOnValue(
-                  BehaviorDynamicWave.NAME_LENGTH_ADJ
+                  ResourceWater.NAME_LENGTH_ADJACENT
                   );
          }
          catch (Exception e)
@@ -50,7 +50,7 @@ public class LengthFraction extends ProcessorDouble implements InitializerAutoSi
          try
          {
             lengthAdj = (ValueDouble)createDependencyOnValue(
-                  BehaviorDynamicWave.NAME_LENGTH_ADJ
+                  ResourceWater.NAME_LENGTH_ADJACENT
                   );
             throw new Exception(String.format(
                   "Adjacent length is defined with local length in boundary %s.",

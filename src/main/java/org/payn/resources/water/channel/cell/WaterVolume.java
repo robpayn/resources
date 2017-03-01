@@ -50,19 +50,19 @@ public class WaterVolume extends ProcessorStorageDouble implements InitializerAu
             ResourceWater.NAME_WATER_HEAD
             );
       elevationBank = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_BANK_ELEVATION
+            ResourceWater.NAME_BANK_ELEVATION
             );
       elevationBed = (ValueDouble)createDependencyOnValue(
             ResourceWater.NAME_BED_ELEVATION
             );
       bottomArea = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_BOTTOM_AREA
+            ResourceWater.NAME_ACTIVE_CHANNEL_BOTTOM_AREA
             );
       wettedAreaChange = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_WETTED_AREA_CHANGE
+            ResourceWater.NAME_WETTED_AREA_CHANGE
             );
       wettedAreaMax = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_WETTED_AREA_MAX
+            ResourceWater.NAME_WETTED_AREA_MAX
             );
    }
 
@@ -85,7 +85,7 @@ public class WaterVolume extends ProcessorStorageDouble implements InitializerAu
       
       // calculate volume of h2o in channel
       value.n = (depth * bottomArea.n) 
-            + (depth * depth * wettedAreaChange.n / 2);
+            + (depth * depth * wettedAreaChange.n / 2.0);
       
       // if flooded, add h20 from flood water
       if (head.n > elevationBank.n)

@@ -1,6 +1,7 @@
 package org.payn.resources.water.channel.boundary.dynamicwave;
 
 import org.payn.chsm.values.ValueDouble;
+import org.payn.resources.water.ResourceWater;
 
 /**
  * Dynamic wave behavior based on Wiele power relationship between depth and friction
@@ -10,35 +11,20 @@ import org.payn.chsm.values.ValueDouble;
  */
 public class BehaviorDynamicWaveWiele extends BehaviorDynamicWave {
 
-   /**
-    * Name of the state for the friction factor
-    */
-   public static final String NAME_FRICTION = Friction.class.getSimpleName();
-
-   /**
-    * Name of required state for the Wiele model intercept
-    */
-   public static final String REQ_STATE_WIELEINT = "WieleInt";
-
-   /**
-    * Name of the required state for the Wiele model slope
-    */
-   public static final String REQ_STATE_WIELESLOPE = "WieleSlope";
-
    @Override
    protected void addProcessors() 
    {
       super.addProcessors();
-      addProcessor(NAME_CHEZEY, Chezey.class, Chezey.getValueClass());
-      addProcessor(NAME_FRICTION, Friction.class, Friction.getValueClass());
+      addProcessor(ResourceWater.NAME_CHEZEY, Chezey.class, Chezey.getValueClass());
+      addProcessor(ResourceWater.NAME_FRICTION_FACTOR, Friction.class, Friction.getValueClass());
    }
 
    @Override
    protected void addRequiredStates() 
    {
       super.addRequiredStatesChannelFlow();
-      addRequiredState(REQ_STATE_WIELEINT, ValueDouble.class);
-      addRequiredState(REQ_STATE_WIELESLOPE, ValueDouble.class);
+      addRequiredState(ResourceWater.NAME_WIELE_MODEL_INTERCEPT, ValueDouble.class);
+      addRequiredState(ResourceWater.NAME_WIELE_MODEL_SLOPE, ValueDouble.class);
    }
 
 }

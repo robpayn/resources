@@ -6,7 +6,6 @@ import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
 import org.payn.neoch.processors.ProcessorDoubleTrade;
 import org.payn.resources.water.ResourceWater;
-import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calcualte the hydraulic gradient 
@@ -52,10 +51,10 @@ public class HydraulicGradient extends ProcessorDoubleTrade implements Initializ
    public void setUpdateDependencies() throws Exception 
    {
       depth = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_DEPTH
+            ResourceWater.NAME_WATER_DEPTH
             );
       linkLength = (ValueDouble)createDependencyOnValue(
-            BehaviorDynamicWave.NAME_LINK_LENGTH
+            ResourceWater.NAME_LENGTH_BOUND
             );
       
       HolonBoundary parentBoundary = (HolonBoundary)getState().getParentHolon();

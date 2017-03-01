@@ -32,13 +32,13 @@ public class WettedAreaMax extends ProcessorDouble implements InitializerAutoSim
    public void setInitDependencies() throws Exception 
    {
       activeWidthAvg = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_ACTIVE_WIDTH_AVG
+            ResourceWater.NAME_ACTIVE_CHANNEL_WIDTH_AVERAGE
             );
       bottomArea = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_BOTTOM_AREA
+            ResourceWater.NAME_ACTIVE_CHANNEL_BOTTOM_AREA
             );
       length = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_LENGTH
+            ResourceWater.NAME_LENGTH
             );
    }
 

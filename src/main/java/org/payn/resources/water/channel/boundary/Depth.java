@@ -6,7 +6,6 @@ import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
 import org.payn.neoch.processors.ProcessorDoubleTrade;
 import org.payn.resources.water.ResourceWater;
-import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calculates the depth of water in the channel flow
@@ -72,7 +71,7 @@ public class Depth extends ProcessorDoubleTrade implements InitializerAutoSimple
    public void setUpdateDependencies() throws Exception 
    {
       lengthFraction = (ValueDouble)createDependencyOnValue(
-            BehaviorDynamicWave.NAME_LENGTH_FRACTION
+            ResourceWater.NAME_LENGTH_FRACTION
             );
       bedElevation = (ValueDouble)createDependencyOnValue(
             ResourceWater.NAME_BED_ELEVATION
@@ -102,11 +101,11 @@ public class Depth extends ProcessorDoubleTrade implements InitializerAutoSimple
       
       cellDepthLoc = (ValueDouble)createDependencyOnValue(
             cell,
-            ResourceWater.NAME_DEPTH
+            ResourceWater.NAME_WATER_DEPTH
             );
       cellDepthAdj = (ValueDouble)createDependencyOnValue(
             cellAdj,
-            ResourceWater.NAME_DEPTH
+            ResourceWater.NAME_WATER_DEPTH
             );
    }
 

@@ -70,28 +70,28 @@ public class WettedArea extends ProcessorDoubleState implements InitializerAutoS
             ResourceWater.NAME_WATER_HEAD
             );
       depth = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_DEPTH
+            ResourceWater.NAME_WATER_DEPTH
             );
       bankElevation = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_BANK_ELEVATION
+            ResourceWater.NAME_BANK_ELEVATION
             );
       wettedAreaMax = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_WETTED_AREA_MAX
+            ResourceWater.NAME_WETTED_AREA_MAX
             );
       wettedAreaChange = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_WETTED_AREA_CHANGE
+            ResourceWater.NAME_WETTED_AREA_CHANGE
             );
       bottomArea = (ValueDouble)createDependencyOnValue(
-            BehaviorChannelStorage.NAME_BOTTOM_AREA
+            ResourceWater.NAME_ACTIVE_CHANNEL_BOTTOM_AREA
             );
    }
 
    @Override
    public void update() throws Exception 
    {
-      if (volume.n <= 0)
+      if (volume.n <= 0.0)
       {
-         value.n = 0;
+         value.n = 0.0;
       }
       else if (head.n > bankElevation.n)
       {

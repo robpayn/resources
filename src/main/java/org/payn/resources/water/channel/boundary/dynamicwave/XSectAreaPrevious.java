@@ -37,7 +37,7 @@ public class XSectAreaPrevious extends ProcessorDouble implements UpdaterSimple,
    {
       xSectionArea = (ValueDouble)xSectAreaCurrent.getValue();
       depth = (ValueDouble)xSectAreaCurrent.createDependency(
-            ResourceWater.NAME_DEPTH
+            ResourceWater.NAME_WATER_DEPTH
             ).getValue();
    }
 

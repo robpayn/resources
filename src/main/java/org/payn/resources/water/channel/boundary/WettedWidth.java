@@ -4,7 +4,6 @@ import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleTrade;
 import org.payn.resources.water.ResourceWater;
-import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
 
 /**
  * Calculates the wetted width
@@ -45,13 +44,13 @@ public class WettedWidth extends ProcessorDoubleTrade implements InitializerAuto
    public void setUpdateDependencies() throws Exception 
    {
       depth = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_DEPTH
+            ResourceWater.NAME_WATER_DEPTH
             );
       bottomWidth = (ValueDouble)createDependencyOnValue(
-            BehaviorDynamicWave.NAME_BOTTOM_WIDTH
+            ResourceWater.NAME_ACTIVE_CHANNEL_BOTTOM_WIDTH
             );
       wettedWidthChange = (ValueDouble)createDependencyOnValue(
-            BehaviorDynamicWave.NAME_WETTED_WIDTH_CHANGE
+            ResourceWater.NAME_WETTED_WIDTH_CHANGE
             );
    }
 

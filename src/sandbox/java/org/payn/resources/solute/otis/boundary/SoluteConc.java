@@ -1,12 +1,12 @@
 package org.payn.resources.solute.otis.boundary;
 
 import org.payn.chsm.processors.ProcessorDouble;
-import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
+import org.payn.chsm.processors.interfaces.InitializerSimpleAuto;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.resources.solute.otis.ResourceSoluteOTIS;
 
-public class SoluteConc extends ProcessorDouble implements InitializerAutoSimple {
+public class SoluteConc extends ProcessorDouble implements InitializerSimpleAuto {
 
    private ValueDouble adjacentConc;
 

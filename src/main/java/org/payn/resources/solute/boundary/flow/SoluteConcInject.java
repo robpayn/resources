@@ -1,7 +1,7 @@
 package org.payn.resources.solute.boundary.flow;
 
 import org.payn.chsm.Holon;
-import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
+import org.payn.chsm.processors.interfaces.InitializerSimpleAuto;
 import org.payn.chsm.resources.time.BehaviorTime;
 import org.payn.chsm.resources.time.Iteration;
 import org.payn.chsm.values.ValueDouble;
@@ -17,7 +17,7 @@ import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
  * @author robpayn
  *
  */
-public class SoluteConcInject extends ProcessorDoubleTrade implements InitializerAutoSimple {
+public class SoluteConcInject extends ProcessorDoubleTrade implements InitializerSimpleAuto {
 
    /**
     * Value for background concentration

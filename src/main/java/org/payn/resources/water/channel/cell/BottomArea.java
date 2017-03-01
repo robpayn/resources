@@ -1,7 +1,7 @@
 package org.payn.resources.water.channel.cell;
 
 import org.payn.chsm.processors.ProcessorDouble;
-import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
+import org.payn.chsm.processors.interfaces.InitializerSimpleAuto;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.water.ResourceWater;
 
@@ -11,7 +11,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class BottomArea extends ProcessorDouble implements InitializerAutoSimple {
+public class BottomArea extends ProcessorDouble implements InitializerSimpleAuto {
 
    /**
     * Slope angle of the bank

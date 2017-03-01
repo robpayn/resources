@@ -1,6 +1,6 @@
 package org.payn.resources.solute.cell.storage;
 
-import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
+import org.payn.chsm.processors.interfaces.InitializerSimpleAuto;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorStorageDouble;
 import org.payn.resources.solute.ResourceSolute;
@@ -12,7 +12,7 @@ import org.payn.resources.solute.cell.BehaviorSoluteStorage;
  * @author v78h241
  *
  */
-public class SoluteMass extends ProcessorStorageDouble implements InitializerAutoSimple {
+public class SoluteMass extends ProcessorStorageDouble implements InitializerSimpleAuto {
    
    /**
     * Concentration value

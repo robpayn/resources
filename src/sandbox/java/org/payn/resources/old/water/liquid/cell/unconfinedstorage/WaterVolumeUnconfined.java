@@ -1,6 +1,6 @@
 package org.payn.resources.old.water.liquid.cell.unconfinedstorage;
 
-import org.payn.chsm.processors.interfaces.InitializerAutoSimple;
+import org.payn.chsm.processors.interfaces.InitializerSimpleAuto;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.old.water.WaterStorage;
 import org.payn.resources.old.water.liquid.cell.HydraulicHead;
@@ -11,7 +11,7 @@ import org.payn.resources.old.water.liquid.cell.HydraulicHead;
  * @author robpayn
  *
  */
-public class WaterVolumeUnconfined extends WaterStorage implements InitializerAutoSimple {
+public class WaterVolumeUnconfined extends WaterStorage implements InitializerSimpleAuto {
 
    /**
     * Hydraulic head in the cell

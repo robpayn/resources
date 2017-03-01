@@ -57,10 +57,6 @@ implements InitializerAutoSimple {
    @Override
    public void setInitDependencies() throws Exception 
    {
-      if (value.isNoValue())
-      {
-         setUpdateDependencies();
-      }
    }
 
    @Override
@@ -68,7 +64,7 @@ implements InitializerAutoSimple {
    {
       if (value.isNoValue())
       {
-         update();
+         value.n = 0;
       }
    }
 
@@ -139,8 +135,8 @@ implements InitializerAutoSimple {
       }
       if (exponents[0] == null)
       {
-         velocityExponent = 2;
-         radiusExponent = 4 / 3;
+         velocityExponent = 2.0;
+         radiusExponent = 4.0 / 3.0;
       }
       else
       {

@@ -55,7 +55,7 @@ public class Chezey extends ProcessorDoubleTrade implements InitializerAutoSimpl
    public void update() throws Exception 
    {
       value.n = Math.pow(hydraulicRadius.n, ONE_THIRD) 
-            / (ResourceWater.GRAVITY_ACC * Math.pow(friction.n, 2));
+            / (ResourceWater.GRAVITY_ACC * Math.pow(friction.n, 2.0));
    }
 
 }

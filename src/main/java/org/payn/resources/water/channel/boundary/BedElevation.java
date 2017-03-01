@@ -61,7 +61,7 @@ public class BedElevation extends ProcessorDouble implements InitializerAutoSimp
       ValueDouble cellElevationAdj = 
             (ValueDouble)cellElevationAdjState.getValue();
       double defaultValue = 
-            (1 - lengthFraction.n) * cellElevationLoc.n 
+            (1.0 - lengthFraction.n) * cellElevationLoc.n 
             + lengthFraction.n * cellElevationAdj.n;
       if (!value.isNoValue() && defaultValue > value.n)
       {

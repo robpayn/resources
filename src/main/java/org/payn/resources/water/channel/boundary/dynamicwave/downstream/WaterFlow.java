@@ -64,7 +64,7 @@ implements InitializerAutoSimple {
    {
       if (value.isNoValue())
       {
-         value.n = 0;
+         value.n = 0.0;
       }
    }
 
@@ -157,13 +157,13 @@ implements InitializerAutoSimple {
       {
          gradient = hydraulicGradient.n;
       }
-      value.n = 0.;
-      if (gradient > 0)
+      value.n = 0.0;
+      if (gradient > 0.0)
       {
           value.n = -xSectionArea.n 
                 * Math.pow(
                       (Math.pow(hydraulicRadius.n, radiusExponent) * gradient / chezey.n), 
-                      (1 / velocityExponent)
+                      (1.0 / velocityExponent)
                       );
       }
    }

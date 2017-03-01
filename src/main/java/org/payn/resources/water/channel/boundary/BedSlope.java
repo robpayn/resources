@@ -55,7 +55,7 @@ public class BedSlope extends ProcessorDouble implements InitializerAutoSimple {
    @Override
    public void initialize() throws Exception 
    {
-      if (linkLength.n <= 0) 
+      if (linkLength.n <= 0.0) 
       {
          throw new Exception(String.format(
                "LINKLENGTH <= 0 in boundary %s", 

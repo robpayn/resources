@@ -58,13 +58,13 @@ public class WettedWidth extends ProcessorDoubleTrade implements InitializerAuto
    @Override
    public void update() throws Exception 
    {
-      if (depth.n > 0)
+      if (depth.n > 0.0)
       {
          value.n = bottomWidth.n + (depth.n * wettedWidthChange.n);
       }
       else
       {
-         value.n = 0;
+         value.n = 0.0;
       }
    }
 

@@ -77,13 +77,13 @@ public class XSectAreaCurrent extends ProcessorDoubleTrade implements Initialize
     */
    private void calculate()
    {
-      if (depth.n <= 0)
+      if (depth.n <= 0.0)
       {
          value.n = 0.0;
       }
       else
       {
-         value.n = (bottomWidth.n + (wettedWidthChange.n * depth.n) / 2) * depth.n;
+         value.n = (bottomWidth.n + (wettedWidthChange.n * depth.n) / 2.0) * depth.n;
       }
    }
 

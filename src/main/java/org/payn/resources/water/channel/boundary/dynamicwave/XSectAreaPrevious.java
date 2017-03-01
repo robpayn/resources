@@ -50,7 +50,7 @@ public class XSectAreaPrevious extends ProcessorDouble implements UpdaterSimple,
    @Override
    public void update() throws Exception 
    {
-      if (depth.n > 0)
+      if (depth.n > 0.0)
       {
          value.n = xSectionArea.n;
       }

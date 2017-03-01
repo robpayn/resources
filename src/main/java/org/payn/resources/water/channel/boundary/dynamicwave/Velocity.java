@@ -61,13 +61,13 @@ public class Velocity extends ProcessorDouble implements UpdaterSimple, Initiali
    {
       // compute velocity based on last time step
       double v;
-      if (xSectionArea.n > 0)
+      if (xSectionArea.n > 0.0)
       {
-         v = 2 * (waterFlow.n / (xSectionArea.n + xSectionAreaPrev.n));
+         v = 2.0 * (waterFlow.n / (xSectionArea.n + xSectionAreaPrev.n));
       }
       else
       {
-         v = 0;
+         v = 0.0;
       }
       if (Math.abs(v) > BehaviorDynamicWave.MAX_VELOCITY)
       {

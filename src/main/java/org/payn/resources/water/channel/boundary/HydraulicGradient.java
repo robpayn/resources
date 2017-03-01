@@ -75,9 +75,9 @@ public class HydraulicGradient extends ProcessorDoubleTrade implements Initializ
    @Override
    public void update() throws Exception 
    {
-      if (depth.n <= 0)
+      if (depth.n <= 0.0)
       {
-         value.n = 0;
+         value.n = 0.0;
       }
       else
       {

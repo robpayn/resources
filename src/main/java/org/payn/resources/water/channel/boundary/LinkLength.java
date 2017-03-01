@@ -118,7 +118,7 @@ public class LinkLength extends ProcessorDouble implements InitializerAutoSimple
                xLocal.n, yLocal.n, xAdjacent.n, yAdjacent.n
                );
       }
-      else if (lengthLoc.n > 0 && lengthAdj.n > 0)
+      else if (lengthLoc.n > 0.0 && lengthAdj.n > 0.0)
       {
          value.n = lengthLoc.n + lengthAdj.n;
       }

@@ -72,7 +72,7 @@ public class LengthFraction extends ProcessorDouble implements InitializerAutoSi
       {
          value.n = 0.5;
       }
-      else if (lengthLoc.n > 0 && lengthAdj.n > 0)
+      else if (lengthLoc.n > 0.0 && lengthAdj.n > 0.0)
       {
          value.n = lengthLoc.n / (lengthLoc.n + lengthAdj.n);
       }

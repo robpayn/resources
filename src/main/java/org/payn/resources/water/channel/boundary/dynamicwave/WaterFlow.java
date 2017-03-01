@@ -167,9 +167,9 @@ public class WaterFlow extends ProcessorLoadDouble implements InitializerAutoSim
       double a, b;
 
       // short-circuit test
-      if (xSectionArea.n <= 0)
+      if (xSectionArea.n <= 0.0)
       {
-          return 0.;
+          return 0.0;
       }
 
       double absVelocity = Math.abs(velocity.n);
@@ -185,10 +185,10 @@ public class WaterFlow extends ProcessorLoadDouble implements InitializerAutoSim
       b = Math.pow(hydraulicRadius.n, radiusExp);
  
       flow = (flow 
-            + (2 * velocity.n * (xSectionArea.n - xSectionAreaPrev.n))
+            + (2.0 * velocity.n * (xSectionArea.n - xSectionAreaPrev.n))
             + (timeStep.n * velocity.n * velocity.n * wettedWidth.n * (bedSlope.n - hydraulicGradient.n)) 
             + (timeStep.n * ResourceWater.GRAVITY_ACC * (xSectionArea.n * hydraulicGradient.n)))
-            / (1. + (timeStep.n * ResourceWater.GRAVITY_ACC * chezey.n * a / b));
+            / (1.0 + (timeStep.n * ResourceWater.GRAVITY_ACC * chezey.n * a / b));
       
       if (Double.isNaN(flow))
       {

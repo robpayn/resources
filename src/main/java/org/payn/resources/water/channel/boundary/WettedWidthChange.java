@@ -40,9 +40,9 @@ public class WettedWidthChange extends ProcessorDouble implements InitializerAut
       {
          if (bankSlope == null)
          {
-            value.n = 0;
+            value.n = 0.0;
          }
-         else if (bankSlope.n > Math.PI / 2)
+         else if (bankSlope.n > Math.PI / 2.0)
          {
             value.setToNoValue();
             throw new Exception(String.format(
@@ -52,7 +52,7 @@ public class WettedWidthChange extends ProcessorDouble implements InitializerAut
          }
          else
          {
-            value.n = (2 / Math.tan(bankSlope.n));
+            value.n = (2.0 / Math.tan(bankSlope.n));
          }
       }
    }

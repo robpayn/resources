@@ -113,9 +113,9 @@ public class Depth extends ProcessorDoubleTrade implements InitializerAutoSimple
    @Override
    public void update() throws Exception 
    {
-      if (cellVolumeLoc.n <= 0 && cellVolumeAdj.n <= 0)
+      if (cellVolumeLoc.n <= 0.0 && cellVolumeAdj.n <= 0.0)
       {
-         value.n = 0;
+         value.n = 0.0;
       }
       else
       {

@@ -2,10 +2,10 @@ package org.payn.resources.water.channel.boundary.dynamicwave;
 
 import org.payn.chsm.Holon;
 import org.payn.chsm.State;
-import org.payn.chsm.io.file.initialize.ProcessorInitialConditionInit;
+import org.payn.chsm.io.file.initialize.InitialConditionTable;
 import org.payn.chsm.resources.time.BehaviorTime;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.UpdaterLoad;
+import org.payn.neoch.processors.ProcessorDoubleLoadSymmetricInitRequired;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -14,7 +14,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class WaterFlow extends ProcessorInitialConditionInit implements UpdaterLoad {
+public class WaterFlow extends ProcessorDoubleLoadSymmetricInitRequired {
 
    /**
     * Chezey coefficient
@@ -86,10 +86,18 @@ public class WaterFlow extends ProcessorInitialConditionInit implements UpdaterL
     */
    private Velocity velocityProc;
 
+   /**
+    * Initial condition table
+    */
+   private InitialConditionTable initialConditionTable;
+
    @Override
    public void setInitDependencies() throws Exception 
    {
-      super.setInitDependencies();
+      if (value.isNoValue())
+      {
+         initialConditionTable = InitialConditionTable.getInstance(this);
+      }
       setUpdateDependencies();
       velocityProc.setInitDependencies();
    }
@@ -97,7 +105,14 @@ public class WaterFlow extends ProcessorInitialConditionInit implements UpdaterL
    @Override
    public void initialize() throws Exception 
    {
-      super.initialize();
+      if (initialConditionTable != null)
+      {
+         value.n = initialConditionTable.find(state);
+      }
+      else
+      {
+         super.initialize();
+      }
       if (velocityExponent == null)
       {
           velocityExp = 2.0;
@@ -113,7 +128,7 @@ public class WaterFlow extends ProcessorInitialConditionInit implements UpdaterL
    }
    
    @Override
-   public void setUpdateDependencies() throws Exception 
+   public void setUpdateDependenciesLoad() throws Exception 
    {
       timeStep = (ValueDouble)((Holon)controller.getState()).getState(
             BehaviorTime.ITERATION_INTERVAL
@@ -152,7 +167,7 @@ public class WaterFlow extends ProcessorInitialConditionInit implements UpdaterL
    }
 
    @Override
-   public void update() throws Exception 
+   public void updateLoad() throws Exception 
    {
       velocityProc.update();
       value.n = calculate(value.n);

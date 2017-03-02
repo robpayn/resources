@@ -1,8 +1,8 @@
 package org.payn.resources.water.channel.cell;
 
-import org.payn.chsm.io.file.initialize.ProcessorInitialConditionInit;
+import org.payn.chsm.io.file.initialize.InitialConditionTable;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.UpdaterState;
+import org.payn.neoch.processors.ProcessorDoubleStateInitRequired;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -11,7 +11,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class WaterHead extends ProcessorInitialConditionInit implements UpdaterState {
+public class WaterHead extends ProcessorDoubleStateInitRequired  {
 
    /**
     * Volume of water
@@ -27,6 +27,34 @@ public class WaterHead extends ProcessorInitialConditionInit implements UpdaterS
     * Depth of the channel flow
     */
    private ValueDouble depth;
+
+   /**
+    * Initial condition table
+    */
+   private InitialConditionTable initialConditionTable;
+
+   @Override
+   public void setInitDependencies() throws Exception 
+   {
+      if (value.isNoValue())
+      {
+         initialConditionTable = InitialConditionTable.getInstance(this);
+      }
+   }
+
+   @Override
+   public void initialize() throws Exception 
+   {
+      if (initialConditionTable != null)
+      {
+         value.n = initialConditionTable.find(state);
+
+      }
+      else
+      {
+         super.initialize();
+      }
+   }
 
    @Override
    public void setUpdateDependencies() throws Exception 

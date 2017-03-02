@@ -65,7 +65,7 @@ public class WaterFlow extends ProcessorDoubleLoadInit {
    }
 
    @Override
-   public void setUpdateDependencies() throws Exception 
+   public void setUpdateDependenciesLoad() throws Exception 
    {
       // Get the next boundary upstream
       HolonBoundary thisBoundary = 
@@ -142,7 +142,7 @@ public class WaterFlow extends ProcessorDoubleLoadInit {
    }
 
    @Override
-   public void update() throws Exception 
+   public void updateLoad() throws Exception 
    {
       double gradient;
       if (bedSlope.n < 0.01)

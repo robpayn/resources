@@ -3,7 +3,7 @@ package org.payn.resources.solute.boundary.flow;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
-import org.payn.neoch.processors.ProcessorDoubleLoad;
+import org.payn.neoch.processors.ProcessorDoubleLoadSymmetric;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
 
@@ -13,7 +13,7 @@ import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
  * @author v78h241
  *
  */
-public class SoluteAdvection extends ProcessorDoubleLoad {
+public class SoluteAdvection extends ProcessorDoubleLoadSymmetric {
 
    /**
     * Value of volumetric water flow
@@ -31,7 +31,7 @@ public class SoluteAdvection extends ProcessorDoubleLoad {
    private ValueDouble concAdjacent;
 
    @Override
-   public void setUpdateDependencies() throws Exception 
+   public void setUpdateDependenciesLoad() throws Exception 
    {
       HolonCell cell = ((HolonBoundary)getState().getParentHolon()).getCell();
       concLocal = (ValueDouble)createAbstractDependency(
@@ -49,7 +49,7 @@ public class SoluteAdvection extends ProcessorDoubleLoad {
    }
 
    @Override
-   public void update() 
+   public void updateLoad() 
    {
       if (waterFlow.n <= 0)
       {

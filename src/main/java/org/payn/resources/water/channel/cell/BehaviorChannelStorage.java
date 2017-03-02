@@ -3,7 +3,7 @@ package org.payn.resources.water.channel.cell;
 import org.payn.chsm.io.file.initialize.InitialConditionTable;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
-import org.payn.neoch.behavior.BehaviorMatrix;
+import org.payn.neoch.BehaviorMatrix;
 import org.payn.resources.water.ResourceWater;
 
 /**

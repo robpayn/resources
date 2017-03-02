@@ -3,7 +3,7 @@ package org.payn.resources.solute.boundary.flow;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
-import org.payn.neoch.processors.ProcessorDoubleLoad;
+import org.payn.neoch.processors.ProcessorDoubleLoadSymmetric;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
 
@@ -13,7 +13,7 @@ import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
  * @author v78h241
  *
  */
-public class SoluteDispersion extends ProcessorDoubleLoad {
+public class SoluteDispersion extends ProcessorDoubleLoadSymmetric {
 
    /**
     * Value of concentration in local cell
@@ -41,7 +41,7 @@ public class SoluteDispersion extends ProcessorDoubleLoad {
    private ValueDouble area;
 
    @Override
-   public void setUpdateDependencies() throws Exception 
+   public void setUpdateDependenciesLoad() throws Exception 
    {
       HolonCell cell = ((HolonBoundary)getState().getParentHolon()).getCell();
       concLocal = (ValueDouble)createAbstractDependency(
@@ -65,7 +65,7 @@ public class SoluteDispersion extends ProcessorDoubleLoad {
    }
 
    @Override
-   public void update() 
+   public void updateLoad() 
    {
       double grad = (concAdjacent.n - concLocal.n) / length.n;
       value.n = area.n * dispCoeff.n * grad;

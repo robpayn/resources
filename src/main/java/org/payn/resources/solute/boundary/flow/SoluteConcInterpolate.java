@@ -1,8 +1,8 @@
 package org.payn.resources.solute.boundary.flow;
 
-import org.payn.chsm.io.file.interpolate.ProcessorInterpolateSnapshotTable;
-import org.payn.chsm.values.ValueString;
-import org.payn.neoch.UpdaterTrade;
+import org.payn.chsm.io.file.interpolate.Interpolator;
+import org.payn.chsm.io.file.interpolate.InterpolatorSnapshotTable;
+import org.payn.neoch.processors.ProcessorDoubleTradeInit;
 
 /**
  * Solute concentration processor based on interpolation from input data
@@ -10,30 +10,36 @@ import org.payn.neoch.UpdaterTrade;
  * @author robpayn
  *
  */
-public class SoluteConcInterpolate extends ProcessorInterpolateSnapshotTable implements UpdaterTrade {
+public class SoluteConcInterpolate extends ProcessorDoubleTradeInit {
+
+   /**
+    * Interpolator
+    */
+   private Interpolator interp;
 
    @Override
-   protected ValueString createPathDependency() throws Exception 
+   public void setInitDependencies() throws Exception 
    {
-      return (ValueString)createAbstractDependency(
-            ProcessorInterpolateSnapshotTable.REQ_STATE_PATH
-            ).getValue();
+      interp = InterpolatorSnapshotTable.getInterpolatorAbstract(this);
    }
 
    @Override
-   protected ValueString createTypeDependency() throws Exception 
+   public void initialize() throws Exception 
    {
-      return (ValueString)createAbstractDependency(
-            ProcessorInterpolateSnapshotTable.REQ_STATE_TYPE
-            ).getValue();
+      if (value.isNoValue())
+      {
+         value.n = interp.interpolate();
+      }
    }
 
    @Override
-   protected ValueString createDelimiterDependency() throws Exception 
+   public void setUpdateDependencies() throws Exception 
+   {}
+
+   @Override
+   public void update() throws Exception 
    {
-      return (ValueString)createAbstractDependency(
-            ProcessorInterpolateSnapshotTable.REQ_STATE_DELIMITER
-            ).getValue();
+      value.n = interp.interpolate();
    }
 
 }

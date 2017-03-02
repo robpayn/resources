@@ -12,8 +12,7 @@ import org.payn.resources.solute.boundary.BehaviorSoluteActiveMM;
  * @author v78h241
  *
  */
-public class SoluteUptakeMM 
-extends ProcessorDoubleLoad {
+public class SoluteUptakeMM extends ProcessorDoubleLoad {
 
    /**
     * Maximum uptake
@@ -41,7 +40,7 @@ extends ProcessorDoubleLoad {
    private ValueDouble planArea;
 
    @Override
-   public void setUpdateDependencies() throws Exception 
+   public void setUpdateDependenciesLoad() throws Exception 
    {
       planArea = (ValueDouble)createDependency(
             BehaviorSoluteActiveMM.REQ_STATE_PLANAREA
@@ -62,7 +61,7 @@ extends ProcessorDoubleLoad {
    }
 
    @Override
-   public void update() 
+   public void updateLoad() 
    {
       value.n = planArea.n * (
             ((maxUptake.n * bkgConc.n) / (halfSat.n + bkgConc.n)) 

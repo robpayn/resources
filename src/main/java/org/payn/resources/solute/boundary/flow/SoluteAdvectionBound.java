@@ -31,7 +31,7 @@ public class SoluteAdvectionBound extends ProcessorDoubleLoad {
    private ValueDouble extConc;
 
    @Override
-   public void setUpdateDependencies() throws Exception 
+   public void setUpdateDependenciesLoad() throws Exception 
    {
       extConc = (ValueDouble)createAbstractDependency(
             ResourceSolute.NAME_SOLUTE_CONC
@@ -47,7 +47,7 @@ public class SoluteAdvectionBound extends ProcessorDoubleLoad {
    }
 
    @Override
-   public void update() 
+   public void updateLoad() 
    {
       if (waterFlow.n <= 0)
       {

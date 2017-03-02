@@ -41,7 +41,7 @@ public class SoluteDispersionBound extends ProcessorDoubleLoad {
    private ValueDouble area;
 
    @Override
-   public void setUpdateDependencies() throws Exception 
+   public void setUpdateDependenciesLoad() throws Exception 
    {
       extConc = (ValueDouble)createAbstractDependency(
             ResourceSolute.NAME_SOLUTE_CONC
@@ -63,7 +63,7 @@ public class SoluteDispersionBound extends ProcessorDoubleLoad {
    }
 
    @Override
-   public void update() 
+   public void updateLoad() 
    {
       double grad = (extConc.n - concLocal.n) / length.n;
       value.n = area.n * dispCoeff.n * grad;

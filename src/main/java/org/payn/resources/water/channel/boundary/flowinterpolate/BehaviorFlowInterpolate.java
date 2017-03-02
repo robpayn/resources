@@ -1,8 +1,8 @@
 package org.payn.resources.water.channel.boundary.flowinterpolate;
 
-import org.payn.chsm.io.file.interpolate.ProcessorInterpolateSnapshotTable;
+import org.payn.chsm.io.file.interpolate.InterpolatorSnapshotTable;
 import org.payn.chsm.values.ValueString;
-import org.payn.neoch.behavior.BehaviorMatrix;
+import org.payn.neoch.BehaviorMatrix;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -23,15 +23,15 @@ public class BehaviorFlowInterpolate extends BehaviorMatrix {
    protected void addRequiredStates() 
    {
       addRequiredState(
-            ProcessorInterpolateSnapshotTable.REQ_STATE_DELIMITER, 
+            InterpolatorSnapshotTable.REQ_STATE_DELIMITER, 
             ValueString.class
             );
       addRequiredState(
-            ProcessorInterpolateSnapshotTable.REQ_STATE_PATH, 
+            InterpolatorSnapshotTable.REQ_STATE_PATH, 
             ValueString.class
             );
       addRequiredState(
-            ProcessorInterpolateSnapshotTable.REQ_STATE_TYPE, 
+            InterpolatorSnapshotTable.REQ_STATE_TYPE, 
             ValueString.class
             );
    }

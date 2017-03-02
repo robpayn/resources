@@ -3,7 +3,7 @@ package org.payn.resources.water.channel.boundary;
 import org.payn.chsm.io.file.initialize.InitialConditionTable;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
-import org.payn.neoch.behavior.symmetric.symmdouble.BehaviorSymmetricDouble;
+import org.payn.neoch.BehaviorMatrix;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -12,7 +12,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public abstract class BehaviorChannelFlow extends BehaviorSymmetricDouble {
+public abstract class BehaviorChannelFlow extends BehaviorMatrix {
 
    @Override
    protected void addProcessors()

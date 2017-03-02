@@ -1,7 +1,7 @@
 package org.payn.resources.solute.boundary;
 
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.behavior.BehaviorMatrix;
+import org.payn.neoch.BehaviorMatrix;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.flow.SoluteAdvectionBound;
 import org.payn.resources.solute.boundary.flow.SoluteDispersionBound;

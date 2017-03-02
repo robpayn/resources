@@ -12,11 +12,15 @@ public class SoluteConc extends ProcessorDoubleStorage {
       ValueDouble value = (ValueDouble)getState().getParentHolon().getState(
             getResourceName() + ResourceSoluteOTIS.NAME_ADVECTION
             ).getValue();
-      loadValues.add((ValueDouble)value);
+      loadValues.add(value);
       value = (ValueDouble)getState().getParentHolon().getState(
             getResourceName() + ResourceSoluteOTIS.NAME_DISPERSION
             ).getValue();
-      loadValues.add((ValueDouble)value);
+      loadValues.add(value);
+      value = (ValueDouble)getState().getParentHolon().getState(
+            getResourceName() + ResourceSoluteOTIS.NAME_UPTAKE
+            ).getValue();
+      loadValues.add(value);
    }   
 
 }

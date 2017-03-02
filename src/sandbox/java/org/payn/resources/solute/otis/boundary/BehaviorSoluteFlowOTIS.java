@@ -14,7 +14,7 @@ public class BehaviorSoluteFlowOTIS extends BehaviorMatrix {
    @Override
    protected void addProcessors() 
    {
-      addProcessor(ResourceSoluteOTIS.NAME_SOLUTE_CONC, SoluteConc.class, ValueDouble.class);
+      addProcessor(ResourceSoluteOTIS.NAME_SOLUTE_CONC, SoluteConc.class, SoluteConc.getValueClass());
    }
 
 }

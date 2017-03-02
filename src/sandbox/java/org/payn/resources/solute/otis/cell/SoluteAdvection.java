@@ -1,6 +1,7 @@
 package org.payn.resources.solute.otis.cell;
 
 import org.payn.chsm.values.ValueDouble;
+import org.payn.resources.solute.otis.ResourceSoluteOTIS;
 
 public class SoluteAdvection extends SoluteLoad {
 
@@ -12,13 +13,13 @@ public class SoluteAdvection extends SoluteLoad {
    public void setUpdateDependencies() throws Exception 
    {
       waterFlow = (ValueDouble)createDependency(
-            BehaviorSoluteConcOTIS.REQ_STATE_FLOW
+            ResourceSoluteOTIS.NAME_WATER_FLOW
             ).getValue();
       area = (ValueDouble)createDependency(
-            BehaviorSoluteConcOTIS.REQ_STATE_AREA_XSECT
+            ResourceSoluteOTIS.NAME_AREA_XSECT
             ).getValue();
       length = (ValueDouble)createDependency(
-            BehaviorSoluteConcOTIS.REQ_STATE_LENGTH
+            ResourceSoluteOTIS.NAME_LENGTH
             ).getValue();
       
       setConcentrations();

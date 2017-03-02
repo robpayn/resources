@@ -6,7 +6,6 @@ import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
 import org.payn.neoch.processors.ProcessorDoubleLoad;
-import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.otis.ResourceSoluteOTIS;
 
 public abstract class SoluteLoad extends ProcessorDoubleLoad {
@@ -23,20 +22,20 @@ public abstract class SoluteLoad extends ProcessorDoubleLoad {
       for (HolonBoundary boundary: boundaries)
       {
          ValueDouble flow = (ValueDouble)boundary.getState(
-               BehaviorSoluteConcOTIS.REQ_STATE_FLOW
+               ResourceSoluteOTIS.NAME_WATER_FLOW
                ).getValue();
          if (flow.n > 0)
          {
             upstreamConc = (ValueDouble)createDependency(
                   boundary, 
-                  getResourceName() + ResourceSolute.NAME_SOLUTE_CONC
+                  getResourceName() + ResourceSoluteOTIS.NAME_SOLUTE_CONC
                   ).getValue();
          }
          else
          {
             downstreamConc = (ValueDouble)createDependency(
                   boundary, 
-                  getResourceName() + ResourceSolute.NAME_SOLUTE_CONC
+                  getResourceName() + ResourceSoluteOTIS.NAME_SOLUTE_CONC
                   ).getValue();
          }
       }

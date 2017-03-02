@@ -1,6 +1,7 @@
 package org.payn.resources.solute.otis.cell;
 
 import org.payn.chsm.values.ValueDouble;
+import org.payn.resources.solute.otis.ResourceSoluteOTIS;
 
 public class SoluteDispersion extends SoluteLoad {
 
@@ -11,10 +12,10 @@ public class SoluteDispersion extends SoluteLoad {
    public void setUpdateDependencies() throws Exception 
    {
       dispersion = (ValueDouble)createDependency(
-            BehaviorSoluteConcOTIS.REQ_STATE_DISP
+            ResourceSoluteOTIS.NAME_DISPERSION_COEFF
             ).getValue();
       length = (ValueDouble)createDependency(
-            BehaviorSoluteConcOTIS.REQ_STATE_LENGTH
+            ResourceSoluteOTIS.NAME_LENGTH
             ).getValue();
       setConcentrations();
    }

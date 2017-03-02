@@ -1,10 +1,10 @@
 package org.payn.resources.solute.otis;
 
-import org.payn.chsm.Resource;
+import org.payn.chsm.ResourceAbstract;
 import org.payn.resources.solute.otis.boundary.BehaviorSoluteFlowOTIS;
 import org.payn.resources.solute.otis.cell.BehaviorSoluteConcOTIS;
 
-public class ResourceSoluteOTIS extends Resource {
+public class ResourceSoluteOTIS extends ResourceAbstract {
 
    public static final String BEHAVIOR_STORAGE_CONC = "storage";
    
@@ -16,8 +16,36 @@ public class ResourceSoluteOTIS extends Resource {
 
    public static final String NAME_DISPERSION = "Dispersion";
 
+   public static final String NAME_UPTAKE = "Uptake";
+
+   public static final String NAME_UPTAKE_MAX = "UMax";
+
+   public static final String NAME_CONC_HALF_SAT = "CHalf";
+
+   public static final String NAME_DEPTH = "Depth";
+
+   /**
+    * Name of required state for water flow
+    */
+   public static String NAME_WATER_FLOW = "WaterFlow";
+
+   /**
+    * Name of required state for cross-sectional area of flow path
+    */
+   public static String NAME_AREA_XSECT = "AreaXSect";
+
+   /**
+    * Name of required state for length of flow path
+    */
+   public static String NAME_LENGTH = "Length";
+   
+   /**
+    * Name of required state for dispersion coefficient
+    */
+   public static String NAME_DISPERSION_COEFF = "DispCoeff";
+
    @Override
-   protected void addBehaviors() 
+   public void addBehaviors() 
    {
       addBehavior(
             BEHAVIOR_STORAGE_CONC, 

@@ -1,7 +1,7 @@
 package org.payn.resources.solute.cell;
 
+import org.payn.chsm.BehaviorAbstract;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.BehaviorMatrix;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.cell.storage.SoluteConc;
 import org.payn.resources.solute.cell.storage.SoluteMass;
@@ -12,7 +12,7 @@ import org.payn.resources.solute.cell.storage.SoluteMass;
  * @author v78h241
  *
  */
-public class BehaviorSoluteStorage extends BehaviorMatrix {
+public class BehaviorSoluteStorage extends BehaviorAbstract {
 
    /**
     * Required state name for water storage in the cell

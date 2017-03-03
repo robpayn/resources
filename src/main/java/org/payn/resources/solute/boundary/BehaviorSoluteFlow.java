@@ -1,7 +1,7 @@
 package org.payn.resources.solute.boundary;
 
+import org.payn.chsm.BehaviorAbstract;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.BehaviorMatrix;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.flow.SoluteAdvection;
 import org.payn.resources.solute.boundary.flow.SoluteDispersion;
@@ -12,7 +12,7 @@ import org.payn.resources.solute.boundary.flow.SoluteDispersion;
  * @author v78h241
  *
  */
-public class BehaviorSoluteFlow extends BehaviorMatrix {
+public class BehaviorSoluteFlow extends BehaviorAbstract {
 
    /**
     * Name of required state for dispersion coefficient

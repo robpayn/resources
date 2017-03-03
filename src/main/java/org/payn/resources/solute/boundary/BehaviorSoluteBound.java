@@ -1,7 +1,7 @@
 package org.payn.resources.solute.boundary;
 
+import org.payn.chsm.BehaviorAbstract;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.BehaviorMatrix;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.flow.SoluteAdvectionBound;
 import org.payn.resources.solute.boundary.flow.SoluteDispersionBound;
@@ -12,7 +12,7 @@ import org.payn.resources.solute.boundary.flow.SoluteDispersionBound;
  * @author robpayn
  *
  */
-public class BehaviorSoluteBound extends BehaviorMatrix {
+public class BehaviorSoluteBound extends BehaviorAbstract {
 
    @Override
    public void addRequiredStates() 

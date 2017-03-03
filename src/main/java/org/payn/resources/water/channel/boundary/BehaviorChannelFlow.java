@@ -1,9 +1,9 @@
 package org.payn.resources.water.channel.boundary;
 
+import org.payn.chsm.BehaviorAbstract;
 import org.payn.chsm.io.file.initialize.InitialConditionTable;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
-import org.payn.neoch.BehaviorMatrix;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -12,7 +12,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public abstract class BehaviorChannelFlow extends BehaviorMatrix {
+public abstract class BehaviorChannelFlow extends BehaviorAbstract {
 
    @Override
    protected void addProcessors()

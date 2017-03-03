@@ -1,8 +1,8 @@
 package org.payn.resources.water.channel.boundary.dynamicwave.downstream;
 
+import org.payn.chsm.BehaviorAbstract;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
-import org.payn.neoch.BehaviorMatrix;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -11,7 +11,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class BehaviorDynamicWaveDownstream extends BehaviorMatrix {
+public class BehaviorDynamicWaveDownstream extends BehaviorAbstract {
 
    @Override
    protected void addProcessors() 

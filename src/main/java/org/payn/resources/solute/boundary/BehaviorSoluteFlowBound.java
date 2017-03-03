@@ -1,7 +1,7 @@
 package org.payn.resources.solute.boundary;
 
+import org.payn.chsm.BehaviorAbstract;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.BehaviorMatrix;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.flow.SoluteFlowBound;
 
@@ -11,7 +11,7 @@ import org.payn.resources.solute.boundary.flow.SoluteFlowBound;
  * @author v78h241
  *
  */
-public class BehaviorSoluteFlowBound extends BehaviorMatrix {
+public class BehaviorSoluteFlowBound extends BehaviorAbstract {
 
    /**
     * Name for required state of water flow

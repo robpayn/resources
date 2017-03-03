@@ -1,7 +1,7 @@
 package org.payn.resources.solute.boundary;
 
+import org.payn.chsm.BehaviorAbstract;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.BehaviorMatrix;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.active.SoluteUptakeMM;
 
@@ -11,7 +11,7 @@ import org.payn.resources.solute.boundary.active.SoluteUptakeMM;
  * @author v78h241
  *
  */
-public class BehaviorSoluteActiveMM extends BehaviorMatrix {
+public class BehaviorSoluteActiveMM extends BehaviorAbstract {
 
    /**
     * Name for required state of maximum uptake

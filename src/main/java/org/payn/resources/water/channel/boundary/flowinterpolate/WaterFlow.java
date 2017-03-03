@@ -38,7 +38,7 @@ public class WaterFlow extends ProcessorDoubleLoadInit {
    {}
 
    @Override
-   protected void updateLoad() throws Exception 
+   public void updateLoad() throws Exception 
    {
       value.n = interp.interpolate();
    }

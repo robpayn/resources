@@ -14,15 +14,10 @@ import org.payn.resources.solute.cell.storage.SoluteMass;
  */
 public class BehaviorSoluteStorage extends BehaviorAbstract {
 
-   /**
-    * Required state name for water storage in the cell
-    */
-   public static String REQ_STATE_VOLUME = "WaterStorage";
-
    @Override
    public void addRequiredStates() 
    {
-      addRequiredState(REQ_STATE_VOLUME, ValueDouble.class);
+      addRequiredState(ResourceSolute.NAME_WATER_VOLUME, ValueDouble.class);
    }
 
    @Override

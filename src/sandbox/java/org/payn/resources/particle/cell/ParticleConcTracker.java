@@ -104,11 +104,11 @@ public abstract class ParticleConcTracker implements Particle {
 
    protected boolean isFlowPositive() 
    {
-      State state = currentBound.getState(BehaviorSoluteFlow.REQ_STATE_FLOW);
+      State state = currentBound.getState(BehaviorSoluteFlow.NAME_WATER_FLOW);
       if (state == null)
       {
          state = currentBound.getAdjacentBoundary().getState(
-               BehaviorSoluteFlow.REQ_STATE_FLOW
+               BehaviorSoluteFlow.NAME_WATER_FLOW
                );
          return -((ValueDouble)state.getValue()).n > 0;
       }

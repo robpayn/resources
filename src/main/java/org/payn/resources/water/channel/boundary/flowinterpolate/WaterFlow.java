@@ -21,7 +21,7 @@ public class WaterFlow extends ProcessorDoubleLoadInit {
    @Override
    public void setInitDependencies() throws Exception 
    {
-      interp = InterpolatorSnapshotTable.getInterpolator(this);
+      interp = InterpolatorSnapshotTable.getInterpolatorInstance(this);
    }
 
    @Override

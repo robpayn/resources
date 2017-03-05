@@ -3,7 +3,6 @@ package org.payn.resources.solute.cell.storage;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleState;
 import org.payn.resources.solute.ResourceSolute;
-import org.payn.resources.solute.cell.BehaviorSoluteStorage;
 
 /**
  * Processor for solute concentration
@@ -30,7 +29,7 @@ public class SoluteConc extends ProcessorDoubleState {
             ResourceSolute.NAME_SOLUTE_STORAGE
             ).getValue();
       waterVolume = (ValueDouble)createDependency(
-            BehaviorSoluteStorage.REQ_STATE_VOLUME
+            ResourceSolute.NAME_WATER_VOLUME
             ).getValue();
    }
 

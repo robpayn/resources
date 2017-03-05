@@ -17,6 +17,76 @@ import org.payn.resources.solute.cell.BehaviorSoluteStorage;
 public class ResourceSolute extends ResourceAbstract {
    
    /**
+    * Name for state with total mass of solute to be injected
+    */
+   public static String NAME_INJECT_MASS = "SoluteMass";
+   
+   /**
+    * Name for state with duration (number of intervals) of injection
+    */
+   public static String NAME_INJECT_DURATION = "DurationTicks";
+   
+   /**
+    * Name for state with the first interval of the injection 
+    */
+   public static String NAME_INJECT_START = "StartTick";
+   
+   /**
+    * Name for the water volume
+    */
+   public static String NAME_WATER_VOLUME = "WaterVolume";
+   
+   /**
+    * Name for the water depth
+    */
+   public static String NAME_DEPTH = "Depth";
+   
+   /**
+    * Name for required state of maximum uptake
+    */
+   public static String NAME_UPTAKE_MAX = "UMax";
+   
+   /**
+    * Name for required state of half saturation concentration
+    */
+   public static String NAME_CONC_HALF_SAT = "HalfSatConc";
+   
+   /**
+    * Name for required state of plan area
+    */
+   public static String NAME_PLANAREA = "WettedArea";
+   
+   /**
+    * Name of concentration states
+    */
+   public static final String NAME_SOLUTE_CONC = "Conc";
+
+   /**
+    * Name for the background concentration to maintain
+    */
+   public static String NAME_BKG_CONC = "Bkg" + NAME_SOLUTE_CONC;
+   
+   /**
+    * Name of required state for dispersion coefficient
+    */
+   public static String NAME_DISPERSION_COEFF = "DispCoeff";
+   
+   /**
+    * Name of required state for length of flow path
+    */
+   public static String NAME_LENGTH = "Length";
+   
+   /**
+    * Name of required state for cross-sectional area of flow path
+    */
+   public static String NAME_AREA_XSECT = "AreaXSect";
+   
+   /**
+    * Name of required state for water flow
+    */
+   public static String NAME_WATER_FLOW = "WaterFlow";
+
+   /**
     * Name of the solute load state
     */
    public static final String NAME_SOLUTE_LOAD = "Load";
@@ -26,11 +96,6 @@ public class ResourceSolute extends ResourceAbstract {
     */
    public static final String NAME_SOLUTE_STORAGE = "Storage";
    
-   /**
-    * Name of concentration states
-    */
-   public static final String NAME_SOLUTE_CONC = "Conc";
-
    /**
     * Name of advection states
     */

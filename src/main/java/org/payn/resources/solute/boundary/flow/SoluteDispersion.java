@@ -5,7 +5,6 @@ import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
 import org.payn.neoch.processors.ProcessorDoubleLoadSymmetric;
 import org.payn.resources.solute.ResourceSolute;
-import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
 
 /**
  * Processor to calculate dispersive transport of solute
@@ -54,13 +53,13 @@ public class SoluteDispersion extends ProcessorDoubleLoadSymmetric {
             ResourceSolute.NAME_SOLUTE_CONC
             ).getValue();
       dispCoeff = (ValueDouble)createDependency(
-            BehaviorSoluteFlow.REQ_STATE_DISP
+            ResourceSolute.NAME_DISPERSION_COEFF
             ).getValue();
       length = (ValueDouble)createDependency(
-            BehaviorSoluteFlow.REQ_STATE_LENGTH
+            ResourceSolute.NAME_LENGTH
             ).getValue();
       area = (ValueDouble)createDependency(
-            BehaviorSoluteFlow.REQ_STATE_AREA_XSECT
+            ResourceSolute.NAME_AREA_XSECT
             ).getValue();
    }
 

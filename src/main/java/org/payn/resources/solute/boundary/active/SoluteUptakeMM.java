@@ -4,7 +4,6 @@ import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.processors.ProcessorDoubleLoad;
 import org.payn.resources.solute.ResourceSolute;
-import org.payn.resources.solute.boundary.BehaviorSoluteActiveMM;
 
 /**
  * Simulates solute uptake as a boundary condition based on Michaelis Menten kinetics
@@ -43,16 +42,16 @@ public class SoluteUptakeMM extends ProcessorDoubleLoad {
    public void setUpdateDependenciesLoad() throws Exception 
    {
       planArea = (ValueDouble)createDependency(
-            BehaviorSoluteActiveMM.REQ_STATE_PLANAREA
+            ResourceSolute.NAME_PLANAREA
             ).getValue();
       bkgConc = (ValueDouble)createAbstractDependency(
-            BehaviorSoluteActiveMM.REQ_STATE_BKG_CONC
+            ResourceSolute.NAME_BKG_CONC
             ).getValue();
       maxUptake = (ValueDouble)createAbstractDependency(
-            BehaviorSoluteActiveMM.REQ_STATE_UMAX
+            ResourceSolute.NAME_UPTAKE_MAX
             ).getValue();
       halfSat = (ValueDouble)createAbstractDependency(
-            BehaviorSoluteActiveMM.REQ_STATE_HALFSAT
+            ResourceSolute.NAME_CONC_HALF_SAT
             ).getValue();
       conc = (ValueDouble)createAbstractDependency(
             ((HolonBoundary)getState().getParentHolon()).getCell(),

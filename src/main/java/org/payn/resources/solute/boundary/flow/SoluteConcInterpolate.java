@@ -20,7 +20,7 @@ public class SoluteConcInterpolate extends ProcessorDoubleTradeInit {
    @Override
    public void setInitDependencies() throws Exception 
    {
-      interp = InterpolatorSnapshotTable.getInterpolatorAbstract(this);
+      interp = InterpolatorSnapshotTable.getInterpolatorInstanceAbstract(this);
    }
 
    @Override

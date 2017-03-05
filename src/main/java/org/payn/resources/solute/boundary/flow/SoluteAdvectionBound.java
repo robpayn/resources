@@ -5,7 +5,6 @@ import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
 import org.payn.neoch.processors.ProcessorDoubleLoad;
 import org.payn.resources.solute.ResourceSolute;
-import org.payn.resources.solute.boundary.BehaviorSoluteFlowBound;
 
 /**
  * Advection of solute at a flow-controlled boundary
@@ -42,7 +41,7 @@ public class SoluteAdvectionBound extends ProcessorDoubleLoad {
             ResourceSolute.NAME_SOLUTE_CONC
             ).getValue();
       waterFlow = (ValueDouble)createDependency(
-            BehaviorSoluteFlowBound.REQ_STATE_FLOW
+            ResourceSolute.NAME_WATER_FLOW
             ).getValue();
    }
 

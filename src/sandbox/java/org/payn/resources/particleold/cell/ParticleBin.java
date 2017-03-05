@@ -55,7 +55,7 @@ public class ParticleBin extends ParticleList implements UpdaterStorage {
          }
          else
          {
-            outFlow = (ValueDouble)createDependency(boundary, BehaviorSoluteFlow.REQ_STATE_FLOW).getValue();
+            outFlow = (ValueDouble)createDependency(boundary, BehaviorSoluteFlow.NAME_WATER_FLOW).getValue();
          }
          
          if (loadList != null)

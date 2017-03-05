@@ -14,33 +14,13 @@ import org.payn.resources.solute.boundary.flow.SoluteDispersion;
  */
 public class BehaviorSoluteFlow extends BehaviorAbstract {
 
-   /**
-    * Name of required state for dispersion coefficient
-    */
-   public static String REQ_STATE_DISP = "DispCoeff";
-   
-   /**
-    * Name of required state for water flow
-    */
-   public static String REQ_STATE_FLOW = "WaterFlow";
-   
-   /**
-    * Name of required state for length of flow path
-    */
-   public static String REQ_STATE_LENGTH = "Length";
-   
-   /**
-    * Name of required state for cross-sectional area of flow path
-    */
-   public static String REQ_STATE_AREA_XSECT = "AreaXSect";
-   
    @Override
    public void addRequiredStates() 
    {
-      addRequiredState(REQ_STATE_DISP, ValueDouble.class);
-      addRequiredState(REQ_STATE_FLOW, ValueDouble.class);
-      addRequiredState(REQ_STATE_LENGTH, ValueDouble.class);
-      addRequiredState(REQ_STATE_AREA_XSECT, ValueDouble.class);
+      addRequiredState(ResourceSolute.NAME_DISPERSION_COEFF, ValueDouble.class);
+      addRequiredState(ResourceSolute.NAME_WATER_FLOW, ValueDouble.class);
+      addRequiredState(ResourceSolute.NAME_LENGTH, ValueDouble.class);
+      addRequiredState(ResourceSolute.NAME_AREA_XSECT, ValueDouble.class);
    }
 
    @Override

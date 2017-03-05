@@ -4,7 +4,6 @@ import org.payn.chsm.processors.interfaces.InitializerSimpleAuto;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleStorage;
 import org.payn.resources.solute.ResourceSolute;
-import org.payn.resources.solute.cell.BehaviorSoluteStorage;
 
 /**
  * Processor for solute mass
@@ -31,7 +30,7 @@ public class SoluteMass extends ProcessorDoubleStorage implements InitializerSim
             ResourceSolute.NAME_SOLUTE_CONC
             ).getValue();
       waterVolume = (ValueDouble)createDependency(
-            BehaviorSoluteStorage.REQ_STATE_VOLUME
+            ResourceSolute.NAME_WATER_VOLUME
             ).getValue();
    }
 

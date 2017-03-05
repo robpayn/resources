@@ -17,10 +17,10 @@ public class BehaviorSoluteBound extends BehaviorAbstract {
    @Override
    public void addRequiredStates() 
    {
-      addRequiredState(BehaviorSoluteFlow.REQ_STATE_DISP, ValueDouble.class);
-      addRequiredState(BehaviorSoluteFlow.REQ_STATE_FLOW, ValueDouble.class);
-      addRequiredState(BehaviorSoluteFlow.REQ_STATE_LENGTH, ValueDouble.class);
-      addRequiredState(BehaviorSoluteFlow.REQ_STATE_AREA_XSECT, ValueDouble.class);
+      addRequiredState(ResourceSolute.NAME_DISPERSION_COEFF, ValueDouble.class);
+      addRequiredState(ResourceSolute.NAME_WATER_FLOW, ValueDouble.class);
+      addRequiredState(ResourceSolute.NAME_LENGTH, ValueDouble.class);
+      addRequiredState(ResourceSolute.NAME_AREA_XSECT, ValueDouble.class);
    }
    
    @Override

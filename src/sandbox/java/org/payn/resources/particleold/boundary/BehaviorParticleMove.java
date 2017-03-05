@@ -12,7 +12,7 @@ public class BehaviorParticleMove extends BehaviorMatrix {
    @Override
    protected void addRequiredStates() 
    {
-      addRequiredState(BehaviorSoluteFlow.REQ_STATE_FLOW, ValueDouble.class);
+      addRequiredState(BehaviorSoluteFlow.NAME_WATER_FLOW, ValueDouble.class);
       
    }
 

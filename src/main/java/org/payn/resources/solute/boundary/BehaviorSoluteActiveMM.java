@@ -13,34 +13,14 @@ import org.payn.resources.solute.boundary.active.SoluteUptakeMM;
  */
 public class BehaviorSoluteActiveMM extends BehaviorAbstract {
 
-   /**
-    * Name for required state of maximum uptake
-    */
-   public static String REQ_STATE_UMAX = "UMax";
-   
-   /**
-    * Name for required state of half saturation concentration
-    */
-   public static String REQ_STATE_HALFSAT = "HalfSatConc";
-   
-   /**
-    * Name for required state of plan area
-    */
-   public static String REQ_STATE_PLANAREA = "PlanArea";
-   
-   /**
-    * Name for the background concentration to maintain
-    */
-   public static String REQ_STATE_BKG_CONC = "Bkg" + ResourceSolute.NAME_SOLUTE_CONC;
-   
    @Override
    public void addRequiredStates() 
    {
-      addAbstractRequiredState(REQ_STATE_UMAX, ValueDouble.class);
-      addAbstractRequiredState(REQ_STATE_HALFSAT, ValueDouble.class);
-      addAbstractRequiredState(REQ_STATE_BKG_CONC, ValueDouble.class);
+      addAbstractRequiredState(ResourceSolute.NAME_UPTAKE_MAX, ValueDouble.class);
+      addAbstractRequiredState(ResourceSolute.NAME_CONC_HALF_SAT, ValueDouble.class);
+      addAbstractRequiredState(ResourceSolute.NAME_BKG_CONC, ValueDouble.class);
       
-      addRequiredState(REQ_STATE_PLANAREA, ValueDouble.class);
+      addRequiredState(ResourceSolute.NAME_PLANAREA, ValueDouble.class);
    }
 
    @Override

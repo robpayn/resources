@@ -7,8 +7,7 @@ import org.payn.chsm.resources.time.Iteration;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueLong;
 import org.payn.neoch.processors.ProcessorDoubleTrade;
-import org.payn.resources.solute.boundary.BehaviorSoluteBoundInject;
-import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
+import org.payn.resources.solute.ResourceSolute;
 
 /**
  * Processor for calculating the concentration based on background from an input file and
@@ -74,13 +73,13 @@ public class SoluteConcInject extends ProcessorDoubleTrade implements Initialize
             ).getValue();
 
       mass = (ValueDouble)createAbstractDependency(
-            BehaviorSoluteBoundInject.REQ_STATE_MASS
+            ResourceSolute.NAME_INJECT_MASS
             ).getValue();
       startTick = (ValueLong)createAbstractDependency(
-            BehaviorSoluteBoundInject.REQ_STATE_START
+            ResourceSolute.NAME_INJECT_START
             ).getValue();
       duration = (ValueLong)createAbstractDependency(
-            BehaviorSoluteBoundInject.REQ_STATE_DURATION
+            ResourceSolute.NAME_INJECT_DURATION
             ).getValue();
       setUpdateDependencies();
    }
@@ -102,9 +101,9 @@ public class SoluteConcInject extends ProcessorDoubleTrade implements Initialize
             Iteration.class.getSimpleName()
             ).getValue();
 
-      flow = (ValueDouble)createDependency(BehaviorSoluteFlow.REQ_STATE_FLOW).getValue();
+      flow = (ValueDouble)createDependency(ResourceSolute.NAME_WATER_FLOW).getValue();
       bkgConc = (ValueDouble)createAbstractDependency(
-            BehaviorSoluteBoundInject.NAME_BKG_CONC
+            ResourceSolute.NAME_BKG_CONC
             ).getValue();
    }
 

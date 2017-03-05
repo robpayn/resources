@@ -5,7 +5,6 @@ import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
 import org.payn.neoch.processors.ProcessorDoubleLoad;
 import org.payn.resources.solute.ResourceSolute;
-import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
 
 /**
  * Processor to calculate dispersive transport of solute
@@ -38,7 +37,7 @@ public class SoluteDispersionBound extends ProcessorDoubleLoad {
    /**
     * Value of the cross-sectional area of the flow path
     */
-   private ValueDouble area;
+   private ValueDouble xSectionArea;
 
    @Override
    public void setUpdateDependenciesLoad() throws Exception 
@@ -52,13 +51,13 @@ public class SoluteDispersionBound extends ProcessorDoubleLoad {
             ResourceSolute.NAME_SOLUTE_CONC
             ).getValue();
       dispCoeff = (ValueDouble)createDependency(
-            BehaviorSoluteFlow.REQ_STATE_DISP
+            ResourceSolute.NAME_DISPERSION_COEFF
             ).getValue();
       length = (ValueDouble)createDependency(
-            BehaviorSoluteFlow.REQ_STATE_LENGTH
+            ResourceSolute.NAME_LENGTH
             ).getValue();
-      area = (ValueDouble)createDependency(
-            BehaviorSoluteFlow.REQ_STATE_AREA_XSECT
+      xSectionArea = (ValueDouble)createDependency(
+            ResourceSolute.NAME_AREA_XSECT
             ).getValue();
    }
 
@@ -66,7 +65,7 @@ public class SoluteDispersionBound extends ProcessorDoubleLoad {
    public void updateLoad() 
    {
       double grad = (extConc.n - concLocal.n) / length.n;
-      value.n = area.n * dispCoeff.n * grad;
+      value.n = xSectionArea.n * dispCoeff.n * grad;
    }
 
 }

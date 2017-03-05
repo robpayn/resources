@@ -102,15 +102,15 @@ public class ParticleOneDim extends ParticleConcTracker {
 
    private double getCurrentVelocity() 
    {
-      State state = currentBound.getState(BehaviorSoluteFlow.REQ_STATE_FLOW);
+      State state = currentBound.getState(BehaviorSoluteFlow.NAME_WATER_FLOW);
       if (state == null)
       {
-         return Math.abs(((ValueDouble)currentBound.getAdjacentBoundary().getState(BehaviorSoluteFlow.REQ_STATE_FLOW).getValue()).n) /
+         return Math.abs(((ValueDouble)currentBound.getAdjacentBoundary().getState(BehaviorSoluteFlow.NAME_WATER_FLOW).getValue()).n) /
          ((ValueDouble)currentBound.getAdjacentBoundary().getState(BehaviorSoluteFlow.REQ_STATE_AREA_XSECT).getValue()).n;
       }
       else
       {
-         return Math.abs(((ValueDouble)currentBound.getState(BehaviorSoluteFlow.REQ_STATE_FLOW).getValue()).n) /
+         return Math.abs(((ValueDouble)currentBound.getState(BehaviorSoluteFlow.NAME_WATER_FLOW).getValue()).n) /
          ((ValueDouble)currentBound.getState(BehaviorSoluteFlow.REQ_STATE_AREA_XSECT).getValue()).n;
       }
    }
@@ -149,11 +149,11 @@ public class ParticleOneDim extends ParticleConcTracker {
 
    protected boolean isFlowPositive() 
    {
-      State state = currentBound.getState(BehaviorSoluteFlow.REQ_STATE_FLOW);
+      State state = currentBound.getState(BehaviorSoluteFlow.NAME_WATER_FLOW);
       if (state == null)
       {
          state = currentBound.getAdjacentBoundary().getState(
-               BehaviorSoluteFlow.REQ_STATE_FLOW
+               BehaviorSoluteFlow.NAME_WATER_FLOW
                );
          return -((ValueDouble)state.getValue()).n > 0;
       }

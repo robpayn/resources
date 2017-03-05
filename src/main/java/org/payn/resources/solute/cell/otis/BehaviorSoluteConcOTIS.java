@@ -20,9 +20,6 @@ public class BehaviorSoluteConcOTIS extends BehaviorAbstract {
       addRequiredState(ResourceSolute.NAME_AREA_XSECT, ValueDouble.class);
       addRequiredState(ResourceSolute.NAME_LENGTH, ValueDouble.class);
       addRequiredState(ResourceSolute.NAME_DISPERSION_COEFF, ValueDouble.class);
-      addRequiredState(ResourceSolute.NAME_UPTAKE_MAX, ValueDouble.class);
-      addRequiredState(ResourceSolute.NAME_CONC_HALF_SAT, ValueDouble.class);
-      addRequiredState(ResourceSolute.NAME_DEPTH, ValueDouble.class);
    }
 
    @Override

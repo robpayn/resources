@@ -37,6 +37,11 @@ public class SoluteUptake extends ProcessorDoubleLoad {
     */
    private ValueDouble depth;
 
+   /**
+    * Background concentration
+    */
+   private ValueDouble background;
+
    @Override
    public void setUpdateDependencies() throws Exception
    {
@@ -52,10 +57,13 @@ public class SoluteUptake extends ProcessorDoubleLoad {
       conc = (ValueDouble)createAbstractDependency(
             ResourceSolute.NAME_SOLUTE_CONC
             ).getValue();
-      umax = (ValueDouble)createDependency(
+      background = (ValueDouble)createAbstractDependency(
+            ResourceSolute.NAME_BKG_CONC
+            ).getValue();
+      umax = (ValueDouble)createAbstractDependency(
             ResourceSolute.NAME_UPTAKE_MAX
             ).getValue();
-      chalf = (ValueDouble)createDependency(
+      chalf = (ValueDouble)createAbstractDependency(
             ResourceSolute.NAME_CONC_HALF_SAT
             ).getValue();
       depth = (ValueDouble)createDependency(
@@ -66,7 +74,9 @@ public class SoluteUptake extends ProcessorDoubleLoad {
    @Override
    public void updateLoad() throws Exception 
    {
-      value.n = ((umax.n * conc.n) / (chalf.n + conc.n)) / depth.n;
+      value.n = ( ((umax.n * background.n) / (chalf.n + background.n))
+            - ((umax.n * conc.n) / (chalf.n + conc.n)) )
+            / depth.n;
    }
 
 }

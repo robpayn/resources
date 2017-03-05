@@ -107,9 +107,19 @@ public class ResourceSolute extends ResourceAbstract {
    public static final String NAME_DISPERSION = "Dispersion";
    
    /**
+    * Name of the state for uptake
+    */
+   public static final String NAME_UPTAKE = "Uptake";
+
+   /**
     * Name of storage behavior
     */
    public static final String BEHAVIOR_STORAGE = "storage";
+   
+   /**
+    * Storage behavior with saturating uptake kinetic (hyperbolic)
+    */
+   public static final String BEHAVIOR_STORAGE_HYPER = "storagehyper";
    
    /**
     * Name of flow behavior

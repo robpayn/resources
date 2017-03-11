@@ -76,7 +76,7 @@ public class ParticleBin extends ParticleList implements UpdaterStorage {
       }
       
       volume = (ValueDouble)createDependency(BehaviorSoluteStorage.REQ_STATE_VOLUME).getValue();
-      Holon matrixHolon = (Holon)getController().getState();
+      Holon matrixHolon = (Holon)loadController().getState();
       timeInterval = (ValueDouble)matrixHolon.getState(BehaviorTime.ITERATION_INTERVAL).getValue();
       random = new Random(System.currentTimeMillis());
    }

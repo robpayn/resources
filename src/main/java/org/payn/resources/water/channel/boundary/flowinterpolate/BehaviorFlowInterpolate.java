@@ -1,7 +1,7 @@
 package org.payn.resources.water.channel.boundary.flowinterpolate;
 
 import org.payn.chsm.BehaviorAbstract;
-import org.payn.chsm.io.file.interpolate.InterpolatorSnapshotTable;
+import org.payn.chsm.io.interpolate.InterpolatorSnapshotTable;
 import org.payn.chsm.values.ValueString;
 import org.payn.resources.water.ResourceWater;
 

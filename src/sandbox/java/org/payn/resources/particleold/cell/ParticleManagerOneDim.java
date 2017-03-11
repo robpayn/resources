@@ -56,23 +56,23 @@ public class ParticleManagerOneDim extends ParticleManager implements UpdaterInf
       ValueString releaseCellName = (ValueString)createDependency(
             BehaviorConcTracker.REQ_STATE_RELEASE_NAME
             ).getValue();
-      releaseCell = ((HolonMatrix)getController().getState()).getCell(releaseCellName.string);
+      releaseCell = ((HolonMatrix)loadController().getState()).getCell(releaseCellName.string);
       
       ValueString endCellName = (ValueString)createDependency(
             BehaviorConcTracker.REQ_STATE_END_NAME
             ).getValue();
-      downstreamCell = ((HolonMatrix)getController().getState()).getCell(endCellName.string);
+      downstreamCell = ((HolonMatrix)loadController().getState()).getCell(endCellName.string);
       
       tick = (ValueLong)createDependency(
-            (Holon)getController().getState(),
+            (Holon)loadController().getState(),
             BehaviorTime.DEFAULT_ITERATION_NAME
             ).getValue();
       time = (ValueDouble)createDependency(
-            (Holon)getController().getState(),
+            (Holon)loadController().getState(),
             BehaviorTime.DEFAULT_TIME_NAME
             ).getValue();
       timeStep = (ValueDouble)createDependency(
-            (Holon)getController().getState(),
+            (Holon)loadController().getState(),
             BehaviorTime.ITERATION_INTERVAL
             ).getValue();
       releaseInterval = (ValueLong)createDependency(

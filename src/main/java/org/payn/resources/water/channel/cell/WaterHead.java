@@ -1,6 +1,6 @@
 package org.payn.resources.water.channel.cell;
 
-import org.payn.chsm.io.file.initialize.InitialConditionTable;
+import org.payn.chsm.io.initialize.InitialConditionTable;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleStateInitRequired;
 import org.payn.resources.water.ResourceWater;

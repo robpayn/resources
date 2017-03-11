@@ -1,7 +1,7 @@
 package org.payn.resources.water.channel.boundary;
 
 import org.payn.chsm.BehaviorAbstract;
-import org.payn.chsm.io.file.initialize.InitialConditionTable;
+import org.payn.chsm.io.initialize.InitialConditionTable;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
 import org.payn.resources.water.ResourceWater;

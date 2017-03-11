@@ -78,12 +78,12 @@ public class ParticleManagerVel extends ProcessorLong implements UpdaterInfo {
       ValueString releaseCellName = (ValueString)createDependency(
             BehaviorConcTrackerVel.REQ_STATE_RELEASE_NAME
             ).getValue();
-      releaseCell = ((HolonMatrix)getController().getState()).getCell(releaseCellName.string);
+      releaseCell = ((HolonMatrix)loadController().getState()).getCell(releaseCellName.string);
       
       ValueString endCellName = (ValueString)createDependency(
             BehaviorConcTrackerVel.REQ_STATE_END_NAME
             ).getValue();
-      endCell = ((HolonMatrix)getController().getState()).getCell(endCellName.string);
+      endCell = ((HolonMatrix)loadController().getState()).getCell(endCellName.string);
       
       String outputLocation = ((ValueString)createDependency(
             BehaviorConcTrackerVel.REQ_STATE_OUTPUT_LOC
@@ -95,15 +95,15 @@ public class ParticleManagerVel extends ProcessorLong implements UpdaterInfo {
             ).getValue()).string;
       
       tick = (ValueLong)createDependency(
-            (Holon)getController().getState(),
+            (Holon)loadController().getState(),
             BehaviorTime.DEFAULT_ITERATION_NAME
             ).getValue();
       time = (ValueDouble)createDependency(
-            (Holon)getController().getState(),
+            (Holon)loadController().getState(),
             BehaviorTime.DEFAULT_TIME_NAME
             ).getValue();
       timeStep = (ValueDouble)createDependency(
-            (Holon)getController().getState(),
+            (Holon)loadController().getState(),
             BehaviorTime.ITERATION_INTERVAL
             ).getValue();
       releaseInterval = (ValueLong)createDependency(

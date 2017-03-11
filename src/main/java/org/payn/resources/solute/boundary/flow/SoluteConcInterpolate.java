@@ -1,7 +1,7 @@
 package org.payn.resources.solute.boundary.flow;
 
-import org.payn.chsm.io.file.interpolate.Interpolator;
-import org.payn.chsm.io.file.interpolate.InterpolatorSnapshotTable;
+import org.payn.chsm.io.interpolate.Interpolator;
+import org.payn.chsm.io.interpolate.InterpolatorSnapshotTable;
 import org.payn.neoch.processors.ProcessorDoubleTradeInit;
 
 /**

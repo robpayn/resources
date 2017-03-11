@@ -2,7 +2,7 @@ package org.payn.resources.water.channel.boundary.dynamicwave;
 
 import org.payn.chsm.Holon;
 import org.payn.chsm.State;
-import org.payn.chsm.io.file.initialize.InitialConditionTable;
+import org.payn.chsm.io.initialize.InitialConditionTable;
 import org.payn.chsm.resources.time.BehaviorTime;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleLoadSymmetricInitRequired;

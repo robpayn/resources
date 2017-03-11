@@ -1,6 +1,6 @@
 package org.payn.resources.solute.boundary;
 
-import org.payn.chsm.io.file.interpolate.InterpolatorSnapshotTable;
+import org.payn.chsm.io.interpolate.InterpolatorSnapshotTable;
 import org.payn.chsm.values.ValueString;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.boundary.flow.SoluteConcInterpolate;

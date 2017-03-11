@@ -1,7 +1,7 @@
 package org.payn.resources.solute.boundary.otis;
 
 import org.payn.chsm.BehaviorAbstract;
-import org.payn.chsm.io.file.interpolate.InterpolatorSnapshotTable;
+import org.payn.chsm.io.interpolate.InterpolatorSnapshotTable;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueLong;
 import org.payn.chsm.values.ValueString;

@@ -1,6 +1,6 @@
 package org.payn.resources.water.channel.boundary.dynamicwave;
 
-import org.payn.chsm.io.file.initialize.InitialConditionTable;
+import org.payn.chsm.io.initialize.InitialConditionTable;
 import org.payn.chsm.processors.ProcessorDouble;
 import org.payn.chsm.processors.interfaces.InitializerSimple;
 import org.payn.chsm.processors.interfaces.UpdaterSimple;

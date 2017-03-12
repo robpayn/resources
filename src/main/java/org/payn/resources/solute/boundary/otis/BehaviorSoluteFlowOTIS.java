@@ -14,9 +14,9 @@ import org.payn.resources.solute.ResourceSolute;
 public class BehaviorSoluteFlowOTIS extends BehaviorAbstract {
 
    @Override
-   protected void addRequiredStates() 
+   protected void registerStates() 
    {
-      addRequiredState(ResourceSolute.NAME_WATER_FLOW, ValueDouble.class);
+      registerState(ResourceSolute.NAME_WATER_FLOW, ValueDouble.class);
    }
 
    @Override

@@ -14,20 +14,20 @@ import org.payn.resources.solute.ResourceSolute;
 public class BehaviorSoluteConcOTIS extends BehaviorAbstract {
 
    @Override
-   protected void addRequiredStates() 
+   protected void registerStates() 
    {
-      addRequiredState(ResourceSolute.NAME_WATER_FLOW, ValueDouble.class);
-      addRequiredState(ResourceSolute.NAME_AREA_XSECT, ValueDouble.class);
-      addRequiredState(ResourceSolute.NAME_LENGTH, ValueDouble.class);
-      addRequiredState(ResourceSolute.NAME_DISPERSION_COEFF, ValueDouble.class);
+      registerState(ResourceSolute.NAME_WATER_FLOW, ValueDouble.class);
+      registerState(ResourceSolute.NAME_AREA_XSECT, ValueDouble.class);
+      registerState(ResourceSolute.NAME_LENGTH, ValueDouble.class);
+      registerState(ResourceSolute.NAME_DISPERSION_COEFF, ValueDouble.class);
    }
 
    @Override
    protected void addProcessors() 
    {
-      addAbstractProcessor(ResourceSolute.NAME_SOLUTE_CONC, SoluteConc.class, SoluteConc.getValueClass());
-      addAbstractProcessor(ResourceSolute.NAME_ADVECTION, SoluteAdvection.class, SoluteAdvection.getValueClass());
-      addAbstractProcessor(ResourceSolute.NAME_DISPERSION, SoluteDispersion.class, SoluteDispersion.getValueClass());
+      addProcessorAbstract(ResourceSolute.NAME_SOLUTE_CONC, SoluteConc.class, SoluteConc.getValueClass());
+      addProcessorAbstract(ResourceSolute.NAME_ADVECTION, SoluteAdvection.class, SoluteAdvection.getValueClass());
+      addProcessorAbstract(ResourceSolute.NAME_DISPERSION, SoluteDispersion.class, SoluteDispersion.getValueClass());
    }
 
 }

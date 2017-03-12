@@ -21,7 +21,7 @@ public class BehaviorInterception extends BehaviorMatrix {
     @Override
     protected void addRequiredStates()
     {
-        addRequiredState(REQ_STATE_RATE, ValueDouble.class);
+        registerState(REQ_STATE_RATE, ValueDouble.class);
     }
 
     @Override

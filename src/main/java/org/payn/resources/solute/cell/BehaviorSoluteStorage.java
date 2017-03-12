@@ -15,20 +15,20 @@ import org.payn.resources.solute.cell.storage.SoluteMass;
 public class BehaviorSoluteStorage extends BehaviorAbstract {
 
    @Override
-   public void addRequiredStates() 
+   public void registerStates() 
    {
-      addRequiredState(ResourceSolute.NAME_WATER_VOLUME, ValueDouble.class);
+      registerState(ResourceSolute.NAME_WATER_VOLUME, ValueDouble.class);
    }
 
    @Override
    public void addProcessors() 
    {
-      addAbstractProcessor(
+      addProcessorAbstract(
             ResourceSolute.NAME_SOLUTE_STORAGE, 
             SoluteMass.class, 
             SoluteMass.getValueClass()
             );
-      addAbstractProcessor(
+      addProcessorAbstract(
             ResourceSolute.NAME_SOLUTE_CONC, 
             SoluteConc.class, 
             SoluteConc.getValueClass()

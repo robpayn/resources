@@ -27,16 +27,16 @@ public class BehaviorChannelStorage extends BehaviorAbstract {
    }
 
    @Override
-   protected void addRequiredStates() 
+   protected void registerStates() 
    {
-      addRequiredState(ResourceWater.NAME_COORDINATE_X, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_COORDINATE_Y, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_BED_ELEVATION, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_BANK_ELEVATION, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_LENGTH, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_ACTIVE_CHANNEL_WIDTH_AVERAGE, ValueDouble.class);
-      addRequiredState(InitialConditionTable.NAME_INITIAL_CONDITION_PATH, ValueString.class);
-      addRequiredState(InitialConditionTable.NAME_INITIAL_CONDITION_DELIMITER, ValueString.class);
+      registerState(ResourceWater.NAME_COORDINATE_X, ValueDouble.class);
+      registerState(ResourceWater.NAME_COORDINATE_Y, ValueDouble.class);
+      registerState(ResourceWater.NAME_BED_ELEVATION, ValueDouble.class);
+      registerState(ResourceWater.NAME_BANK_ELEVATION, ValueDouble.class);
+      registerState(ResourceWater.NAME_LENGTH, ValueDouble.class);
+      registerState(ResourceWater.NAME_ACTIVE_CHANNEL_WIDTH_AVERAGE, ValueDouble.class);
+      registerState(InitialConditionTable.NAME_INITIAL_CONDITION_PATH, ValueString.class);
+      registerState(InitialConditionTable.NAME_INITIAL_CONDITION_DELIMITER, ValueString.class);
    }
 
 }

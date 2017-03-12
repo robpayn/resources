@@ -19,11 +19,11 @@ public abstract class BehaviorParticle extends BehaviorMatrix {
    @Override
    protected void addRequiredStates() 
    {
-      addRequiredState(REQ_STATE_RELEASE_NAME, ValueString.class);
-      addRequiredState(REQ_STATE_END_NAME, ValueString.class);
-      addRequiredState(REQ_STATE_CURRENCY, ValueString.class);
-      addRequiredState(REQ_STATE_INTERVAL_RECORD, ValueLong.class);
-      addRequiredState(REQ_STATE_INTERVAL_RELEASE, ValueLong.class);
+      registerState(REQ_STATE_RELEASE_NAME, ValueString.class);
+      registerState(REQ_STATE_END_NAME, ValueString.class);
+      registerState(REQ_STATE_CURRENCY, ValueString.class);
+      registerState(REQ_STATE_INTERVAL_RECORD, ValueLong.class);
+      registerState(REQ_STATE_INTERVAL_RELEASE, ValueLong.class);
    }
    
    public abstract Particle createParticle(ParticleManager particleManager,

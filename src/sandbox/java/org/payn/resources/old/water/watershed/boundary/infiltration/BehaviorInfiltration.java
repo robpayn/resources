@@ -21,7 +21,7 @@ public class BehaviorInfiltration extends BehaviorSymmetricDouble {
     @Override
     protected void addRequiredStates()
     {
-        addRequiredState(REQ_STATE_MAX_INF, ValueDouble.class);
+        registerState(REQ_STATE_MAX_INF, ValueDouble.class);
     }
 
     @Override

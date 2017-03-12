@@ -20,13 +20,13 @@ public class BehaviorDynamicWaveDownstream extends BehaviorAbstract {
    }
 
    @Override
-   protected void addRequiredStates() 
+   protected void registerStates() 
    {
-      addRequiredState(ResourceWater.NAME_UPSTREAM_BOUNDARY_NAME, ValueString.class);
-      addRequiredState(ResourceWater.NAME_CHEZEY, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_BED_SLOPE, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_CHEZEY_EXPONENT_VELOCITY, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_CHEZEY_EXPONENT_RADIUS, ValueDouble.class);
+      registerState(ResourceWater.NAME_UPSTREAM_BOUNDARY_NAME, ValueString.class);
+      registerState(ResourceWater.NAME_CHEZEY, ValueDouble.class);
+      registerState(ResourceWater.NAME_BED_SLOPE, ValueDouble.class);
+      registerState(ResourceWater.NAME_CHEZEY_EXPONENT_VELOCITY, ValueDouble.class);
+      registerState(ResourceWater.NAME_CHEZEY_EXPONENT_RADIUS, ValueDouble.class);
    }
 
 }

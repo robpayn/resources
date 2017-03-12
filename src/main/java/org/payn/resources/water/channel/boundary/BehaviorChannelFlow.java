@@ -34,13 +34,13 @@ public abstract class BehaviorChannelFlow extends BehaviorAbstract {
     */
    protected void addRequiredStatesChannelFlow()
    {
-      addRequiredState(ResourceWater.NAME_ACTIVE_CHANNEL_WIDTH_AVERAGE, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_LENGTH_LOCAL, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_LENGTH_ADJACENT, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_BANK_SLOPE, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_ACTIVE_CHANNEL_DEPTH, ValueDouble.class);
-      addRequiredState(InitialConditionTable.NAME_INITIAL_CONDITION_PATH, ValueString.class);
-      addRequiredState(InitialConditionTable.NAME_INITIAL_CONDITION_DELIMITER, ValueString.class);
+      registerState(ResourceWater.NAME_ACTIVE_CHANNEL_WIDTH_AVERAGE, ValueDouble.class);
+      registerState(ResourceWater.NAME_LENGTH_LOCAL, ValueDouble.class);
+      registerState(ResourceWater.NAME_LENGTH_ADJACENT, ValueDouble.class);
+      registerState(ResourceWater.NAME_BANK_SLOPE, ValueDouble.class);
+      registerState(ResourceWater.NAME_ACTIVE_CHANNEL_DEPTH, ValueDouble.class);
+      registerState(InitialConditionTable.NAME_INITIAL_CONDITION_PATH, ValueString.class);
+      registerState(InitialConditionTable.NAME_INITIAL_CONDITION_DELIMITER, ValueString.class);
    }
 
 }

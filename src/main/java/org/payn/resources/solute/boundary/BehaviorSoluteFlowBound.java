@@ -14,10 +14,10 @@ import org.payn.resources.solute.boundary.flow.SoluteFlowBound;
 public class BehaviorSoluteFlowBound extends BehaviorAbstract {
 
    @Override
-   public void addRequiredStates() 
+   public void registerStates() 
    {
-      addRequiredState(ResourceSolute.NAME_WATER_FLOW, ValueDouble.class);
-      addAbstractRequiredState(
+      registerState(ResourceSolute.NAME_WATER_FLOW, ValueDouble.class);
+      registerStateAbstract(
             ResourceSolute.NAME_SOLUTE_CONC, 
             ValueDouble.class
             );
@@ -26,7 +26,7 @@ public class BehaviorSoluteFlowBound extends BehaviorAbstract {
    @Override
    public void addProcessors() 
    {
-      addAbstractProcessor(
+      addProcessorAbstract(
             ResourceSolute.NAME_SOLUTE_LOAD, 
             SoluteFlowBound.class, 
             SoluteFlowBound.getValueClass()

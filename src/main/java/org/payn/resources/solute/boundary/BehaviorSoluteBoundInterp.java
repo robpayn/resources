@@ -14,18 +14,18 @@ import org.payn.resources.solute.boundary.flow.SoluteConcInterpolate;
 public class BehaviorSoluteBoundInterp extends BehaviorSoluteBound {
 
    @Override
-   public void addRequiredStates() 
+   public void registerStates() 
    {
-      super.addRequiredStates();
-      addAbstractRequiredState(
+      super.registerStates();
+      registerStateAbstract(
             InterpolatorSnapshotTable.REQ_STATE_TYPE, 
             ValueString.class
             );
-      addAbstractRequiredState(
+      registerStateAbstract(
             InterpolatorSnapshotTable.REQ_STATE_PATH, 
             ValueString.class
             );
-      addAbstractRequiredState(
+      registerStateAbstract(
             InterpolatorSnapshotTable.REQ_STATE_DELIMITER, 
             ValueString.class
             );
@@ -35,7 +35,7 @@ public class BehaviorSoluteBoundInterp extends BehaviorSoluteBound {
    public void addProcessors() 
    {
       super.addProcessors();
-      addAbstractProcessor(
+      addProcessorAbstract(
             ResourceSolute.NAME_SOLUTE_CONC, 
             SoluteConcInterpolate.class, 
             SoluteConcInterpolate.getValueClass()

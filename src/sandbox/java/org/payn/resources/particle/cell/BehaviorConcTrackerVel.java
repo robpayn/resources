@@ -21,13 +21,13 @@ public class BehaviorConcTrackerVel extends BehaviorMatrix {
    @Override
    protected void addRequiredStates() 
    {
-      addRequiredState(REQ_STATE_RELEASE_NAME, ValueString.class);
-      addRequiredState(REQ_STATE_END_NAME, ValueString.class);
-      addRequiredState(REQ_STATE_RESOURCE, ValueString.class);
-      addRequiredState(REQ_STATE_INTERVAL_RECORD, ValueLong.class);
-      addRequiredState(REQ_STATE_INTERVAL_RELEASE, ValueLong.class);
-      addRequiredState(REQ_STATE_VEL_FILE, ValueString.class);
-      addRequiredState(REQ_STATE_OUTPUT_LOC, ValueString.class);
+      registerState(REQ_STATE_RELEASE_NAME, ValueString.class);
+      registerState(REQ_STATE_END_NAME, ValueString.class);
+      registerState(REQ_STATE_RESOURCE, ValueString.class);
+      registerState(REQ_STATE_INTERVAL_RECORD, ValueLong.class);
+      registerState(REQ_STATE_INTERVAL_RELEASE, ValueLong.class);
+      registerState(REQ_STATE_VEL_FILE, ValueString.class);
+      registerState(REQ_STATE_OUTPUT_LOC, ValueString.class);
    }
 
    @Override

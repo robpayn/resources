@@ -12,20 +12,20 @@ import org.payn.resources.solute.ResourceSolute;
 public class BehaviorSoluteConcHyperOTIS extends BehaviorSoluteConcOTIS {
    
    @Override
-   protected void addRequiredStates() 
+   protected void registerStates() 
    {
-      super.addRequiredStates();
-      addAbstractRequiredState(ResourceSolute.NAME_UPTAKE_MAX, ValueDouble.class);
-      addAbstractRequiredState(ResourceSolute.NAME_CONC_HALF_SAT, ValueDouble.class);
-      addAbstractRequiredState(ResourceSolute.NAME_BKG_CONC, ValueDouble.class);
-      addRequiredState(ResourceSolute.NAME_DEPTH, ValueDouble.class);
+      super.registerStates();
+      registerStateAbstract(ResourceSolute.NAME_UPTAKE_MAX, ValueDouble.class);
+      registerStateAbstract(ResourceSolute.NAME_CONC_HALF_SAT, ValueDouble.class);
+      registerStateAbstract(ResourceSolute.NAME_BKG_CONC, ValueDouble.class);
+      registerState(ResourceSolute.NAME_DEPTH, ValueDouble.class);
    }
 
    @Override
    protected void addProcessors() 
    {
       super.addProcessors();
-      addAbstractProcessor(
+      addProcessorAbstract(
             ResourceSolute.NAME_UPTAKE, 
             SoluteUptake.class, 
             SoluteUptake.getValueClass()

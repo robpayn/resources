@@ -15,23 +15,23 @@ import org.payn.resources.solute.boundary.flow.SoluteDispersionBound;
 public class BehaviorSoluteBound extends BehaviorAbstract {
 
    @Override
-   public void addRequiredStates() 
+   public void registerStates() 
    {
-      addRequiredState(ResourceSolute.NAME_DISPERSION_COEFF, ValueDouble.class);
-      addRequiredState(ResourceSolute.NAME_WATER_FLOW, ValueDouble.class);
-      addRequiredState(ResourceSolute.NAME_LENGTH, ValueDouble.class);
-      addRequiredState(ResourceSolute.NAME_AREA_XSECT, ValueDouble.class);
+      registerState(ResourceSolute.NAME_DISPERSION_COEFF, ValueDouble.class);
+      registerState(ResourceSolute.NAME_WATER_FLOW, ValueDouble.class);
+      registerState(ResourceSolute.NAME_LENGTH, ValueDouble.class);
+      registerState(ResourceSolute.NAME_AREA_XSECT, ValueDouble.class);
    }
    
    @Override
    public void addProcessors() 
    {
-      addAbstractProcessor(
+      addProcessorAbstract(
             ResourceSolute.NAME_ADVECTION, 
             SoluteAdvectionBound.class, 
             SoluteAdvectionBound.getValueClass()
             );
-      addAbstractProcessor(
+      addProcessorAbstract(
             ResourceSolute.NAME_DISPERSION, 
             SoluteDispersionBound.class, 
             SoluteDispersionBound.getValueClass()

@@ -13,13 +13,13 @@ import org.payn.resources.solute.ResourceSolute;
 public class BehaviorSoluteFlowBoundOTIS extends BehaviorAbstract {
 
    @Override
-   public void addRequiredStates() 
+   public void registerStates() 
    {
-      addRequiredState(
+      registerState(
             ResourceSolute.NAME_WATER_FLOW, 
             ValueDouble.class
             );
-      addAbstractRequiredState(
+      registerStateAbstract(
             ResourceSolute.NAME_SOLUTE_CONC, 
             ValueDouble.class
             );

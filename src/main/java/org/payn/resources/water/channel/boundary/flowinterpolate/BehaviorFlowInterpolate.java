@@ -20,17 +20,17 @@ public class BehaviorFlowInterpolate extends BehaviorAbstract {
    }
 
    @Override
-   protected void addRequiredStates() 
+   protected void registerStates() 
    {
-      addRequiredState(
+      registerState(
             InterpolatorSnapshotTable.REQ_STATE_DELIMITER, 
             ValueString.class
             );
-      addRequiredState(
+      registerState(
             InterpolatorSnapshotTable.REQ_STATE_PATH, 
             ValueString.class
             );
-      addRequiredState(
+      registerState(
             InterpolatorSnapshotTable.REQ_STATE_TYPE, 
             ValueString.class
             );

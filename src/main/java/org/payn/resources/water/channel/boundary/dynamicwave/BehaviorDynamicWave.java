@@ -23,12 +23,12 @@ public class BehaviorDynamicWave extends BehaviorChannelFlow {
    }
 
    @Override
-   protected void addRequiredStates() 
+   protected void registerStates() 
    {
       addRequiredStatesChannelFlow();
-      addRequiredState(ResourceWater.NAME_CHEZEY, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_CHEZEY_EXPONENT_VELOCITY, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_CHEZEY_EXPONENT_RADIUS, ValueDouble.class);
+      registerState(ResourceWater.NAME_CHEZEY, ValueDouble.class);
+      registerState(ResourceWater.NAME_CHEZEY_EXPONENT_VELOCITY, ValueDouble.class);
+      registerState(ResourceWater.NAME_CHEZEY_EXPONENT_RADIUS, ValueDouble.class);
    }
    
 }

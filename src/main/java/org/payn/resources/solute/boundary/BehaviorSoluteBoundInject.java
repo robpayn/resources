@@ -15,24 +15,24 @@ import org.payn.resources.solute.boundary.flow.SoluteConcInterpolate;
 public class BehaviorSoluteBoundInject extends BehaviorSoluteBoundInterp {
 
    @Override
-   public void addRequiredStates()
+   public void registerStates()
    {
-      super.addRequiredStates();
-      addAbstractRequiredState(ResourceSolute.NAME_INJECT_MASS, ValueDouble.class);
-      addAbstractRequiredState(ResourceSolute.NAME_INJECT_START, ValueLong.class);
-      addAbstractRequiredState(ResourceSolute.NAME_INJECT_DURATION, ValueLong.class);
+      super.registerStates();
+      registerStateAbstract(ResourceSolute.NAME_INJECT_MASS, ValueDouble.class);
+      registerStateAbstract(ResourceSolute.NAME_INJECT_START, ValueLong.class);
+      registerStateAbstract(ResourceSolute.NAME_INJECT_DURATION, ValueLong.class);
    }
    
    @Override
    public void addProcessors()
    {
       super.addProcessors();
-      addAbstractProcessor(
+      addProcessorAbstract(
             ResourceSolute.NAME_SOLUTE_CONC, 
             SoluteConcInject.class, 
             SoluteConcInject.getValueClass()
             );
-      addAbstractProcessor(
+      addProcessorAbstract(
             ResourceSolute.NAME_BKG_CONC, 
             SoluteConcInterpolate.class, 
             SoluteConcInject.getValueClass()

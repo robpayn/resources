@@ -11,7 +11,7 @@ public class BehaviorConcTrackerAlt extends BehaviorConcTracker {
    protected void addRequiredStates() 
    {
       super.addRequiredStates();
-      addRequiredState(REQ_STATE_RELEASE_COUNT, ValueLong.class);
+      registerState(REQ_STATE_RELEASE_COUNT, ValueLong.class);
    }
 
    @Override

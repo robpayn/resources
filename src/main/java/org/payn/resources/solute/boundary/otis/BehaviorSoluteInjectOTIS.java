@@ -21,12 +21,12 @@ public class BehaviorSoluteInjectOTIS extends BehaviorAbstract {
    @Override
    public void addProcessors() 
    {
-      addAbstractProcessor(
+      addProcessorAbstract(
             ResourceSolute.NAME_SOLUTE_CONC, 
             SoluteConcInject.class, 
             SoluteConcInject.getValueClass()
             );
-      addAbstractProcessor(
+      addProcessorAbstract(
             ResourceSolute.NAME_BKG_CONC, 
             SoluteConcInterpolate.class, 
             SoluteConcInject.getValueClass()
@@ -34,33 +34,33 @@ public class BehaviorSoluteInjectOTIS extends BehaviorAbstract {
    }
 
    @Override
-   public void addRequiredStates() 
+   public void registerStates() 
    {
-      addRequiredState(
+      registerState(
             ResourceSolute.NAME_WATER_FLOW, 
             ValueDouble.class
             );
-      addAbstractRequiredState(
+      registerStateAbstract(
             ResourceSolute.NAME_INJECT_MASS, 
             ValueDouble.class
             );
-      addAbstractRequiredState(
+      registerStateAbstract(
             ResourceSolute.NAME_INJECT_START, 
             ValueLong.class
             );
-      addAbstractRequiredState(
+      registerStateAbstract(
             ResourceSolute.NAME_INJECT_DURATION, 
             ValueLong.class
             );
-      addAbstractRequiredState(
+      registerStateAbstract(
             InterpolatorSnapshotTable.REQ_STATE_TYPE, 
             ValueString.class
             );
-      addAbstractRequiredState(
+      registerStateAbstract(
             InterpolatorSnapshotTable.REQ_STATE_PATH, 
             ValueString.class
             );
-      addAbstractRequiredState(
+      registerStateAbstract(
             InterpolatorSnapshotTable.REQ_STATE_DELIMITER, 
             ValueString.class
             );

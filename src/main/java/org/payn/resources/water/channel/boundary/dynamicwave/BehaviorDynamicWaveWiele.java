@@ -20,11 +20,11 @@ public class BehaviorDynamicWaveWiele extends BehaviorDynamicWave {
    }
 
    @Override
-   protected void addRequiredStates() 
+   protected void registerStates() 
    {
       super.addRequiredStatesChannelFlow();
-      addRequiredState(ResourceWater.NAME_WIELE_MODEL_INTERCEPT, ValueDouble.class);
-      addRequiredState(ResourceWater.NAME_WIELE_MODEL_SLOPE, ValueDouble.class);
+      registerState(ResourceWater.NAME_WIELE_MODEL_INTERCEPT, ValueDouble.class);
+      registerState(ResourceWater.NAME_WIELE_MODEL_SLOPE, ValueDouble.class);
    }
 
 }

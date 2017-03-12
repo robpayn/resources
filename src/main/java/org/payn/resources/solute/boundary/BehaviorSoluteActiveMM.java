@@ -14,19 +14,19 @@ import org.payn.resources.solute.boundary.active.SoluteUptakeMM;
 public class BehaviorSoluteActiveMM extends BehaviorAbstract {
 
    @Override
-   public void addRequiredStates() 
+   public void registerStates() 
    {
-      addAbstractRequiredState(ResourceSolute.NAME_UPTAKE_MAX, ValueDouble.class);
-      addAbstractRequiredState(ResourceSolute.NAME_CONC_HALF_SAT, ValueDouble.class);
-      addAbstractRequiredState(ResourceSolute.NAME_BKG_CONC, ValueDouble.class);
+      registerStateAbstract(ResourceSolute.NAME_UPTAKE_MAX, ValueDouble.class);
+      registerStateAbstract(ResourceSolute.NAME_CONC_HALF_SAT, ValueDouble.class);
+      registerStateAbstract(ResourceSolute.NAME_BKG_CONC, ValueDouble.class);
       
-      addRequiredState(ResourceSolute.NAME_PLANAREA, ValueDouble.class);
+      registerState(ResourceSolute.NAME_PLANAREA, ValueDouble.class);
    }
 
    @Override
    public void addProcessors() 
    {
-      addAbstractProcessor(
+      addProcessorAbstract(
             ResourceSolute.NAME_SOLUTE_LOAD, 
             SoluteUptakeMM.class, 
             SoluteUptakeMM.getValueClass()

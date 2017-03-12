@@ -23,15 +23,15 @@ public class BehaviorFlowInterpolate extends BehaviorAbstract {
    protected void registerStates() 
    {
       registerState(
-            InterpolatorSnapshotTable.REQ_STATE_DELIMITER, 
+            InterpolatorSnapshotTable.NAME_DELIMITER, 
             ValueString.class
             );
       registerState(
-            InterpolatorSnapshotTable.REQ_STATE_PATH, 
+            InterpolatorSnapshotTable.NAME_PATH, 
             ValueString.class
             );
       registerState(
-            InterpolatorSnapshotTable.REQ_STATE_TYPE, 
+            InterpolatorSnapshotTable.NAME_TYPE, 
             ValueString.class
             );
    }

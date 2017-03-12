@@ -4,6 +4,7 @@ import org.payn.chsm.ResourceAbstract;
 import org.payn.resources.solute.boundary.otis.BehaviorSoluteFlowBoundOTIS;
 import org.payn.resources.solute.boundary.otis.BehaviorSoluteFlowOTIS;
 import org.payn.resources.solute.boundary.otis.BehaviorSoluteInjectOTIS;
+import org.payn.resources.solute.boundary.otis.BehaviorSoluteInterpolateOTIS;
 import org.payn.resources.solute.cell.otis.BehaviorSoluteConcHyperOTIS;
 import org.payn.resources.solute.cell.otis.BehaviorSoluteConcOTIS;
 
@@ -33,6 +34,10 @@ public class ResourceSoluteOTIS extends ResourceAbstract {
       addBehavior(
             ResourceSolute.BEHAVIOR_CONCBOUND_INJECT,
             BehaviorSoluteInjectOTIS.class.getCanonicalName()
+            );
+      addBehavior(
+            ResourceSolute.BEHAVIOR_CONCBOUND,
+            BehaviorSoluteInterpolateOTIS.class.getCanonicalName()
             );
       addBehavior(
             ResourceSolute.BEHAVIOR_FLOWBOUND,

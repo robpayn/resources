@@ -18,15 +18,15 @@ public class BehaviorSoluteBoundInterp extends BehaviorSoluteBound {
    {
       super.registerStates();
       registerStateAbstract(
-            InterpolatorSnapshotTable.REQ_STATE_TYPE, 
+            InterpolatorSnapshotTable.NAME_TYPE, 
             ValueString.class
             );
       registerStateAbstract(
-            InterpolatorSnapshotTable.REQ_STATE_PATH, 
+            InterpolatorSnapshotTable.NAME_PATH, 
             ValueString.class
             );
       registerStateAbstract(
-            InterpolatorSnapshotTable.REQ_STATE_DELIMITER, 
+            InterpolatorSnapshotTable.NAME_DELIMITER, 
             ValueString.class
             );
    }

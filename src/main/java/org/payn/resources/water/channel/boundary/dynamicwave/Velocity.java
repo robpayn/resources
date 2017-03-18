@@ -1,6 +1,5 @@
 package org.payn.resources.water.channel.boundary.dynamicwave;
 
-import org.payn.chsm.io.initialize.InitialConditionTable;
 import org.payn.chsm.processors.ProcessorDouble;
 import org.payn.chsm.processors.interfaces.InitializerSimple;
 import org.payn.chsm.processors.interfaces.UpdaterSimple;
@@ -30,37 +29,12 @@ public class Velocity extends ProcessorDouble implements InitializerSimple, Upda
     */
    private ValueDouble xSectionAreaPrev;
 
-   /**
-    * Initial condition table
-    */
-   private InitialConditionTable initialConditionTable;
-
-   /**
-    * Set the initialization dependencies
-    * 
-    * @throws Exception
-    */
-   public void setInitDependencies() throws Exception
-   {
-      if (value.isNoValue())
-      {
-         initialConditionTable = InitialConditionTable.getInstance(this);
-      }
-   }
-   
    @Override
    public void initialize() throws Exception 
    {
       if (value.isNoValue())
       {
-         if (initialConditionTable != null)
-         {
-            value.n = initialConditionTable.find(state);
-         }
-         else
-         {
-            update();
-         }
+         update();
       }
    }
    

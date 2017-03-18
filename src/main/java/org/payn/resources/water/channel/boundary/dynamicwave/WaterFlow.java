@@ -2,7 +2,6 @@ package org.payn.resources.water.channel.boundary.dynamicwave;
 
 import org.payn.chsm.Holon;
 import org.payn.chsm.State;
-import org.payn.chsm.io.initialize.InitialConditionTable;
 import org.payn.chsm.resources.time.BehaviorTime;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleLoadSymmetricInitRequired;
@@ -86,33 +85,16 @@ public class WaterFlow extends ProcessorDoubleLoadSymmetricInitRequired {
     */
    private Velocity velocityProc;
 
-   /**
-    * Initial condition table
-    */
-   private InitialConditionTable initialConditionTable;
-
    @Override
    public void setInitDependencies() throws Exception 
    {
-      if (value.isNoValue())
-      {
-         initialConditionTable = InitialConditionTable.getInstance(this);
-      }
       setUpdateDependencies();
-      velocityProc.setInitDependencies();
    }
 
    @Override
    public void initialize() throws Exception 
    {
-      if (initialConditionTable != null)
-      {
-         value.n = initialConditionTable.find(state);
-      }
-      else
-      {
-         super.initialize();
-      }
+      super.initialize();
       if (velocityExponent == null)
       {
           velocityExp = 2.0;

@@ -43,7 +43,7 @@ public class BottomArea extends ProcessorDoubleInit {
       try
       {
          bankSlope = (ValueDouble)createDependencyOnValue(
-               ResourceWater.NAME_BANK_SLOPE
+               ResourceWater.DEFAULT_NAME_BANK_SLOPE
                );
       }
       catch (Exception e)
@@ -51,16 +51,16 @@ public class BottomArea extends ProcessorDoubleInit {
          bankSlope = null;
       }
       activeWidthAvg = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_ACTIVE_CHANNEL_WIDTH_AVERAGE
+            ResourceWater.DEFAULT_NAME_ACTIVE_CHANNEL_WIDTH_AVG
             );
       length = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_LENGTH
+            ResourceWater.DEFAULT_NAME_LENGTH
             );
       bankElevation = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_BANK_ELEVATION
+            ResourceWater.DEFAULT_NAME_BANK_ELEV
             );
       bedElevation = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_BED_ELEVATION
+            ResourceWater.DEFAULT_NAME_BED_ELEV
             );
    }
 

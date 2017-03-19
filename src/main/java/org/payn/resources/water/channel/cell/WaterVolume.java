@@ -46,22 +46,22 @@ public class WaterVolume extends ProcessorDoubleStorageInit {
    public void setInitDependencies() throws Exception 
    {
       head = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WATER_HEAD
+            ResourceWater.DEFAULT_NAME_HEAD
             );
       elevationBank = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_BANK_ELEVATION
+            ResourceWater.DEFAULT_NAME_BANK_ELEV
             );
       elevationBed = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_BED_ELEVATION
+            ResourceWater.DEFAULT_NAME_BED_ELEV
             );
       bottomArea = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_ACTIVE_CHANNEL_BOTTOM_AREA
+            ResourceWater.DEFAULT_NAME_ACTIVE_CHANNEL_BOTTOM_AREA
             );
       wettedAreaChange = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WETTED_AREA_CHANGE
+            ResourceWater.DEFAULT_NAME_WETTED_AREA_CHANGE
             );
       wettedAreaMax = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WETTED_AREA_MAX
+            ResourceWater.DEFAULT_NAME_WETTED_AREA_MAX
             );
    }
 

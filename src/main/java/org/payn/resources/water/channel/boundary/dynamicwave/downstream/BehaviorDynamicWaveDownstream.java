@@ -16,17 +16,17 @@ public class BehaviorDynamicWaveDownstream extends BehaviorAbstract {
    @Override
    protected void addProcessors() 
    {
-      addProcessor(ResourceWater.NAME_WATER_FLOW, WaterFlow.class, WaterFlow.getValueClass());
+      addProcessor(ResourceWater.DEFAULT_NAME_FLOW, WaterFlow.class, WaterFlow.getValueClass());
    }
 
    @Override
    protected void registerStates() 
    {
-      registerState(ResourceWater.NAME_UPSTREAM_BOUNDARY_NAME, ValueString.class);
-      registerState(ResourceWater.NAME_CHEZEY, ValueDouble.class);
-      registerState(ResourceWater.NAME_BED_SLOPE, ValueDouble.class);
-      registerState(ResourceWater.NAME_CHEZEY_EXPONENT_VELOCITY, ValueDouble.class);
-      registerState(ResourceWater.NAME_CHEZEY_EXPONENT_RADIUS, ValueDouble.class);
+      registerState(ResourceWater.DEFAULT_NAME_UPSTREAM_BOUNDARY_NAME, ValueString.class);
+      registerState(ResourceWater.DEFAULT_NAME_CHEZEY, ValueDouble.class);
+      registerState(ResourceWater.DEFAULT_NAME_BED_SLOPE, ValueDouble.class);
+      registerState(ResourceWater.DEFAULT_NAME_CHEZEY_EXP_VELOCITY, ValueDouble.class);
+      registerState(ResourceWater.DEFAULT_NAME_CHEZEY_EXP_RADIUS, ValueDouble.class);
    }
 
 }

@@ -50,16 +50,16 @@ public class XSectAreaCurrent extends ProcessorDoubleTradeInit {
    public void setUpdateDependencies() throws Exception 
    {
       depth = (ValueDouble)createDependency(
-            ResourceWater.NAME_WATER_DEPTH
+            ResourceWater.DEFAULT_NAME_DEPTH
             ).getValue();
       bottomWidth = (ValueDouble)createDependency(
-            ResourceWater.NAME_ACTIVE_CHANNEL_BOTTOM_WIDTH
+            ResourceWater.DEFAULT_NAME_ACTIVE_CHANNEL_BOTTOM_WIDTH
             ).getValue();
       wettedWidthChange = (ValueDouble)createDependency(
-            ResourceWater.NAME_WETTED_WIDTH_CHANGE
+            ResourceWater.DEFAULT_NAME_WETTED_WIDTH_CHANGE
             ).getValue();
       xSectionAreaPreviousProc = (XSectAreaPrevious)getState().getParentHolon().getState(
-            ResourceWater.NAME_WETTER_XSECT_AREA_PREV
+            ResourceWater.DEFAULT_NAME_WETTER_XSECT_AREA_PREV
             ).getProcessor();
       xSectionAreaPreviousProc.setDependencies(this);
    }

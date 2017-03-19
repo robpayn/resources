@@ -16,7 +16,7 @@ public class BehaviorFlowInterpolate extends BehaviorAbstract {
    @Override
    protected void addProcessors() 
    {
-      addProcessor(ResourceWater.NAME_WATER_FLOW, WaterFlow.class, WaterFlow.getValueClass());
+      addProcessor(ResourceWater.DEFAULT_NAME_FLOW, WaterFlow.class, WaterFlow.getValueClass());
    }
 
    @Override

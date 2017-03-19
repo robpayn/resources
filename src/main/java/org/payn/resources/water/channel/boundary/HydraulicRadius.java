@@ -43,13 +43,13 @@ public class HydraulicRadius extends ProcessorDoubleTradeInit {
    public void setUpdateDependencies() throws Exception 
    {
       depth = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WATER_DEPTH
+            ResourceWater.DEFAULT_NAME_DEPTH
             );
       xSectionArea = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WETTED_XSECT_AREA
+            ResourceWater.DEFAULT_NAME_WETTED_XSECT_AREA
             );
       wettedWidth = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WETTED_WIDTH
+            ResourceWater.DEFAULT_NAME_WETTED_WIDTH
             );
    }
 

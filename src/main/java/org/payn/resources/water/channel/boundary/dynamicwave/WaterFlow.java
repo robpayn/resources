@@ -116,31 +116,31 @@ public class WaterFlow extends ProcessorDoubleLoadSymmetricInitRequired {
             BehaviorTime.ITERATION_INTERVAL
             ).getValue();
       State velocityState = createDependency(
-            ResourceWater.NAME_WATER_VELOCITY
+            ResourceWater.DEFAULT_NAME_VELOCITY
             );
       velocity = (ValueDouble)velocityState.getValue();
       velocityProc = (Velocity)velocityState.getProcessor();
       velocityProc.setDependencies(this);
       chezey = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_CHEZEY
+            ResourceWater.DEFAULT_NAME_CHEZEY
             );
       xSectionArea = (ValueDouble)createDependency(
-            ResourceWater.NAME_WETTED_XSECT_AREA
+            ResourceWater.DEFAULT_NAME_WETTED_XSECT_AREA
             ).getValue();
       xSectionAreaPrev = (ValueDouble)createDependency(
-            ResourceWater.NAME_WETTER_XSECT_AREA_PREV
+            ResourceWater.DEFAULT_NAME_WETTER_XSECT_AREA_PREV
             ).getValue();
       hydraulicRadius = (ValueDouble)createDependency(
-            ResourceWater.NAME_HYDRAULIC_RADIUS
+            ResourceWater.DEFAULT_NAME_HYDR_RADIUS
             ).getValue();
       wettedWidth = (ValueDouble)createDependency(
-            ResourceWater.NAME_WETTED_WIDTH
+            ResourceWater.DEFAULT_NAME_WETTED_WIDTH
             ).getValue();
       bedSlope = (ValueDouble)createDependency(
-            ResourceWater.NAME_BED_SLOPE
+            ResourceWater.DEFAULT_NAME_BED_SLOPE
             ).getValue();
       hydraulicGradient = (ValueDouble)createDependency(
-            ResourceWater.NAME_HYDRAULIC_GRADIENT
+            ResourceWater.DEFAULT_NAME_HYDR_GRAD
             ).getValue();
       ValueDouble[] exponents = ResourceWater.getChezeyExponentValues(
             state.getParentHolon(), this);

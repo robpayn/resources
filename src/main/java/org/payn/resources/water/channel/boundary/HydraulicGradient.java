@@ -50,10 +50,10 @@ public class HydraulicGradient extends ProcessorDoubleTradeInit {
    public void setUpdateDependencies() throws Exception 
    {
       depth = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WATER_DEPTH
+            ResourceWater.DEFAULT_NAME_DEPTH
             );
       linkLength = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_LENGTH_BOUND
+            ResourceWater.DEFAULT_NAME_LENGTH_BOUND
             );
       
       HolonBoundary parentBoundary = (HolonBoundary)getState().getParentHolon();
@@ -62,11 +62,11 @@ public class HydraulicGradient extends ProcessorDoubleTradeInit {
 
       headLocal = (ValueDouble)createDependencyOnValue(
             cellLoc,
-            ResourceWater.NAME_WATER_HEAD
+            ResourceWater.DEFAULT_NAME_HEAD
             );
       headAdjacent = (ValueDouble)createDependencyOnValue(
             cellAdj,
-            ResourceWater.NAME_WATER_HEAD
+            ResourceWater.DEFAULT_NAME_HEAD
             );
    }
 

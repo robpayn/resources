@@ -53,30 +53,30 @@ public class LengthBound extends ProcessorDoubleInit {
       
       xLocal = (ValueDouble)createDependencyOnValue(
             cellLocal,
-            ResourceWater.NAME_COORDINATE_X
+            ResourceWater.DEFAULT_NAME_COORD_X
             );
       xAdjacent = (ValueDouble)createDependencyOnValue(
             cellAdj,
-            ResourceWater.NAME_COORDINATE_X
+            ResourceWater.DEFAULT_NAME_COORD_X
             );
       yLocal = (ValueDouble)createDependencyOnValue(
             cellLocal,
-            ResourceWater.NAME_COORDINATE_Y
+            ResourceWater.DEFAULT_NAME_COORD_Y
             );
       yAdjacent = (ValueDouble)createDependencyOnValue(
             cellAdj,
-            ResourceWater.NAME_COORDINATE_Y
+            ResourceWater.DEFAULT_NAME_COORD_Y
             );
 
       try
       {
          lengthLoc = (ValueDouble)createDependencyOnValue(
-               ResourceWater.NAME_LENGTH_LOCAL
+               ResourceWater.DEFAULT_NAME_LENGTH_LOCAL
                );
          try
          {
             lengthAdj = (ValueDouble)createDependencyOnValue(
-                  ResourceWater.NAME_LENGTH_ADJACENT
+                  ResourceWater.DEFAULT_NAME_LENGTH_ADJACENT
                   );
          }
          catch (Exception e)
@@ -92,7 +92,7 @@ public class LengthBound extends ProcessorDoubleInit {
          try
          {
             lengthAdj = (ValueDouble)createDependencyOnValue(
-                  ResourceWater.NAME_LENGTH_ADJACENT
+                  ResourceWater.DEFAULT_NAME_LENGTH_ADJACENT
                   );
             throw new Exception(String.format(
                   "Adjacent length is defined with local length in boundary %s.",

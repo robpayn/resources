@@ -63,25 +63,25 @@ public class WettedArea extends ProcessorDoubleStateInit {
    public void setUpdateDependencies() throws Exception 
    {
       volume = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WATER_VOLUME
+            ResourceWater.DEFAULT_NAME_VOLUME
             );
       head = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WATER_HEAD
+            ResourceWater.DEFAULT_NAME_HEAD
             );
       depth = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WATER_DEPTH
+            ResourceWater.DEFAULT_NAME_DEPTH
             );
       bankElevation = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_BANK_ELEVATION
+            ResourceWater.DEFAULT_NAME_BANK_ELEV
             );
       wettedAreaMax = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WETTED_AREA_MAX
+            ResourceWater.DEFAULT_NAME_WETTED_AREA_MAX
             );
       wettedAreaChange = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WETTED_AREA_CHANGE
+            ResourceWater.DEFAULT_NAME_WETTED_AREA_CHANGE
             );
       bottomArea = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_ACTIVE_CHANNEL_BOTTOM_AREA
+            ResourceWater.DEFAULT_NAME_ACTIVE_CHANNEL_BOTTOM_AREA
             );
    }
 

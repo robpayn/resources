@@ -58,22 +58,22 @@ public class Depth extends ProcessorDoubleStateInit {
    public void setUpdateDependencies() throws Exception 
    {
       volume = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WATER_VOLUME
+            ResourceWater.DEFAULT_NAME_VOLUME
             );
       bankElevation = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_BANK_ELEVATION
+            ResourceWater.DEFAULT_NAME_BANK_ELEV
             );
       bedElevation = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_BED_ELEVATION
+            ResourceWater.DEFAULT_NAME_BED_ELEV
             );
       wettedAreaChange = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WETTED_AREA_CHANGE
+            ResourceWater.DEFAULT_NAME_WETTED_AREA_CHANGE
             );
       wettedAreaMax = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WETTED_AREA_MAX
+            ResourceWater.DEFAULT_NAME_WETTED_AREA_MAX
             );
       bottomArea = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_ACTIVE_CHANNEL_BOTTOM_AREA
+            ResourceWater.DEFAULT_NAME_ACTIVE_CHANNEL_BOTTOM_AREA
             );
    }
 

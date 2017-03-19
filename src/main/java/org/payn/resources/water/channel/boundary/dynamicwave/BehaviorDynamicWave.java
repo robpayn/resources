@@ -16,19 +16,19 @@ public class BehaviorDynamicWave extends BehaviorChannelFlow {
    protected void addProcessors() 
    {
       super.addProcessors();
-      addProcessor(ResourceWater.NAME_WATER_FLOW, WaterFlow.class, ValueDouble.class);
-      addProcessor(ResourceWater.NAME_WETTED_XSECT_AREA, XSectAreaCurrent.class, ValueDouble.class);
-      addProcessor(ResourceWater.NAME_WETTER_XSECT_AREA_PREV, XSectAreaPrevious.class, ValueDouble.class);
-      addProcessor(ResourceWater.NAME_WATER_VELOCITY, Velocity.class, ValueDouble.class);
+      addProcessor(ResourceWater.DEFAULT_NAME_FLOW, WaterFlow.class, ValueDouble.class);
+      addProcessor(ResourceWater.DEFAULT_NAME_WETTED_XSECT_AREA, XSectAreaCurrent.class, ValueDouble.class);
+      addProcessor(ResourceWater.DEFAULT_NAME_WETTER_XSECT_AREA_PREV, XSectAreaPrevious.class, ValueDouble.class);
+      addProcessor(ResourceWater.DEFAULT_NAME_VELOCITY, Velocity.class, ValueDouble.class);
    }
 
    @Override
    protected void registerStates() 
    {
       addRequiredStatesChannelFlow();
-      registerState(ResourceWater.NAME_CHEZEY, ValueDouble.class);
-      registerState(ResourceWater.NAME_CHEZEY_EXPONENT_VELOCITY, ValueDouble.class);
-      registerState(ResourceWater.NAME_CHEZEY_EXPONENT_RADIUS, ValueDouble.class);
+      registerState(ResourceWater.DEFAULT_NAME_CHEZEY, ValueDouble.class);
+      registerState(ResourceWater.DEFAULT_NAME_CHEZEY_EXP_VELOCITY, ValueDouble.class);
+      registerState(ResourceWater.DEFAULT_NAME_CHEZEY_EXP_RADIUS, ValueDouble.class);
    }
    
 }

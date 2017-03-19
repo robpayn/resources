@@ -23,7 +23,7 @@ public class WettedWidthChange extends ProcessorDoubleInit {
       try
       {
          bankSlope = (ValueDouble)createDependencyOnValue(
-               ResourceWater.NAME_BANK_SLOPE
+               ResourceWater.DEFAULT_NAME_BANK_SLOPE
                );
       }
       catch (Exception e)

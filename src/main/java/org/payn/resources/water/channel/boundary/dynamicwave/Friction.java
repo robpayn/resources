@@ -44,13 +44,13 @@ public class Friction extends ProcessorDoubleTradeInit {
    public void setUpdateDependencies() throws Exception 
    {
       wieleInt = (ValueDouble)createDependency(
-            ResourceWater.NAME_WIELE_MODEL_INTERCEPT
+            ResourceWater.DEFAULT_NAME_WIELE_MODEL_INTERCEPT
             ).getValue();
       wieleSlope = (ValueDouble)createDependency(
-            ResourceWater.NAME_WIELE_MODEL_SLOPE
+            ResourceWater.DEFAULT_NAME_WIELE_MODEL_SLOPE
             ).getValue();
       hydraulicRadius = (ValueDouble)createDependency(
-            ResourceWater.NAME_HYDRAULIC_RADIUS
+            ResourceWater.DEFAULT_NAME_HYDR_RADIUS
             ).getValue();
    }
 

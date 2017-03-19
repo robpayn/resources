@@ -50,10 +50,10 @@ public class Velocity extends ProcessorDouble implements InitializerSimple, Upda
    {
       waterFlow = (ValueDouble)waterFlowProc.getState().getValue();
       xSectionArea = (ValueDouble)waterFlowProc.createDependency(
-            ResourceWater.NAME_WETTED_XSECT_AREA
+            ResourceWater.DEFAULT_NAME_WETTED_XSECT_AREA
             ).getValue();
       xSectionAreaPrev = (ValueDouble)waterFlowProc.createDependency(
-            ResourceWater.NAME_WETTER_XSECT_AREA_PREV
+            ResourceWater.DEFAULT_NAME_WETTER_XSECT_AREA_PREV
             ).getValue();
    }
 

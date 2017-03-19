@@ -28,7 +28,7 @@ public class WettedAreaChange extends ProcessorDoubleInit {
       try
       {
          bankSlope = (ValueDouble)createDependencyOnValue(
-               ResourceWater.NAME_BANK_SLOPE
+               ResourceWater.DEFAULT_NAME_BANK_SLOPE
                );
       }
       catch (Exception e)
@@ -37,7 +37,7 @@ public class WettedAreaChange extends ProcessorDoubleInit {
       }
       
       length = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_LENGTH
+            ResourceWater.DEFAULT_NAME_LENGTH
             );
    }
 

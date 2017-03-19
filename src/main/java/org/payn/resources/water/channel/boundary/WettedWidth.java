@@ -43,13 +43,13 @@ public class WettedWidth extends ProcessorDoubleTradeInit {
    public void setUpdateDependencies() throws Exception 
    {
       depth = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WATER_DEPTH
+            ResourceWater.DEFAULT_NAME_DEPTH
             );
       bottomWidth = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_ACTIVE_CHANNEL_BOTTOM_WIDTH
+            ResourceWater.DEFAULT_NAME_ACTIVE_CHANNEL_BOTTOM_WIDTH
             );
       wettedWidthChange = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WETTED_WIDTH_CHANGE
+            ResourceWater.DEFAULT_NAME_WETTED_WIDTH_CHANGE
             );
    }
 

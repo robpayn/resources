@@ -31,13 +31,13 @@ public class WettedAreaMax extends ProcessorDoubleInit {
    public void setInitDependencies() throws Exception 
    {
       activeWidthAvg = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_ACTIVE_CHANNEL_WIDTH_AVERAGE
+            ResourceWater.DEFAULT_NAME_ACTIVE_CHANNEL_WIDTH_AVG
             );
       bottomArea = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_ACTIVE_CHANNEL_BOTTOM_AREA
+            ResourceWater.DEFAULT_NAME_ACTIVE_CHANNEL_BOTTOM_AREA
             );
       length = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_LENGTH
+            ResourceWater.DEFAULT_NAME_LENGTH
             );
    }
 

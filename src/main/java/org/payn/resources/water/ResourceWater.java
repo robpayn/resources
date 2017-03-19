@@ -15,7 +15,7 @@ import org.payn.resources.water.channel.boundary.LengthBound;
 import org.payn.resources.water.channel.boundary.WettedWidth;
 import org.payn.resources.water.channel.boundary.WettedWidthChange;
 import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWave;
-import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorDynamicWaveWiele;
+import org.payn.resources.water.channel.boundary.dynamicwave.BehaviorWieleFriction;
 import org.payn.resources.water.channel.boundary.dynamicwave.Chezey;
 import org.payn.resources.water.channel.boundary.dynamicwave.Friction;
 import org.payn.resources.water.channel.boundary.dynamicwave.Velocity;
@@ -56,16 +56,6 @@ public class ResourceWater extends ResourceAbstract {
    public static final double CONSTANT_MAX_VELOCITY = 50.0;
    
    /**
-    * Name of state for water volume
-    */
-   public static final String NAME_WATER_VOLUME = WaterVolume.class.getSimpleName();
-
-   /**
-    * Name of state for water head
-    */
-   public static final String NAME_WATER_HEAD = WaterHead.class.getSimpleName();
-
-   /**
     * Name of behavior for the channel storage
     */
    public static final String BEHAVIOR_CHANNEL_STORAGE = "channel";
@@ -78,7 +68,7 @@ public class ResourceWater extends ResourceAbstract {
    /**
     * Name of behavior for dynamic wave routing with the Wiele model for variable friction
     */
-   public static final String BEHAVIOR_DYNAMIC_WAVE_WIELE = "dynamicwavewiele";
+   public static final String BEHAVIOR_WIELE_FRICTION = "wielefriction";
 
    /**
     * Name of the behavior for the downstream boundary condition of a dynamic wave channel
@@ -91,174 +81,184 @@ public class ResourceWater extends ResourceAbstract {
    public static final String BEHAVIOR_FLOW_INTERPOLATE = "flowinterpolate";
 
    /**
+    * Name of state for water volume
+    */
+   public static final String DEFAULT_NAME_VOLUME = WaterVolume.class.getSimpleName();
+
+   /**
+    * Name of state for water head
+    */
+   public static final String DEFAULT_NAME_HEAD = WaterHead.class.getSimpleName();
+
+   /**
     * Name of the state for water flow
     */
-   public static final String NAME_WATER_FLOW = WaterFlow.class.getSimpleName();
+   public static final String DEFAULT_NAME_FLOW = WaterFlow.class.getSimpleName();
 
    /**
     * Name of the state for the bed elevation
     */
-   public static final String NAME_BED_ELEVATION = BedElevation.class.getSimpleName();
+   public static final String DEFAULT_NAME_BED_ELEV = BedElevation.class.getSimpleName();
 
    /**
     * Name of the state for the depth of the channel flow
     */
-   public static final String NAME_WATER_DEPTH = Depth.class.getSimpleName();
+   public static final String DEFAULT_NAME_DEPTH = Depth.class.getSimpleName();
 
    /**
     * Name of the optional state for bank slope
     */
-   public static final String NAME_BANK_SLOPE = "BankSlope";
+   public static final String DEFAULT_NAME_BANK_SLOPE = "BankSlope";
 
    /**
     * Name of the state for the average width of the active channel
     */
-   public static final String NAME_ACTIVE_CHANNEL_WIDTH_AVERAGE = "ActiveWidthAverage";
+   public static final String DEFAULT_NAME_ACTIVE_CHANNEL_WIDTH_AVG = "ActiveWidthAverage";
 
    /**
     * X coordinate
     */
-   public static final String NAME_COORDINATE_X = "X";
+   public static final String DEFAULT_NAME_COORD_X = "X";
 
    /**
     * Y coordinate
     */
-   public static final String NAME_COORDINATE_Y = "Y";
+   public static final String DEFAULT_NAME_COORD_Y = "Y";
 
    /**
     * Name of the state for bank elevation
     */
-   public static final String NAME_BANK_ELEVATION = "BankElevation";
+   public static final String DEFAULT_NAME_BANK_ELEV = "BankElevation";
 
    /**
     * Name of the state for channel bottom area
     */
-   public static final String NAME_ACTIVE_CHANNEL_BOTTOM_AREA = BottomArea.class.getSimpleName();
+   public static final String DEFAULT_NAME_ACTIVE_CHANNEL_BOTTOM_AREA = BottomArea.class.getSimpleName();
 
    /**
     * Name of the state for change in wetted area with depth
     */
-   public static final String NAME_WETTED_AREA_CHANGE = WettedAreaChange.class.getSimpleName();
+   public static final String DEFAULT_NAME_WETTED_AREA_CHANGE = WettedAreaChange.class.getSimpleName();
 
    /**
     * Name of the state for the maximum wetted area
     */
-   public static final String NAME_WETTED_AREA_MAX = WettedAreaMax.class.getSimpleName();
+   public static final String DEFAULT_NAME_WETTED_AREA_MAX = WettedAreaMax.class.getSimpleName();
 
    /**
     * Name of the state for length
     */
-   public static final String NAME_LENGTH = "Length";
+   public static final String DEFAULT_NAME_LENGTH = "Length";
 
    /**
     * Name of the state for the wetted area
     */
-   public static final String NAME_WETTED_AREA = WettedArea.class.getSimpleName();
+   public static final String DEFAULT_NAME_WETTED_AREA = WettedArea.class.getSimpleName();
 
    /**
     * Name of the state for the hydraulic radius of the channel flow
     */
-   public static final String NAME_HYDRAULIC_RADIUS = HydraulicRadius.class.getSimpleName();
+   public static final String DEFAULT_NAME_HYDR_RADIUS = HydraulicRadius.class.getSimpleName();
 
    /**
     * Name of the state for the wetted with of channel flow
     */
-   public static final String NAME_WETTED_WIDTH = WettedWidth.class.getSimpleName();
+   public static final String DEFAULT_NAME_WETTED_WIDTH = WettedWidth.class.getSimpleName();
 
    /**
     * Name of the state for the fraction of the length between cells
     */
-   public static final String NAME_LENGTH_FRACTION = LengthFraction.class.getSimpleName();
+   public static final String DEFUALT_NAME_LENGTH_FRACTION = LengthFraction.class.getSimpleName();
 
    /**
     * Name of the state for the width of the bottom of the channel
     */
-   public static final String NAME_ACTIVE_CHANNEL_BOTTOM_WIDTH = BottomWidth.class.getSimpleName();
+   public static final String DEFAULT_NAME_ACTIVE_CHANNEL_BOTTOM_WIDTH = BottomWidth.class.getSimpleName();
 
    /**
     * Name of the state for the change in the wetted width with depth
     */
-   public static final String NAME_WETTED_WIDTH_CHANGE = WettedWidthChange.class.getSimpleName();
+   public static final String DEFAULT_NAME_WETTED_WIDTH_CHANGE = WettedWidthChange.class.getSimpleName();
 
    /**
     * Name of optional state for specifying the length within the associated cell
     */
-   public static final String NAME_LENGTH_LOCAL = "LengthLoc";
+   public static final String DEFAULT_NAME_LENGTH_LOCAL = "LengthLoc";
 
    /**
     * Name of the optional state for specifying the length within the adjacent cell
     */
-   public static final String NAME_LENGTH_ADJACENT = "LengthAdj";
+   public static final String DEFAULT_NAME_LENGTH_ADJACENT = "LengthAdj";
 
    /**
     * Name of the state for the depth of the active channel
     */
-   public static final String NAME_ACTIVE_CHANNEL_DEPTH = "ActiveDepth";
+   public static final String DEFAULT_NAME_ACTIVE_CHANNEL_DEPTH = "ActiveDepth";
 
    /**
     * Name of the state for the bed slope
     */
-   public static final String NAME_BED_SLOPE = BedSlope.class.getSimpleName();
+   public static final String DEFAULT_NAME_BED_SLOPE = BedSlope.class.getSimpleName();
 
    /**
     * Name of the state for hydraulic gradient
     */
-   public static final String NAME_HYDRAULIC_GRADIENT = HydraulicGradient.class.getSimpleName();
+   public static final String DEFAULT_NAME_HYDR_GRAD = HydraulicGradient.class.getSimpleName();
 
    /**
     * Name of the state for the boundary length between cell centroids
     */
-   public static final String NAME_LENGTH_BOUND = LengthBound.class.getSimpleName();
+   public static final String DEFAULT_NAME_LENGTH_BOUND = LengthBound.class.getSimpleName();
 
    /**
     * Name of the state for cross-sectional area of channel flow
     */
-   public static final String NAME_WETTED_XSECT_AREA = XSectAreaCurrent.class.getSimpleName();
+   public static final String DEFAULT_NAME_WETTED_XSECT_AREA = XSectAreaCurrent.class.getSimpleName();
 
    /**
     * Name of the state for the previous cross-sectional area
     */
-   public static final String NAME_WETTER_XSECT_AREA_PREV = XSectAreaPrevious.class.getSimpleName();
+   public static final String DEFAULT_NAME_WETTER_XSECT_AREA_PREV = XSectAreaPrevious.class.getSimpleName();
 
    /**
     * Name of the state for velocity
     */
-   public static final String NAME_WATER_VELOCITY = Velocity.class.getSimpleName();
+   public static final String DEFAULT_NAME_VELOCITY = Velocity.class.getSimpleName();
 
    /**
     * Name of the state for the Chezey coefficient
     */
-   public static final String NAME_CHEZEY = Chezey.class.getSimpleName();
+   public static final String DEFAULT_NAME_CHEZEY = Chezey.class.getSimpleName();
 
    /**
     * Name of the state for the velocity exponent
     */
-   public static final String NAME_CHEZEY_EXPONENT_VELOCITY = "VelocityExp";
+   public static final String DEFAULT_NAME_CHEZEY_EXP_VELOCITY = "VelocityExp";
 
    /**
     * Name of the state for the radius exponent
     */
-   public static final String NAME_CHEZEY_EXPONENT_RADIUS = "RadiusExp";
+   public static final String DEFAULT_NAME_CHEZEY_EXP_RADIUS = "RadiusExp";
 
    /**
     * Name of the state for the friction factor
     */
-   public static final String NAME_FRICTION_FACTOR = Friction.class.getSimpleName();
+   public static final String DEFAULT_NAME_FRICTION_FACTOR = Friction.class.getSimpleName();
 
    /**
     * Name of required state for the Wiele model intercept
     */
-   public static final String NAME_WIELE_MODEL_INTERCEPT = "WieleInt";
+   public static final String DEFAULT_NAME_WIELE_MODEL_INTERCEPT = "WieleInt";
 
    /**
     * Name of the required state for the Wiele model slope
     */
-   public static final String NAME_WIELE_MODEL_SLOPE = "WieleSlope";
+   public static final String DEFAULT_NAME_WIELE_MODEL_SLOPE = "WieleSlope";
 
    /**
     * Name for the upstream boundary name
     */
-   public static final String NAME_UPSTREAM_BOUNDARY_NAME = "UpstreamBoundaryName";
+   public static final String DEFAULT_NAME_UPSTREAM_BOUNDARY_NAME = "UpstreamBoundaryName";
 
    /**
     * Get the Euclidian distance on a two-dimensional plane
@@ -301,13 +301,13 @@ public class ResourceWater extends ResourceAbstract {
       {
          exponents[0] = (ValueDouble)processor.createDependencyOnValue(
                holon,
-               NAME_CHEZEY_EXPONENT_VELOCITY
+               DEFAULT_NAME_CHEZEY_EXP_VELOCITY
                );
          try
          {
             exponents[1] = (ValueDouble)processor.createDependencyOnValue(
                   holon,
-                  NAME_CHEZEY_EXPONENT_RADIUS
+                  DEFAULT_NAME_CHEZEY_EXP_RADIUS
                   );
          }
          catch (Exception e)
@@ -324,7 +324,7 @@ public class ResourceWater extends ResourceAbstract {
          {
             exponents[1] = (ValueDouble)processor.createDependencyOnValue(
                   holon,
-                  NAME_CHEZEY_EXPONENT_RADIUS
+                  DEFAULT_NAME_CHEZEY_EXP_RADIUS
                   );
             throw new Exception(String.format(
                   "Radius exponent provided but velocity exponent not available in boundary %s", 
@@ -345,7 +345,7 @@ public class ResourceWater extends ResourceAbstract {
    {
       addBehavior(BEHAVIOR_CHANNEL_STORAGE, BehaviorChannelStorage.class.getCanonicalName());
       addBehavior(BEHAVIOR_DYNAMIC_WAVE, BehaviorDynamicWave.class.getCanonicalName());
-      addBehavior(BEHAVIOR_DYNAMIC_WAVE_WIELE, BehaviorDynamicWaveWiele.class.getCanonicalName());
+      addBehavior(BEHAVIOR_WIELE_FRICTION, BehaviorWieleFriction.class.getCanonicalName());
       addBehavior(BEHAVIOR_FLOW_INTERPOLATE, BehaviorFlowInterpolate.class.getCanonicalName());
       addBehavior(BEHAVIOR_DYNAMIC_WAVE_DOWNSTREAM, BehaviorDynamicWaveDownstream.class.getCanonicalName());
    }

@@ -33,7 +33,7 @@ public class BedSlope extends ProcessorDoubleInit {
    public void setInitDependencies() throws Exception 
    {
       linkLength = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_LENGTH_BOUND
+            ResourceWater.DEFAULT_NAME_LENGTH_BOUND
             );
 
       HolonBoundary parentBoundary = (HolonBoundary)getState().getParentHolon();
@@ -42,11 +42,11 @@ public class BedSlope extends ProcessorDoubleInit {
       
       cellElevationLoc = (ValueDouble)createDependencyOnValue(
             cellLoc,
-            ResourceWater.NAME_BED_ELEVATION
+            ResourceWater.DEFAULT_NAME_BED_ELEV
             );
       cellElevationAdj = (ValueDouble)createDependencyOnValue(
             cellAdj,
-            ResourceWater.NAME_BED_ELEVATION
+            ResourceWater.DEFAULT_NAME_BED_ELEV
             );
    }
 

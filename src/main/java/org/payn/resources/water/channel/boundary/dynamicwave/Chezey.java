@@ -43,10 +43,10 @@ public class Chezey extends ProcessorDoubleTradeInit {
    public void setUpdateDependencies() throws Exception 
    {
       friction = (ValueDouble)createDependency(
-            ResourceWater.NAME_FRICTION_FACTOR
+            ResourceWater.DEFAULT_NAME_FRICTION_FACTOR
             ).getValue();
       hydraulicRadius = (ValueDouble)createDependency(
-            ResourceWater.NAME_HYDRAULIC_RADIUS
+            ResourceWater.DEFAULT_NAME_HYDR_RADIUS
             ).getValue();
    }
 

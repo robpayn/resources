@@ -28,12 +28,12 @@ public class LengthFraction extends ProcessorDoubleInit {
       try
       {
          lengthLoc = (ValueDouble)createDependencyOnValue(
-               ResourceWater.NAME_LENGTH_LOCAL
+               ResourceWater.DEFAULT_NAME_LENGTH_LOCAL
                );
          try
          {
             lengthAdj = (ValueDouble)createDependencyOnValue(
-                  ResourceWater.NAME_LENGTH_ADJACENT
+                  ResourceWater.DEFAULT_NAME_LENGTH_ADJACENT
                   );
          }
          catch (Exception e)
@@ -49,7 +49,7 @@ public class LengthFraction extends ProcessorDoubleInit {
          try
          {
             lengthAdj = (ValueDouble)createDependencyOnValue(
-                  ResourceWater.NAME_LENGTH_ADJACENT
+                  ResourceWater.DEFAULT_NAME_LENGTH_ADJACENT
                   );
             throw new Exception(String.format(
                   "Adjacent length is defined with local length in boundary %s.",

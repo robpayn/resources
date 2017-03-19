@@ -31,17 +31,17 @@ public class BottomWidth extends ProcessorDoubleInit {
    public void setInitDependencies() throws Exception 
    {
       activeWidthAvg = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_ACTIVE_CHANNEL_WIDTH_AVERAGE
+            ResourceWater.DEFAULT_NAME_ACTIVE_CHANNEL_WIDTH_AVG
             );
       try
       {
          bankSlope = (ValueDouble)createDependencyOnValue(
-               ResourceWater.NAME_BANK_SLOPE
+               ResourceWater.DEFAULT_NAME_BANK_SLOPE
                );
          try
          {
             activeDepth = (ValueDouble)createDependencyOnValue(
-                  ResourceWater.NAME_ACTIVE_CHANNEL_DEPTH
+                  ResourceWater.DEFAULT_NAME_ACTIVE_CHANNEL_DEPTH
                   );
          }
          catch (Exception e)
@@ -57,7 +57,7 @@ public class BottomWidth extends ProcessorDoubleInit {
          try
          {
             activeDepth = (ValueDouble)createDependencyOnValue(
-                  ResourceWater.NAME_ACTIVE_CHANNEL_DEPTH
+                  ResourceWater.DEFAULT_NAME_ACTIVE_CHANNEL_DEPTH
                   );
             throw new Exception(String.format(
                   "Active depth provided without a bank slope in boundary %s", 

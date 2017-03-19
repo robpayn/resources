@@ -34,7 +34,7 @@ public class BedElevation extends ProcessorDoubleInit {
    public void setInitDependencies() throws Exception 
    {
       lengthFraction = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_LENGTH_FRACTION
+            ResourceWater.DEFUALT_NAME_LENGTH_FRACTION
             );
 
       HolonBoundary parentBoundary = (HolonBoundary)getState().getParentHolon();
@@ -43,11 +43,11 @@ public class BedElevation extends ProcessorDoubleInit {
       
       cellElevationLocState = createDependency(
             cell,
-            ResourceWater.NAME_BED_ELEVATION
+            ResourceWater.DEFAULT_NAME_BED_ELEV
             );
       cellElevationAdjState = createDependency(
             cellAdj,
-            ResourceWater.NAME_BED_ELEVATION
+            ResourceWater.DEFAULT_NAME_BED_ELEV
             );
    }
 

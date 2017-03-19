@@ -71,7 +71,7 @@ public class WaterFlow extends ProcessorDoubleLoadInit {
       HolonBoundary thisBoundary = 
             ((HolonBoundary)state.getParentHolon());
       ValueString upstreamBoundaryName = (ValueString)createDependencyOnValue(
-            ResourceWater.NAME_UPSTREAM_BOUNDARY_NAME
+            ResourceWater.DEFAULT_NAME_UPSTREAM_BOUNDARY_NAME
             );
       HolonBoundary upstreamBoundary = thisBoundary.getCell().getBoundary(
             upstreamBoundaryName.string
@@ -79,15 +79,15 @@ public class WaterFlow extends ProcessorDoubleLoadInit {
 
       hydraulicGradient = (ValueDouble)createDependencyOnValue(
             upstreamBoundary,
-            ResourceWater.NAME_HYDRAULIC_GRADIENT
+            ResourceWater.DEFAULT_NAME_HYDR_GRAD
             );
       xSectionArea = (ValueDouble)createDependencyOnValue(
             upstreamBoundary,
-            ResourceWater.NAME_WETTED_XSECT_AREA
+            ResourceWater.DEFAULT_NAME_WETTED_XSECT_AREA
             );
       hydraulicRadius = (ValueDouble)createDependencyOnValue(
             upstreamBoundary,
-            ResourceWater.NAME_HYDRAULIC_RADIUS
+            ResourceWater.DEFAULT_NAME_HYDR_RADIUS
             );
 
       // Get bed slope and Chezey coefficient from this boundary
@@ -95,27 +95,27 @@ public class WaterFlow extends ProcessorDoubleLoadInit {
       try 
       {
          bedSlope = (ValueDouble)createDependencyOnValue(
-               ResourceWater.NAME_BED_SLOPE
+               ResourceWater.DEFAULT_NAME_BED_SLOPE
                );
       }
       catch (Exception e)
       {
          bedSlope = (ValueDouble)createDependencyOnValue(
                upstreamBoundary,
-               ResourceWater.NAME_BED_SLOPE
+               ResourceWater.DEFAULT_NAME_BED_SLOPE
                );
       }
       try 
       {
          chezey = (ValueDouble)createDependencyOnValue(
-               ResourceWater.NAME_CHEZEY
+               ResourceWater.DEFAULT_NAME_CHEZEY
                );
       }
       catch (Exception e)
       {
          chezey = (ValueDouble)createDependencyOnValue(
                upstreamBoundary,
-               ResourceWater.NAME_CHEZEY
+               ResourceWater.DEFAULT_NAME_CHEZEY
                );
       }
       

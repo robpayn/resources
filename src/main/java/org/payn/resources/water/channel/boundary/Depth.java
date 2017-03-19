@@ -70,10 +70,10 @@ public class Depth extends ProcessorDoubleTradeInit {
    public void setUpdateDependencies() throws Exception 
    {
       lengthFraction = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_LENGTH_FRACTION
+            ResourceWater.DEFUALT_NAME_LENGTH_FRACTION
             );
       bedElevation = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_BED_ELEVATION
+            ResourceWater.DEFAULT_NAME_BED_ELEV
             );
       
       HolonBoundary parentBoundary = (HolonBoundary)getState().getParentHolon();
@@ -82,29 +82,29 @@ public class Depth extends ProcessorDoubleTradeInit {
       
       cellVolumeLoc = (ValueDouble)createDependencyOnValue(
             cell,
-            ResourceWater.NAME_WATER_VOLUME
+            ResourceWater.DEFAULT_NAME_VOLUME
             );
       cellVolumeAdj = (ValueDouble)createDependencyOnValue(
             cellAdj,
-            ResourceWater.NAME_WATER_VOLUME
+            ResourceWater.DEFAULT_NAME_VOLUME
             );
       
       cellHeadLoc = (ValueDouble)createDependencyOnValue(
             cell,
-            ResourceWater.NAME_WATER_HEAD
+            ResourceWater.DEFAULT_NAME_HEAD
             );
       cellHeadAdj = (ValueDouble)createDependencyOnValue(
             cellAdj,
-            ResourceWater.NAME_WATER_HEAD
+            ResourceWater.DEFAULT_NAME_HEAD
             );
       
       cellDepthLoc = (ValueDouble)createDependencyOnValue(
             cell,
-            ResourceWater.NAME_WATER_DEPTH
+            ResourceWater.DEFAULT_NAME_DEPTH
             );
       cellDepthAdj = (ValueDouble)createDependencyOnValue(
             cellAdj,
-            ResourceWater.NAME_WATER_DEPTH
+            ResourceWater.DEFAULT_NAME_DEPTH
             );
    }
 

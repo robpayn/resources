@@ -31,13 +31,13 @@ public class WaterHead extends ProcessorDoubleStateInitRequired  {
    public void setUpdateDependencies() throws Exception 
    {
       volume = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WATER_VOLUME
+            ResourceWater.DEFAULT_NAME_VOLUME
             );
       bedElevation = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_BED_ELEVATION
+            ResourceWater.DEFAULT_NAME_BED_ELEV
             );
       depth = (ValueDouble)createDependencyOnValue(
-            ResourceWater.NAME_WATER_DEPTH
+            ResourceWater.DEFAULT_NAME_DEPTH
             );
    }
 

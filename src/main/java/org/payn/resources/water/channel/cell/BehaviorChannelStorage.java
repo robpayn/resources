@@ -17,24 +17,24 @@ public class BehaviorChannelStorage extends BehaviorAbstract {
    @Override
    protected void addProcessors() 
    {
-      addProcessor(ResourceWater.NAME_WATER_VOLUME, WaterVolume.class, WaterVolume.getValueClass());
-      addProcessor(ResourceWater.NAME_WATER_HEAD, WaterHead.class, WaterHead.getValueClass());
-      addProcessor(ResourceWater.NAME_WATER_DEPTH, Depth.class, Depth.getValueClass());
-      addProcessor(ResourceWater.NAME_ACTIVE_CHANNEL_BOTTOM_AREA, BottomArea.class, BottomArea.getValueClass());
-      addProcessor(ResourceWater.NAME_WETTED_AREA, WettedArea.class, WettedArea.getValueClass());
-      addProcessor(ResourceWater.NAME_WETTED_AREA_CHANGE, WettedAreaChange.class, WettedAreaChange.getValueClass());
-      addProcessor(ResourceWater.NAME_WETTED_AREA_MAX, WettedAreaMax.class, WettedAreaMax.getValueClass());
+      addProcessor(ResourceWater.DEFAULT_NAME_VOLUME, WaterVolume.class, WaterVolume.getValueClass());
+      addProcessor(ResourceWater.DEFAULT_NAME_HEAD, WaterHead.class, WaterHead.getValueClass());
+      addProcessor(ResourceWater.DEFAULT_NAME_DEPTH, Depth.class, Depth.getValueClass());
+      addProcessor(ResourceWater.DEFAULT_NAME_ACTIVE_CHANNEL_BOTTOM_AREA, BottomArea.class, BottomArea.getValueClass());
+      addProcessor(ResourceWater.DEFAULT_NAME_WETTED_AREA, WettedArea.class, WettedArea.getValueClass());
+      addProcessor(ResourceWater.DEFAULT_NAME_WETTED_AREA_CHANGE, WettedAreaChange.class, WettedAreaChange.getValueClass());
+      addProcessor(ResourceWater.DEFAULT_NAME_WETTED_AREA_MAX, WettedAreaMax.class, WettedAreaMax.getValueClass());
    }
 
    @Override
    protected void registerStates() 
    {
-      registerState(ResourceWater.NAME_COORDINATE_X, ValueDouble.class);
-      registerState(ResourceWater.NAME_COORDINATE_Y, ValueDouble.class);
-      registerState(ResourceWater.NAME_BED_ELEVATION, ValueDouble.class);
-      registerState(ResourceWater.NAME_BANK_ELEVATION, ValueDouble.class);
-      registerState(ResourceWater.NAME_LENGTH, ValueDouble.class);
-      registerState(ResourceWater.NAME_ACTIVE_CHANNEL_WIDTH_AVERAGE, ValueDouble.class);
+      registerState(ResourceWater.DEFAULT_NAME_COORD_X, ValueDouble.class);
+      registerState(ResourceWater.DEFAULT_NAME_COORD_Y, ValueDouble.class);
+      registerState(ResourceWater.DEFAULT_NAME_BED_ELEV, ValueDouble.class);
+      registerState(ResourceWater.DEFAULT_NAME_BANK_ELEV, ValueDouble.class);
+      registerState(ResourceWater.DEFAULT_NAME_LENGTH, ValueDouble.class);
+      registerState(ResourceWater.DEFAULT_NAME_ACTIVE_CHANNEL_WIDTH_AVG, ValueDouble.class);
       registerState(InitialConditionTable.NAME_INITIAL_CONDITION_PATH, ValueString.class);
       registerState(InitialConditionTable.NAME_INITIAL_CONDITION_DELIMITER, ValueString.class);
    }

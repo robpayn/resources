@@ -4,6 +4,7 @@ import org.payn.chsm.ResourceAbstract;
 import org.payn.resources.solute.boundary.BehaviorSoluteActiveMM;
 import org.payn.resources.solute.boundary.BehaviorSoluteBoundInject;
 import org.payn.resources.solute.boundary.BehaviorSoluteBoundInterp;
+import org.payn.resources.solute.boundary.BehaviorSoluteConcInterp;
 import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
 import org.payn.resources.solute.boundary.BehaviorSoluteFlowBound;
 import org.payn.resources.solute.cell.BehaviorSoluteStorage;
@@ -145,6 +146,11 @@ public class ResourceSolute extends ResourceAbstract {
     * Name of Michaelis Menten uptake behavior
     */
    public static final String BEHAVIOR_ACTIVEMM = "activemm";
+   
+   /**
+    * Behavior for interpolating concentration from a file
+    */
+   public static final String BEHAVIOR_CONC_INTERP = "concinterp";
 
 
    @Override
@@ -173,6 +179,10 @@ public class ResourceSolute extends ResourceAbstract {
       addBehavior(
             BEHAVIOR_ACTIVEMM, 
             BehaviorSoluteActiveMM.class.getCanonicalName()
+            );
+      addBehavior(
+            BEHAVIOR_CONC_INTERP,
+            BehaviorSoluteConcInterp.class.getCanonicalName()
             );
    }
 

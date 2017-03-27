@@ -2,6 +2,7 @@ package org.payn.resources.solute;
 
 import org.payn.chsm.ResourceAbstract;
 import org.payn.resources.solute.boundary.BehaviorSoluteActiveMM;
+import org.payn.resources.solute.boundary.BehaviorSoluteAdvection;
 import org.payn.resources.solute.boundary.BehaviorSoluteBoundInject;
 import org.payn.resources.solute.boundary.BehaviorSoluteBoundInterp;
 import org.payn.resources.solute.boundary.BehaviorSoluteConcInterp;
@@ -152,6 +153,11 @@ public class ResourceSolute extends ResourceAbstract {
     */
    public static final String BEHAVIOR_CONC_INTERP = "concinterp";
 
+   /**
+    * Behavior for advection
+    */
+   public static final String BEHAVIOR_ADVECT = "advection";
+
 
    @Override
    public void addBehaviors() 
@@ -183,6 +189,10 @@ public class ResourceSolute extends ResourceAbstract {
       addBehavior(
             BEHAVIOR_CONC_INTERP,
             BehaviorSoluteConcInterp.class.getCanonicalName()
+            );
+      addBehavior(
+            BEHAVIOR_ADVECT,
+            BehaviorSoluteAdvection.class.getCanonicalName()
             );
    }
 

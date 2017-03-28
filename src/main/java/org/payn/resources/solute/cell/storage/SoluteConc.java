@@ -1,7 +1,7 @@
 package org.payn.resources.solute.cell.storage;
 
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.processors.ProcessorDoubleState;
+import org.payn.neoch.processors.ProcessorDoubleStateInitRequired;
 import org.payn.resources.solute.ResourceSolute;
 
 /**
@@ -10,7 +10,7 @@ import org.payn.resources.solute.ResourceSolute;
  * @author v78h241
  *
  */
-public class SoluteConc extends ProcessorDoubleState {
+public class SoluteConc extends ProcessorDoubleStateInitRequired {
 
    /**
     * Water volume value

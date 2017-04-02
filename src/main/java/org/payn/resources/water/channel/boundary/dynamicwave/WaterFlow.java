@@ -112,7 +112,8 @@ public class WaterFlow extends ProcessorDoubleLoadSymmetricInitRequired {
    @Override
    public void setUpdateDependenciesLoad() throws Exception 
    {
-      timeStep = (ValueDouble)((Holon)controller.getState()).getState(
+      timeStep = (ValueDouble)getState(
+            (Holon)controller.getState(),
             BehaviorTime.ITERATION_INTERVAL
             ).getValue();
       State velocityState = createDependency(
@@ -128,7 +129,7 @@ public class WaterFlow extends ProcessorDoubleLoadSymmetricInitRequired {
             ResourceWater.DEFAULT_NAME_WETTED_XSECT_AREA
             ).getValue();
       xSectionAreaPrev = (ValueDouble)createDependency(
-            ResourceWater.DEFAULT_NAME_WETTER_XSECT_AREA_PREV
+            ResourceWater.DEFAULT_NAME_WETTED_XSECT_AREA_PREV
             ).getValue();
       hydraulicRadius = (ValueDouble)createDependency(
             ResourceWater.DEFAULT_NAME_HYDR_RADIUS

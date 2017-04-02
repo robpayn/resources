@@ -46,7 +46,8 @@ public abstract class SoluteConcChange extends ProcessorDoubleLoad {
       HolonCell holon = (HolonCell)getState().getParentHolon();
       for (HolonBoundary boundary: holon.getBoundaryMap().values())
       {
-         ValueDouble flow = (ValueDouble)boundary.getState(
+         ValueDouble flow = (ValueDouble)getState(
+               boundary,
                ResourceSolute.NAME_WATER_FLOW
                ).getValue();
          if (flow.n > 0)

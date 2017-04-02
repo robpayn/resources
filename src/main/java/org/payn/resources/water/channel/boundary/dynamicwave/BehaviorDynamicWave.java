@@ -18,7 +18,7 @@ public class BehaviorDynamicWave extends BehaviorChannelFlow {
       super.addProcessors();
       addProcessor(ResourceWater.DEFAULT_NAME_FLOW, WaterFlow.class, ValueDouble.class);
       addProcessor(ResourceWater.DEFAULT_NAME_WETTED_XSECT_AREA, XSectAreaCurrent.class, ValueDouble.class);
-      addProcessor(ResourceWater.DEFAULT_NAME_WETTER_XSECT_AREA_PREV, XSectAreaPrevious.class, ValueDouble.class);
+      addProcessor(ResourceWater.DEFAULT_NAME_WETTED_XSECT_AREA_PREV, XSectAreaPrevious.class, ValueDouble.class);
       addProcessor(ResourceWater.DEFAULT_NAME_VELOCITY, Velocity.class, ValueDouble.class);
    }
 

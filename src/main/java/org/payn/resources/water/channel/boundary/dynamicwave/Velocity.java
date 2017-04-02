@@ -53,7 +53,7 @@ public class Velocity extends ProcessorDouble implements InitializerSimple, Upda
             ResourceWater.DEFAULT_NAME_WETTED_XSECT_AREA
             ).getValue();
       xSectionAreaPrev = (ValueDouble)waterFlowProc.createDependency(
-            ResourceWater.DEFAULT_NAME_WETTER_XSECT_AREA_PREV
+            ResourceWater.DEFAULT_NAME_WETTED_XSECT_AREA_PREV
             ).getValue();
    }
 

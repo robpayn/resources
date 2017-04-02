@@ -58,8 +58,8 @@ public class XSectAreaCurrent extends ProcessorDoubleTradeInit {
       wettedWidthChange = (ValueDouble)createDependency(
             ResourceWater.DEFAULT_NAME_WETTED_WIDTH_CHANGE
             ).getValue();
-      xSectionAreaPreviousProc = (XSectAreaPrevious)getState().getParentHolon().getState(
-            ResourceWater.DEFAULT_NAME_WETTER_XSECT_AREA_PREV
+      xSectionAreaPreviousProc = (XSectAreaPrevious)getState(
+            ResourceWater.DEFAULT_NAME_WETTED_XSECT_AREA_PREV
             ).getProcessor();
       xSectionAreaPreviousProc.setDependencies(this);
    }

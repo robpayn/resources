@@ -31,6 +31,7 @@ import org.payn.resources.water.channel.cell.WaterVolume;
 import org.payn.resources.water.channel.cell.WettedArea;
 import org.payn.resources.water.channel.cell.WettedAreaChange;
 import org.payn.resources.water.channel.cell.WettedAreaMax;
+import org.payn.resources.water.channel.temperature.BehaviorReachAvgTemperature;
 
 /**
  * Controls behaviors for the water currency
@@ -79,6 +80,11 @@ public class ResourceWater extends ResourceAbstract {
     * Behavior flow flow interpolation at boundary
     */
    public static final String BEHAVIOR_FLOW_INTERPOLATE = "flowinterpolate";
+
+   /**
+    * Behavior for reach average temperature
+    */
+   public static final String BEHAVIOR_REACH_AVG_TEMP = "reachavgtemperature";
 
    /**
     * Name of state for water volume
@@ -218,7 +224,7 @@ public class ResourceWater extends ResourceAbstract {
    /**
     * Name of the state for the previous cross-sectional area
     */
-   public static final String DEFAULT_NAME_WETTER_XSECT_AREA_PREV = XSectAreaPrevious.class.getSimpleName();
+   public static final String DEFAULT_NAME_WETTED_XSECT_AREA_PREV = XSectAreaPrevious.class.getSimpleName();
 
    /**
     * Name of the state for velocity
@@ -259,6 +265,21 @@ public class ResourceWater extends ResourceAbstract {
     * Name for the upstream boundary name
     */
    public static final String DEFAULT_NAME_UPSTREAM_BOUNDARY_NAME = "UpstreamBoundaryName";
+
+   /**
+    * Name for upstream temperature
+    */
+   public static final String DEFAULT_NAME_UPSTREAM_TEMP = "UpstreamTemperature";
+
+   /**
+    * Name for downstream temperature
+    */
+   public static final String DEFAULT_NAME_DOWNSTREAM_TEMP = "DownstreamTemperature";
+
+   /**
+    * Name for the flow header in an interpolation file
+    */
+   public static final String DEFAULT_NAME_FLOW_HEADER = "FlowHeader";
 
    /**
     * Get the Euclidian distance on a two-dimensional plane
@@ -343,11 +364,30 @@ public class ResourceWater extends ResourceAbstract {
    @Override
    public void addBehaviors()
    {
-      addBehavior(BEHAVIOR_CHANNEL_STORAGE, BehaviorChannelStorage.class.getCanonicalName());
-      addBehavior(BEHAVIOR_DYNAMIC_WAVE, BehaviorDynamicWave.class.getCanonicalName());
-      addBehavior(BEHAVIOR_WIELE_FRICTION, BehaviorWieleFriction.class.getCanonicalName());
-      addBehavior(BEHAVIOR_FLOW_INTERPOLATE, BehaviorFlowInterpolate.class.getCanonicalName());
-      addBehavior(BEHAVIOR_DYNAMIC_WAVE_DOWNSTREAM, BehaviorDynamicWaveDownstream.class.getCanonicalName());
+      addBehavior(
+            BEHAVIOR_CHANNEL_STORAGE, 
+            BehaviorChannelStorage.class.getCanonicalName()
+            );
+      addBehavior(
+            BEHAVIOR_DYNAMIC_WAVE, 
+            BehaviorDynamicWave.class.getCanonicalName()
+            );
+      addBehavior(
+            BEHAVIOR_WIELE_FRICTION, 
+            BehaviorWieleFriction.class.getCanonicalName()
+            );
+      addBehavior(
+            BEHAVIOR_FLOW_INTERPOLATE, 
+            BehaviorFlowInterpolate.class.getCanonicalName()
+            );
+      addBehavior(
+            BEHAVIOR_DYNAMIC_WAVE_DOWNSTREAM, 
+            BehaviorDynamicWaveDownstream.class.getCanonicalName()
+            );
+      addBehavior(
+            BEHAVIOR_REACH_AVG_TEMP,
+            BehaviorReachAvgTemperature.class.getCanonicalName()
+            );
    }
 
 }

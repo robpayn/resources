@@ -2,7 +2,9 @@ package org.payn.resources.water.channel.boundary.flowinterpolate;
 
 import org.payn.chsm.io.interpolate.Interpolator;
 import org.payn.chsm.io.interpolate.InterpolatorSnapshotTable;
+import org.payn.chsm.values.ValueString;
 import org.payn.neoch.processors.ProcessorDoubleLoadInit;
+import org.payn.resources.water.ResourceWater;
 
 /**
  * Calculates the water flow at an input boundary by interpolating from
@@ -21,7 +23,13 @@ public class WaterFlow extends ProcessorDoubleLoadInit {
    @Override
    public void setInitDependencies() throws Exception 
    {
-      interp = InterpolatorSnapshotTable.getInterpolatorInstance(this);
+      ValueString header = (ValueString)createDependency(
+            ResourceWater.DEFAULT_NAME_FLOW_HEADER
+            ).getValue();
+      interp = InterpolatorSnapshotTable.getInterpolatorInstance(
+            this,
+            header.string
+            );
    }
 
    @Override

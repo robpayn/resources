@@ -22,6 +22,10 @@ public class BehaviorSoluteConcInterp extends BehaviorAbstract {
             ValueString.class
             );
       registerStateAbstract(
+            InterpolatorSnapshotTable.DEFAULT_NAME_HEADER,
+            ValueString.class
+            );
+      registerStateAbstract(
             InterpolatorSnapshotTable.NAME_PATH, 
             ValueString.class
             );

@@ -32,6 +32,7 @@ import org.payn.resources.water.channel.cell.WettedArea;
 import org.payn.resources.water.channel.cell.WettedAreaChange;
 import org.payn.resources.water.channel.cell.WettedAreaMax;
 import org.payn.resources.water.channel.temperature.BehaviorReachAvgTemperature;
+import org.payn.resources.water.channel.temperature.BehaviorReachAvgTemperatureBound;
 
 /**
  * Controls behaviors for the water currency
@@ -82,7 +83,12 @@ public class ResourceWater extends ResourceAbstract {
    public static final String BEHAVIOR_FLOW_INTERPOLATE = "flowinterpolate";
 
    /**
-    * Behavior for reach average temperature
+    * Behavior for calculating reach average temperature
+    */
+   public static final String BEHAVIOR_REACH_AVG_TEMP_BOUND = "reachavgtemperaturebound";
+   
+   /**
+    * Behavior for translating reach average temperature to cells
     */
    public static final String BEHAVIOR_REACH_AVG_TEMP = "reachavgtemperature";
 
@@ -277,9 +283,19 @@ public class ResourceWater extends ResourceAbstract {
    public static final String DEFAULT_NAME_DOWNSTREAM_TEMP = "DownstreamTemperature";
 
    /**
-    * Name for the flow header in an interpolation file
+    * Name for the average temperature
     */
-   public static final String DEFAULT_NAME_FLOW_HEADER = "FlowHeader";
+   public static final String DEFAULT_NAME_AVG_TEMP = "AverageTemperature";
+
+   /**
+    * Default name for the temperature
+    */
+   public static final String DEFAULT_NAME_TEMP = "Temperature";
+
+   /**
+    * Default name for the holon with the average temperature
+    */
+   public static final String DEFAULT_NAME_AVG_TEMP_HOLON = "AverageTemperatureHolon";
 
    /**
     * Get the Euclidian distance on a two-dimensional plane
@@ -383,6 +399,10 @@ public class ResourceWater extends ResourceAbstract {
       addBehavior(
             BEHAVIOR_DYNAMIC_WAVE_DOWNSTREAM, 
             BehaviorDynamicWaveDownstream.class.getCanonicalName()
+            );
+      addBehavior(
+            BEHAVIOR_REACH_AVG_TEMP_BOUND,
+            BehaviorReachAvgTemperatureBound.class.getCanonicalName()
             );
       addBehavior(
             BEHAVIOR_REACH_AVG_TEMP,

@@ -8,6 +8,12 @@ import org.payn.chsm.io.interpolate.InterpolatorSnapshotTable;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
 
+/**
+ * Processor that gets the downstream temperature from an interpolation file
+ * 
+ * @author robpayn
+ *
+ */
 public class WaterTempDownstream extends WaterTempInterp {
 
    @Override

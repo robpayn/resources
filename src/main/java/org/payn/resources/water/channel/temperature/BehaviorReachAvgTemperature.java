@@ -1,13 +1,12 @@
 package org.payn.resources.water.channel.temperature;
 
 import org.payn.chsm.BehaviorAbstract;
-import org.payn.chsm.io.interpolate.InterpolatorSnapshotTable;
 import org.payn.chsm.values.ValueString;
 import org.payn.resources.water.ResourceWater;
 
 /**
- * Behavior for calcualting a reach average temperatuer from upstream
- * and downstream interpolated temperatures from input data
+ * Behavior for translating a reach average temperature calculated at 
+ * the upstream boundary to a reach 
  * 
  * @author robpayn
  *
@@ -18,14 +17,9 @@ public class BehaviorReachAvgTemperature extends BehaviorAbstract {
    protected void addProcessors() 
    {
       addProcessor(
-            ResourceWater.DEFAULT_NAME_UPSTREAM_TEMP,
-            WaterTempUpstream.class, 
-            WaterTempUpstream.getValueClass()
-            );
-      addProcessor(
-            ResourceWater.DEFAULT_NAME_DOWNSTREAM_TEMP,
-            WaterTempDownstream.class, 
-            WaterTempDownstream.getValueClass()
+            ResourceWater.DEFAULT_NAME_TEMP, 
+            WaterTemperature.class, 
+            WaterTemperature.getValueClass()
             );
    }
 
@@ -33,19 +27,7 @@ public class BehaviorReachAvgTemperature extends BehaviorAbstract {
    protected void registerStates() 
    {
       registerState(
-            "UpstreamTemp" + InterpolatorSnapshotTable.NAME_PATH, 
-            ValueString.class
-            );
-      registerState(
-            "DownstreamTemp" + InterpolatorSnapshotTable.NAME_PATH, 
-            ValueString.class
-            );
-      registerState(
-            "Temp" + InterpolatorSnapshotTable.NAME_TYPE, 
-            ValueString.class
-            );
-      registerState(
-            "Temp" + InterpolatorSnapshotTable.NAME_DELIMITER, 
+            ResourceWater.DEFAULT_NAME_AVG_TEMP_HOLON, 
             ValueString.class
             );
    }

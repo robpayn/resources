@@ -27,7 +27,7 @@ public class BehaviorFlowInterpolate extends BehaviorAbstract {
             ValueString.class
             );
       registerState(
-            ResourceWater.DEFAULT_NAME_FLOW_HEADER,
+            InterpolatorSnapshotTable.DEFAULT_NAME_HEADER,
             ValueString.class
             );
       registerState(

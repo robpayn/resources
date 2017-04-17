@@ -28,9 +28,19 @@ public class BehaviorReachAvgTemperatureBound extends BehaviorAbstract {
             WaterTempDownstream.getValueClass()
             );
       addProcessor(
-            ResourceWater.DEFAULT_NAME_AVG_TEMP,
+            ResourceWater.DEFAULT_NAME_TEMP,
             WaterTempAvg.class, 
             WaterTempAvg.getValueClass()
+            );
+      addProcessor(
+            ResourceWater.DEFAULT_NAME_WATER_DENSITY_UPSTREAM,
+            WaterDensityUpstream.class,
+            WaterDensityUpstream.getValueClass()
+            );
+      addProcessor(
+            ResourceWater.DEFAULT_NAME_WATER_DENSITY_DOWNSTREAM,
+            WaterDensityDownstream.class,
+            WaterDensityDownstream.getValueClass()
             );
    }
 

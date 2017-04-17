@@ -298,6 +298,16 @@ public class ResourceWater extends ResourceAbstract {
    public static final String DEFAULT_NAME_AVG_TEMP_HOLON = "AverageTemperatureHolon";
 
    /**
+    * Default name for upstream water density
+    */
+   public static final String DEFAULT_NAME_WATER_DENSITY_UPSTREAM = "WaterDensityUpstream";
+
+   /**
+    * Default name for downstream water density
+    */
+   public static final String DEFAULT_NAME_WATER_DENSITY_DOWNSTREAM = "WaterDensityDownstream";
+   
+   /**
     * Get the Euclidian distance on a two-dimensional plane
     * 
     * @param x1

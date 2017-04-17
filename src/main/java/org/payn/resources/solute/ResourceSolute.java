@@ -9,6 +9,10 @@ import org.payn.resources.solute.boundary.BehaviorSoluteConcInterp;
 import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
 import org.payn.resources.solute.boundary.BehaviorSoluteFlowBound;
 import org.payn.resources.solute.cell.BehaviorSoluteStorage;
+import org.payn.resources.solute.gas.AWExchangeVelocity;
+import org.payn.resources.solute.gas.BehaviorAWExchangeBound;
+import org.payn.resources.solute.gas.SaturatedConcDownstream;
+import org.payn.resources.solute.gas.SaturatedConcUpstream;
 
 /**
  * The solute currency
@@ -158,6 +162,49 @@ public class ResourceSolute extends ResourceAbstract {
     */
    public static final String BEHAVIOR_ADVECT = "advection";
 
+   /**
+    * Default state name for the Schmidt number
+    * adjusted gas exchange velocity
+    */
+   public static final String DEFAULT_NAME_K600 = "K600";
+
+   /**
+    * Default state name for temperature
+    */
+   public static final String DEFAULT_NAME_TEMP = "Temperature";
+
+   /**
+    * Default state name for the air water exchange velocity
+    */
+   public static final String DEFAULT_NAME_AW_EXCH_VELOCITY = 
+         AWExchangeVelocity.class.getSimpleName();
+
+   /**
+    * Behavior name for air-water gas exchange at the boundary
+    */
+   public static final String BEHAVIOR_AW_EXCHANGE_BOUND = "awexchangebound";
+
+   public static final String DEFAULT_NAME_AWEXCHANGE_HOLON = "AWExchangeHolon";
+
+   public static final String DEFAULT_NAME_UPSTREAM_TEMP = "UpstreamTemperature";
+
+   public static final String DEFAULT_NAME_WATER_DENSITY_UPSTREAM = "WaterDensityUpstream";
+
+   public static final String DEFAULT_NAME_AIR_PRESSURE = "AirPressure";
+
+   public static final String DEFAULT_NAME_SAT_CONC_CONV = "SatConcConv";
+
+   public static final String DEFAULT_NAME_DOWNSTREAM_TEMP = "DownstreamTemperature";
+
+   public static final String DEFAULT_NAME_WATER_DENSITY_DOWNSTREAM = "WaterDensityDownstream";
+
+   public static final String DEFAULT_NAME_SAT_CONC_UPSTREAM = 
+         SaturatedConcUpstream.class.getSimpleName();
+
+   public static final String DEFAULT_NAME_SAT_CONC_DOWNSTREAM = 
+         SaturatedConcDownstream.class.getSimpleName();
+
+   public static final String DEFAULT_NAME_SAT_CONC = "SaturatedConc";
 
    @Override
    public void addBehaviors() 
@@ -193,6 +240,10 @@ public class ResourceSolute extends ResourceAbstract {
       addBehavior(
             BEHAVIOR_ADVECT,
             BehaviorSoluteAdvection.class.getCanonicalName()
+            );
+      addBehavior(
+            BEHAVIOR_AW_EXCHANGE_BOUND,
+            BehaviorAWExchangeBound.class.getCanonicalName()
             );
    }
 

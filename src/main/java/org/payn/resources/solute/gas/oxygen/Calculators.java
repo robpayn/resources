@@ -1,4 +1,4 @@
-package org.payn.resources.solute.gas;
+package org.payn.resources.solute.gas.oxygen;
 
 /**
  * Collection of calculators for gas behavior 

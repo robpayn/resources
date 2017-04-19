@@ -9,10 +9,10 @@ import org.payn.resources.solute.boundary.BehaviorSoluteConcInterp;
 import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
 import org.payn.resources.solute.boundary.BehaviorSoluteFlowBound;
 import org.payn.resources.solute.cell.BehaviorSoluteStorage;
-import org.payn.resources.solute.gas.AWExchangeVelocity;
 import org.payn.resources.solute.gas.oxygen.BehaviorDOAWExchange;
 import org.payn.resources.solute.gas.oxygen.BehaviorDOAWExchangeReach;
 import org.payn.resources.solute.gas.oxygen.DOAWExchange;
+import org.payn.resources.solute.gas.oxygen.DOAWExchangeVelocity;
 import org.payn.resources.solute.gas.oxygen.SaturatedDOConcDownstream;
 import org.payn.resources.solute.gas.oxygen.SaturatedDOConcUpstream;
 
@@ -178,8 +178,8 @@ public class ResourceSolute extends ResourceAbstract {
    /**
     * Default state name for the air water exchange velocity
     */
-   public static final String DEFAULT_NAME_AW_EXCH_VELOCITY = 
-         AWExchangeVelocity.class.getSimpleName();
+   public static final String DEFAULT_NAME_DO_AW_EXCH_VELOCITY = 
+         DOAWExchangeVelocity.class.getSimpleName();
 
    /**
     * Behavior name for air-water gas exchange at the boundary

@@ -3,7 +3,6 @@ package org.payn.resources.solute.gas.oxygen;
 import org.payn.chsm.BehaviorAbstract;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.solute.ResourceSolute;
-import org.payn.resources.solute.gas.AWExchangeVelocity;
 
 /**
  * Behavior for calculating the air-water gas exchange velocity from
@@ -17,10 +16,10 @@ public class BehaviorDOAWExchangeReach extends BehaviorAbstract {
    @Override
    protected void addProcessors() 
    {
-      addProcessorAbstract(
-            ResourceSolute.DEFAULT_NAME_AW_EXCH_VELOCITY, 
-            AWExchangeVelocity.class, 
-            AWExchangeVelocity.getValueClass()
+      addProcessor(
+            ResourceSolute.DEFAULT_NAME_DO_AW_EXCH_VELOCITY, 
+            DOAWExchangeVelocity.class, 
+            DOAWExchangeVelocity.getValueClass()
             );
       addProcessor(
             ResourceSolute.DEFAULT_NAME_DO_SAT_CONC_UPSTREAM, 

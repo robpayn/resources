@@ -1,4 +1,4 @@
-package org.payn.resources.solute.gas;
+package org.payn.resources.solute.gas.oxygen;
 
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleTrade;
@@ -18,7 +18,7 @@ import org.payn.resources.solute.ResourceSolute;
  * 
  * @author robert.payn
  */
-public class AWExchangeVelocity extends ProcessorDoubleTrade {
+public class DOAWExchangeVelocity extends ProcessorDoubleTrade {
 
    /**
     * Temperature of water (&deg;C)

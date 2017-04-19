@@ -38,10 +38,10 @@ public class DOAWExchange extends ProcessorDoubleLoad {
    public void setUpdateDependenciesLoad() throws Exception 
    {
       Holon holon = (Holon)getController().getState();
-      awExchangeVelocity = (ValueDouble)createAbstractDependency(
+      awExchangeVelocity = (ValueDouble)createDependencyOnValue(
             holon,
-            ResourceSolute.DEFAULT_NAME_AW_EXCH_VELOCITY
-            ).getValue();
+            ResourceSolute.DEFAULT_NAME_DO_AW_EXCH_VELOCITY
+            );
       satConc = (ValueDouble)createDependencyOnValue(
             holon,
             ResourceSolute.DEFAULT_NAME_DO_SAT_CONC

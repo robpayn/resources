@@ -3,7 +3,6 @@ package org.payn.resources.solute.gas.oxygen;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleStateInit;
 import org.payn.resources.solute.ResourceSolute;
-import org.payn.resources.solute.gas.Calculators;
 
 /**
  * Controls the saturated dissolved oxygen concentration at a given water

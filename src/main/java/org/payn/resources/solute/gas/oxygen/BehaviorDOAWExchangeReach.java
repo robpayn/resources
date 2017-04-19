@@ -1,8 +1,9 @@
-package org.payn.resources.solute.gas;
+package org.payn.resources.solute.gas.oxygen;
 
 import org.payn.chsm.BehaviorAbstract;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.solute.ResourceSolute;
+import org.payn.resources.solute.gas.AWExchangeVelocity;
 
 /**
  * Behavior for calculating the air-water gas exchange velocity from
@@ -11,30 +12,30 @@ import org.payn.resources.solute.ResourceSolute;
  * @author robpayn
  *
  */
-public class BehaviorAWExchangeBound extends BehaviorAbstract {
+public class BehaviorDOAWExchangeReach extends BehaviorAbstract {
 
    @Override
    protected void addProcessors() 
    {
-      addProcessor(
+      addProcessorAbstract(
             ResourceSolute.DEFAULT_NAME_AW_EXCH_VELOCITY, 
             AWExchangeVelocity.class, 
             AWExchangeVelocity.getValueClass()
             );
       addProcessor(
-            ResourceSolute.DEFAULT_NAME_SAT_CONC_UPSTREAM, 
-            SaturatedConcUpstream.class, 
-            SaturatedConcUpstream.getValueClass()
+            ResourceSolute.DEFAULT_NAME_DO_SAT_CONC_UPSTREAM, 
+            SaturatedDOConcUpstream.class, 
+            SaturatedDOConcUpstream.getValueClass()
             );
       addProcessor(
-            ResourceSolute.DEFAULT_NAME_SAT_CONC_DOWNSTREAM, 
-            SaturatedConcDownstream.class, 
-            SaturatedConcDownstream.getValueClass()
+            ResourceSolute.DEFAULT_NAME_DO_SAT_CONC_DOWNSTREAM, 
+            SaturatedDOConcDownstream.class, 
+            SaturatedDOConcDownstream.getValueClass()
             );
       addProcessor(
-            ResourceSolute.DEFAULT_NAME_SAT_CONC, 
-            SaturatedConcAvg.class, 
-            SaturatedConcAvg.getValueClass()
+            ResourceSolute.DEFAULT_NAME_DO_SAT_CONC, 
+            SaturatedDOConcAvg.class, 
+            SaturatedDOConcAvg.getValueClass()
             );
    }
 
@@ -45,7 +46,7 @@ public class BehaviorAWExchangeBound extends BehaviorAbstract {
             ResourceSolute.DEFAULT_NAME_AIR_PRESSURE, 
             ValueDouble.class
             );
-      registerState(
+      registerStateAbstract(
             ResourceSolute.DEFAULT_NAME_K600, 
             ValueDouble.class
             );

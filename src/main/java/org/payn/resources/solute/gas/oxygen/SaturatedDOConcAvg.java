@@ -1,7 +1,7 @@
-package org.payn.resources.solute.gas;
+package org.payn.resources.solute.gas.oxygen;
 
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.processors.ProcessorDoubleState;
+import org.payn.neoch.processors.ProcessorDoubleStateInit;
 import org.payn.resources.solute.ResourceSolute;
 
 /**
@@ -10,7 +10,7 @@ import org.payn.resources.solute.ResourceSolute;
  * @author robpayn
  *
  */
-public class SaturatedConcAvg extends ProcessorDoubleState {
+public class SaturatedDOConcAvg extends ProcessorDoubleStateInit {
 
    /**
     * Upstream saturated concentration
@@ -26,10 +26,10 @@ public class SaturatedConcAvg extends ProcessorDoubleState {
    public void setUpdateDependencies() throws Exception 
    {
       saturatedConcUpstream = (ValueDouble)createDependencyOnValue(
-            ResourceSolute.DEFAULT_NAME_SAT_CONC_UPSTREAM
+            ResourceSolute.DEFAULT_NAME_DO_SAT_CONC_UPSTREAM
             );
       saturatedConcDownstream = (ValueDouble)createDependencyOnValue(
-            ResourceSolute.DEFAULT_NAME_SAT_CONC_DOWNSTREAM
+            ResourceSolute.DEFAULT_NAME_DO_SAT_CONC_DOWNSTREAM
             );
    }
 
@@ -37,6 +37,18 @@ public class SaturatedConcAvg extends ProcessorDoubleState {
    public void update() throws Exception 
    {
       value.n = 0.5 * (saturatedConcUpstream.n + saturatedConcDownstream.n);
+   }
+
+   @Override
+   public void setInitDependencies() throws Exception 
+   {
+      setUpdateDependencies();
+   }
+
+   @Override
+   public void initialize() throws Exception 
+   {
+      update();
    }
 
 }

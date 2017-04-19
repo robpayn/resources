@@ -10,9 +10,11 @@ import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
 import org.payn.resources.solute.boundary.BehaviorSoluteFlowBound;
 import org.payn.resources.solute.cell.BehaviorSoluteStorage;
 import org.payn.resources.solute.gas.AWExchangeVelocity;
-import org.payn.resources.solute.gas.BehaviorAWExchangeBound;
-import org.payn.resources.solute.gas.SaturatedConcDownstream;
-import org.payn.resources.solute.gas.SaturatedConcUpstream;
+import org.payn.resources.solute.gas.oxygen.BehaviorDOAWExchange;
+import org.payn.resources.solute.gas.oxygen.BehaviorDOAWExchangeReach;
+import org.payn.resources.solute.gas.oxygen.DOAWExchange;
+import org.payn.resources.solute.gas.oxygen.SaturatedDOConcDownstream;
+import org.payn.resources.solute.gas.oxygen.SaturatedDOConcUpstream;
 
 /**
  * The solute currency
@@ -182,29 +184,65 @@ public class ResourceSolute extends ResourceAbstract {
    /**
     * Behavior name for air-water gas exchange at the boundary
     */
-   public static final String BEHAVIOR_AW_EXCHANGE_BOUND = "awexchangebound";
+   public static final String BEHAVIOR_DO_AW_EXCHANGE_BOUND = "doawexchangereach";
 
-   public static final String DEFAULT_NAME_AWEXCHANGE_HOLON = "AWExchangeHolon";
-
+   /**
+    * Default state name for the upstream temperature
+    */
    public static final String DEFAULT_NAME_UPSTREAM_TEMP = "UpstreamTemperature";
 
+   /**
+    * Default state name for the upstream water density
+    */
    public static final String DEFAULT_NAME_WATER_DENSITY_UPSTREAM = "WaterDensityUpstream";
 
+   /**
+    * Default state name for the air pressure
+    */
    public static final String DEFAULT_NAME_AIR_PRESSURE = "AirPressure";
 
+   /**
+    * Default state name for the saturated concentration conversion factor
+    */
    public static final String DEFAULT_NAME_SAT_CONC_CONV = "SatConcConv";
 
+   /**
+    * Default state name for the downstream temperature
+    */
    public static final String DEFAULT_NAME_DOWNSTREAM_TEMP = "DownstreamTemperature";
 
+   /**
+    * Default state name for the downstream water density
+    */
    public static final String DEFAULT_NAME_WATER_DENSITY_DOWNSTREAM = "WaterDensityDownstream";
 
-   public static final String DEFAULT_NAME_SAT_CONC_UPSTREAM = 
-         SaturatedConcUpstream.class.getSimpleName();
+   /**
+    * Default state name for the upstream saturated concentration
+    */
+   public static final String DEFAULT_NAME_DO_SAT_CONC_UPSTREAM = 
+         SaturatedDOConcUpstream.class.getSimpleName();
 
-   public static final String DEFAULT_NAME_SAT_CONC_DOWNSTREAM = 
-         SaturatedConcDownstream.class.getSimpleName();
+   /**
+    * Default state name for the downstream saturated concentration
+    */
+   public static final String DEFAULT_NAME_DO_SAT_CONC_DOWNSTREAM = 
+         SaturatedDOConcDownstream.class.getSimpleName();
 
-   public static final String DEFAULT_NAME_SAT_CONC = "SaturatedConc";
+   /**
+    * Default state name for the saturated concentration
+    */
+   public static final String DEFAULT_NAME_DO_SAT_CONC = "DOSaturatedConc";
+
+   /**
+    * Default state name for the air water gas exchange load
+    */
+   public static final String DEFAULT_NAME_DO_AW_EXCH = 
+         DOAWExchange.class.getSimpleName();
+
+   /**
+    * Name of the air water gas exchange behavior
+    */
+   public static final String BEHAVIOR_DO_AW_EXCHANGE = "doawexchange";
 
    @Override
    public void addBehaviors() 
@@ -242,8 +280,12 @@ public class ResourceSolute extends ResourceAbstract {
             BehaviorSoluteAdvection.class.getCanonicalName()
             );
       addBehavior(
-            BEHAVIOR_AW_EXCHANGE_BOUND,
-            BehaviorAWExchangeBound.class.getCanonicalName()
+            BEHAVIOR_DO_AW_EXCHANGE_BOUND,
+            BehaviorDOAWExchangeReach.class.getCanonicalName()
+            );
+      addBehavior(
+            BEHAVIOR_DO_AW_EXCHANGE,
+            BehaviorDOAWExchange.class.getCanonicalName()
             );
    }
 

@@ -1,8 +1,9 @@
-package org.payn.resources.solute.gas;
+package org.payn.resources.solute.gas.oxygen;
 
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.processors.ProcessorDoubleState;
+import org.payn.neoch.processors.ProcessorDoubleStateInit;
 import org.payn.resources.solute.ResourceSolute;
+import org.payn.resources.solute.gas.Calculators;
 
 /**
  * Controls the saturated dissolved oxygen concentration at a given water
@@ -17,7 +18,7 @@ import org.payn.resources.solute.ResourceSolute;
  * 
  * @author Rob Payn
  */
-public class SaturatedConcUpstream extends ProcessorDoubleState {
+public class SaturatedDOConcDownstream extends ProcessorDoubleStateInit {
 
    /**
     * Water temperature
@@ -43,10 +44,10 @@ public class SaturatedConcUpstream extends ProcessorDoubleState {
    public void setUpdateDependencies() throws Exception 
    {
       temperature = (ValueDouble)createDependencyOnValue(
-            ResourceSolute.DEFAULT_NAME_UPSTREAM_TEMP
+            ResourceSolute.DEFAULT_NAME_DOWNSTREAM_TEMP
             );
       density = (ValueDouble)createDependencyOnValue(
-            ResourceSolute.DEFAULT_NAME_WATER_DENSITY_UPSTREAM
+            ResourceSolute.DEFAULT_NAME_WATER_DENSITY_DOWNSTREAM
             );
       airpressure = (ValueDouble)createDependencyOnValue(
             ResourceSolute.DEFAULT_NAME_AIR_PRESSURE
@@ -83,6 +84,18 @@ public class SaturatedConcUpstream extends ProcessorDoubleState {
    {
       value.n = convert * density.n * airpressure.n
             * Calculators.satDOEmpirical(temperature.n);
+   }
+
+   @Override
+   public void setInitDependencies() throws Exception 
+   {
+      setUpdateDependencies();
+   }
+
+   @Override
+   public void initialize() throws Exception 
+   {
+      update();
    }
 
 }

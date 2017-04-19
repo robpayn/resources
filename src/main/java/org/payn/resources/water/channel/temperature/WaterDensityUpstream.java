@@ -1,7 +1,7 @@
 package org.payn.resources.water.channel.temperature;
 
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.processors.ProcessorDoubleState;
+import org.payn.neoch.processors.ProcessorDoubleStateInit;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -10,7 +10,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class WaterDensityUpstream extends ProcessorDoubleState {
+public class WaterDensityUpstream extends ProcessorDoubleStateInit {
 
    /**
     * Temperature
@@ -29,6 +29,18 @@ public class WaterDensityUpstream extends ProcessorDoubleState {
    public void update() throws Exception 
    {
       value.n = Calculators.densityWaterEmpirical(temperature.n);
+   }
+
+   @Override
+   public void setInitDependencies() throws Exception 
+   {
+      setUpdateDependencies();
+   }
+
+   @Override
+   public void initialize() throws Exception 
+   {
+      update();
    }
 
 }

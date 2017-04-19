@@ -34,9 +34,9 @@ public class AWExchangeVelocity extends ProcessorDoubleTrade {
    @Override
    public void setUpdateDependencies() throws Exception 
    {
-      k600 = (ValueDouble)createDependencyOnValue(
+      k600 = (ValueDouble)createAbstractDependency(
             ResourceSolute.DEFAULT_NAME_K600
-            );
+            ).getValue();
       temperature = (ValueDouble)createDependencyOnValue(
             ResourceSolute.DEFAULT_NAME_TEMP
             );

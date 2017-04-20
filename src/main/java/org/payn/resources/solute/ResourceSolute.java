@@ -11,8 +11,14 @@ import org.payn.resources.solute.boundary.BehaviorSoluteFlowBound;
 import org.payn.resources.solute.cell.BehaviorSoluteStorage;
 import org.payn.resources.solute.gas.oxygen.BehaviorDOAWExchange;
 import org.payn.resources.solute.gas.oxygen.BehaviorDOAWExchangeReach;
+import org.payn.resources.solute.gas.oxygen.BehaviorDOPhotosynthesis;
+import org.payn.resources.solute.gas.oxygen.BehaviorDOPhotosynthesisReach;
+import org.payn.resources.solute.gas.oxygen.BehaviorDORespiration;
+import org.payn.resources.solute.gas.oxygen.BehaviorDORespirationReach;
 import org.payn.resources.solute.gas.oxygen.DOAWExchange;
 import org.payn.resources.solute.gas.oxygen.DOAWExchangeVelocity;
+import org.payn.resources.solute.gas.oxygen.DOPhotosynthesis;
+import org.payn.resources.solute.gas.oxygen.DORespiration;
 import org.payn.resources.solute.gas.oxygen.SaturatedDOConcDownstream;
 import org.payn.resources.solute.gas.oxygen.SaturatedDOConcUpstream;
 
@@ -244,6 +250,48 @@ public class ResourceSolute extends ResourceAbstract {
     */
    public static final String BEHAVIOR_DO_AW_EXCHANGE = "doawexchange";
 
+   /**
+    * Default state name for the ratio of oxygen production to PAR availability
+    */
+   public static final String DEFAULT_NAME_DO_PTOPAR_RATIO = "PToPARRatio";
+
+   /**
+    * Default state name for photosynthetically active radiation
+    */
+   public static final String DEFAULT_NAME_PAR = "PAR";
+
+   /**
+    * Default state name for DO increase due to photosynthesis
+    */
+   public static final String DEFAULT_NAME_DO_PHOTOSYNTHESIS = 
+         DOPhotosynthesis.class.getSimpleName();
+
+   /**
+    * Name of behavior for photsynthesis
+    */
+   public static final String BEHAVIOR_DO_PHOTOSYNTHESIS = "dophotosynthesis";
+
+   /**
+    * Name of behavior of photosynthesis over the reach
+    */
+   public static final String BEHAVIOR_DO_PHOTOSYNTHESIS_REACH = "dophotosynthesisreach";
+
+   /**
+    * Name of behavior of respiration over the reach
+    */
+   public static final String BEHAVIOR_DO_RESPIRATION = "dorespiration";
+
+   /**
+    * Default state name for respiration in terms of oxygen consumption
+    */
+   public static final String DEFAULT_NAME_DO_RESPIRATION = 
+         DORespiration.class.getSimpleName();
+
+   /**
+    * Name of the behavior of respiration
+    */
+   public static final String BEHAVIOR_DO_RESPIRATION_REACH = "dorespirationreach";
+
    @Override
    public void addBehaviors() 
    {
@@ -286,6 +334,22 @@ public class ResourceSolute extends ResourceAbstract {
       addBehavior(
             BEHAVIOR_DO_AW_EXCHANGE,
             BehaviorDOAWExchange.class.getCanonicalName()
+            );
+      addBehavior(
+            BEHAVIOR_DO_PHOTOSYNTHESIS, 
+            BehaviorDOPhotosynthesis.class.getCanonicalName()
+            );
+      addBehavior(
+            BEHAVIOR_DO_PHOTOSYNTHESIS_REACH,
+            BehaviorDOPhotosynthesisReach.class.getCanonicalName()
+            );
+      addBehavior(
+            BEHAVIOR_DO_RESPIRATION,
+            BehaviorDORespiration.class.getCanonicalName()
+            );
+      addBehavior(
+            BEHAVIOR_DO_RESPIRATION_REACH,
+            BehaviorDORespirationReach.class.getCanonicalName()
             );
    }
 

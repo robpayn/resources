@@ -7,7 +7,7 @@ import org.payn.resources.particle.ParticleList;
 
 import neoch.UpdaterLoad;
 
-public class ParticleLoad extends ParticleList implements UpdaterLoad {
+public class ParticleLoad extends ParticleList implements UpdaterDelta {
    
    private ArrayList<Particle> tempParticleList;
 

@@ -110,7 +110,7 @@ public class WaterFlow extends ProcessorDoubleLoadSymmetricInitRequired {
    }
    
    @Override
-   public void setUpdateDependenciesLoad() throws Exception 
+   public void setUpdateDependenciesDelta() throws Exception 
    {
       timeStep = (ValueDouble)getState(
             (Holon)controller.getState(),
@@ -150,7 +150,7 @@ public class WaterFlow extends ProcessorDoubleLoadSymmetricInitRequired {
    }
 
    @Override
-   public void updateLoad() throws Exception 
+   public void updateDelta() throws Exception 
    {
       velocityProc.update();
       value.n = calculate(value.n);

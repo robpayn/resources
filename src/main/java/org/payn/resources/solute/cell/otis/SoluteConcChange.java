@@ -1,11 +1,9 @@
 package org.payn.resources.solute.cell.otis;
 
-import org.payn.chsm.State;
+import org.payn.chsm.processors.auto.ProcessorDoubleDelta;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
-import org.payn.neoch.processors.ProcessorDoubleLoad;
-import org.payn.neoch.processors.ProcessorDoubleStorage;
 import org.payn.resources.solute.ResourceSolute;
 
 /**
@@ -15,7 +13,7 @@ import org.payn.resources.solute.ResourceSolute;
  * @author robpayn
  *
  */
-public abstract class SoluteConcChange extends ProcessorDoubleLoad {
+public abstract class SoluteConcChange extends ProcessorDoubleDelta {
 
    /**
     * Upstream concentration
@@ -26,15 +24,6 @@ public abstract class SoluteConcChange extends ProcessorDoubleLoad {
     * Downstream concentration
     */
    protected ValueDouble downstreamConc;
-
-   @Override
-   public void setUpdateDependencies() throws Exception
-   {
-      setUpdateDependenciesLoad();
-      State storage = ((HolonCell)state.getParentHolon()).getStorage(
-            state.getBehavior().getResource());
-      storageProcessor = (ProcessorDoubleStorage)storage.getProcessor();
-   }
 
    /**
     * Set the upstream and downstream concentrations

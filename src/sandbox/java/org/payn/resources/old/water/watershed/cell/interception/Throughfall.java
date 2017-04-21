@@ -9,7 +9,7 @@ import neoch.HolonBoundary;
 import neoch.HolonCell;
 import neoch.processors.ProcessorDoubleTrade;
 
-public class Throughfall extends ProcessorDoubleTrade implements UpdaterSimple {
+public class Throughfall extends ProcessorDoubleChange implements UpdaterSimple {
 
     private ValueDouble precip;
     

@@ -2,7 +2,7 @@ package org.payn.resources.solute.boundary.flow;
 
 import org.payn.chsm.io.interpolate.Interpolator;
 import org.payn.chsm.io.interpolate.InterpolatorSnapshotTable;
-import org.payn.neoch.processors.ProcessorDoubleTradeInit;
+import org.payn.chsm.processors.auto.ProcessorDoubleChangeInit;
 
 /**
  * Solute concentration processor based on interpolation from input data
@@ -10,7 +10,7 @@ import org.payn.neoch.processors.ProcessorDoubleTradeInit;
  * @author robpayn
  *
  */
-public class SoluteConcInterpolate extends ProcessorDoubleTradeInit {
+public class SoluteConcInterpolate extends ProcessorDoubleChangeInit {
 
    /**
     * Interpolator

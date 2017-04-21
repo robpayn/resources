@@ -1,9 +1,9 @@
 package org.payn.resources.water.channel.temperature;
 
 import org.payn.chsm.Holon;
+import org.payn.chsm.processors.auto.ProcessorDoubleInfoInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
-import org.payn.neoch.processors.ProcessorDoubleStateInit;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -13,7 +13,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class WaterTemperature extends ProcessorDoubleStateInit {
+public class WaterTemperature extends ProcessorDoubleInfoInit {
 
    /**
     * Reach average temperature calculated at the boundary

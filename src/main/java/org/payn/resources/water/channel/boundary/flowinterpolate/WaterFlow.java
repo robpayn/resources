@@ -34,11 +34,11 @@ public class WaterFlow extends ProcessorDoubleLoadInit {
    }
    
    @Override
-   public void setUpdateDependenciesLoad() throws Exception 
+   public void setUpdateDependenciesDelta() throws Exception 
    {}
 
    @Override
-   public void updateLoad() throws Exception 
+   public void updateDelta() throws Exception 
    {
       value.n = interp.interpolate();
    }

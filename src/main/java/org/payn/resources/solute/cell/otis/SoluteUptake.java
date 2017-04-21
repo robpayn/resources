@@ -1,10 +1,7 @@
 package org.payn.resources.solute.cell.otis;
 
-import org.payn.chsm.State;
+import org.payn.chsm.processors.auto.ProcessorDoubleDelta;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.HolonCell;
-import org.payn.neoch.processors.ProcessorDoubleLoad;
-import org.payn.neoch.processors.ProcessorDoubleStorage;
 import org.payn.resources.solute.ResourceSolute;
 
 /**
@@ -15,7 +12,7 @@ import org.payn.resources.solute.ResourceSolute;
  * @author robpayn
  *
  */
-public class SoluteUptake extends ProcessorDoubleLoad {
+public class SoluteUptake extends ProcessorDoubleDelta {
 
    /**
     * Concentration in the cell
@@ -43,16 +40,7 @@ public class SoluteUptake extends ProcessorDoubleLoad {
    private ValueDouble background;
 
    @Override
-   public void setUpdateDependencies() throws Exception
-   {
-      setUpdateDependenciesLoad();
-      State storage = ((HolonCell)state.getParentHolon()).getStorage(
-            state.getBehavior().getResource());
-      storageProcessor = (ProcessorDoubleStorage)storage.getProcessor();
-   }
-
-   @Override
-   public void setUpdateDependenciesLoad() throws Exception 
+   public void setUpdateDependenciesDelta() throws Exception 
    {
       conc = (ValueDouble)createAbstractDependency(
             ResourceSolute.NAME_SOLUTE_CONC
@@ -72,7 +60,7 @@ public class SoluteUptake extends ProcessorDoubleLoad {
    }
 
    @Override
-   public void updateLoad() throws Exception 
+   public void updateDelta() throws Exception 
    {
       value.n = ( ((umax.n * background.n) / (chalf.n + background.n))
             - ((umax.n * conc.n) / (chalf.n + conc.n)) )

@@ -40,7 +40,7 @@ public class SoluteDispersion extends ProcessorDoubleLoadSymmetric {
    private ValueDouble area;
 
    @Override
-   public void setUpdateDependenciesLoad() throws Exception 
+   public void setUpdateDependenciesDelta() throws Exception 
    {
       HolonCell cell = ((HolonBoundary)getState().getParentHolon()).getCell();
       concLocal = (ValueDouble)createAbstractDependency(
@@ -64,7 +64,7 @@ public class SoluteDispersion extends ProcessorDoubleLoadSymmetric {
    }
 
    @Override
-   public void updateLoad() 
+   public void updateDelta() 
    {
       double grad = (concAdjacent.n - concLocal.n) / length.n;
       value.n = area.n * dispCoeff.n * grad;

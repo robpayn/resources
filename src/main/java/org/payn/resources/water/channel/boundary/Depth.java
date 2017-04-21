@@ -1,9 +1,9 @@
 package org.payn.resources.water.channel.boundary;
 
+import org.payn.chsm.processors.auto.ProcessorDoubleChangeInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
-import org.payn.neoch.processors.ProcessorDoubleTradeInit;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -12,7 +12,7 @@ import org.payn.resources.water.ResourceWater;
  * @author v78h241
  *
  */
-public class Depth extends ProcessorDoubleTradeInit {
+public class Depth extends ProcessorDoubleChangeInit {
 
    /**
     * Water volume in the local cell

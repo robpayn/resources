@@ -1,7 +1,7 @@
 package org.payn.resources.water.channel.temperature;
 
 import org.payn.chsm.io.interpolate.Interpolator;
-import org.payn.neoch.processors.ProcessorDoubleStateInit;
+import org.payn.chsm.processors.auto.ProcessorDoubleInfoInit;
 
 /**
  * Abstract processor for getting temperature from an interpolation file
@@ -9,7 +9,7 @@ import org.payn.neoch.processors.ProcessorDoubleStateInit;
  * @author robpayn
  *
  */
-public abstract class WaterTempInterp extends ProcessorDoubleStateInit {
+public abstract class WaterTempInterp extends ProcessorDoubleInfoInit {
 
    /**
     * Interpolator with access to the temperature data

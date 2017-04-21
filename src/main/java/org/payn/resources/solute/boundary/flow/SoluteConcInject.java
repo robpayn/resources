@@ -1,12 +1,12 @@
 package org.payn.resources.solute.boundary.flow;
 
 import org.payn.chsm.Holon;
+import org.payn.chsm.processors.auto.ProcessorDoubleChange;
 import org.payn.chsm.processors.interfaces.InitializerSimpleAuto;
 import org.payn.chsm.resources.time.BehaviorTime;
 import org.payn.chsm.resources.time.Iteration;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueLong;
-import org.payn.neoch.processors.ProcessorDoubleTrade;
 import org.payn.resources.solute.ResourceSolute;
 
 /**
@@ -16,7 +16,7 @@ import org.payn.resources.solute.ResourceSolute;
  * @author robpayn
  *
  */
-public class SoluteConcInject extends ProcessorDoubleTrade implements InitializerSimpleAuto {
+public class SoluteConcInject extends ProcessorDoubleChange implements InitializerSimpleAuto {
 
    /**
     * Value for background concentration

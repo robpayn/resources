@@ -6,9 +6,9 @@ import java.sql.Time;
 import org.payn.chsm.Holon;
 import org.payn.chsm.io.interpolate.Interpolator;
 import org.payn.chsm.io.interpolate.InterpolatorSnapshotTable;
+import org.payn.chsm.processors.auto.ProcessorDoubleInfoInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
-import org.payn.neoch.processors.ProcessorDoubleStateInit;
 
 /**
  * Interpolates photosynthetically active radiation from a table 
@@ -17,7 +17,7 @@ import org.payn.neoch.processors.ProcessorDoubleStateInit;
  * @author v78h241
  *
  */
-public class PAR extends ProcessorDoubleStateInit {
+public class PAR extends ProcessorDoubleInfoInit {
 
    /**
     * Interpolator for the input file

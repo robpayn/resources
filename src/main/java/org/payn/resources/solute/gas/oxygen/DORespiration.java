@@ -26,7 +26,7 @@ public class DORespiration extends ProcessorDoubleLoad {
    private ValueDouble respiration;
 
    @Override
-   public void setUpdateDependenciesLoad() throws Exception 
+   public void setUpdateDependenciesDelta() throws Exception 
    {
       Holon holon = (Holon)getController().getState();
       respiration = (ValueDouble)createDependencyOnValue(
@@ -46,7 +46,7 @@ public class DORespiration extends ProcessorDoubleLoad {
     * [Mass Time<sup><small>-1</small></sup>]
     */
    @Override
-   public void updateLoad() throws Exception 
+   public void updateDelta() throws Exception 
    {
       value.n = respiration.n * planArea.n;
    }

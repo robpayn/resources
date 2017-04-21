@@ -4,7 +4,7 @@ import org.payn.chsm.processors.interfaces.UpdaterSimple;
 
 import neoch.processors.ProcessorDoubleTrade;
 
-public class LossImmediate extends ProcessorDoubleTrade implements UpdaterSimple {
+public class LossImmediate extends ProcessorDoubleChange implements UpdaterSimple {
 
     @Override
     public void setUpdateDependencies() throws Exception

@@ -1,7 +1,7 @@
 package org.payn.resources.water.channel.cell;
 
+import org.payn.chsm.processors.auto.ProcessorDoubleInfoInit;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.processors.ProcessorDoubleStateInit;
 import org.payn.resources.water.ResourceWater;
 
 /**
@@ -10,7 +10,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class WettedArea extends ProcessorDoubleStateInit {
+public class WettedArea extends ProcessorDoubleInfoInit {
 
    /**
     * Volume of water in cell

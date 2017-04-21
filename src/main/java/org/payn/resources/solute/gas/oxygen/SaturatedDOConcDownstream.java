@@ -1,7 +1,7 @@
 package org.payn.resources.solute.gas.oxygen;
 
+import org.payn.chsm.processors.auto.ProcessorDoubleInfoInit;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.processors.ProcessorDoubleStateInit;
 import org.payn.resources.solute.ResourceSolute;
 
 /**
@@ -17,7 +17,7 @@ import org.payn.resources.solute.ResourceSolute;
  * 
  * @author Rob Payn
  */
-public class SaturatedDOConcDownstream extends ProcessorDoubleStateInit {
+public class SaturatedDOConcDownstream extends ProcessorDoubleInfoInit {
 
    /**
     * Water temperature

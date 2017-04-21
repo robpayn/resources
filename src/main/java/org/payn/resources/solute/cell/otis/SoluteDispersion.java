@@ -28,7 +28,7 @@ public class SoluteDispersion extends SoluteConcChange {
    private ValueDouble conc;
 
    @Override
-   public void setUpdateDependenciesLoad() throws Exception 
+   public void setUpdateDependenciesDelta() throws Exception 
    {
       conc = (ValueDouble)createAbstractDependency(
             ResourceSolute.NAME_SOLUTE_CONC
@@ -43,7 +43,7 @@ public class SoluteDispersion extends SoluteConcChange {
    }
 
    @Override
-   public void updateLoad() throws Exception 
+   public void updateDelta() throws Exception 
    {
       value.n = (dispersionCoeff.n * (downstreamConc.n - (2.0 * conc.n) + upstreamConc.n)) 
             / (length.n * length.n);

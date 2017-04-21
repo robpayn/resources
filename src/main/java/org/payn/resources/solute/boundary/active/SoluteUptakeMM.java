@@ -39,7 +39,7 @@ public class SoluteUptakeMM extends ProcessorDoubleLoad {
    private ValueDouble planArea;
 
    @Override
-   public void setUpdateDependenciesLoad() throws Exception 
+   public void setUpdateDependenciesDelta() throws Exception 
    {
       planArea = (ValueDouble)createDependency(
             ResourceSolute.NAME_PLANAREA
@@ -60,7 +60,7 @@ public class SoluteUptakeMM extends ProcessorDoubleLoad {
    }
 
    @Override
-   public void updateLoad() 
+   public void updateDelta() 
    {
       value.n = planArea.n * (
             ((maxUptake.n * bkgConc.n) / (halfSat.n + bkgConc.n)) 

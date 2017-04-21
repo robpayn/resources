@@ -35,7 +35,7 @@ public class DOAWExchange extends ProcessorDoubleLoad {
    private ValueDouble planArea;
 
    @Override
-   public void setUpdateDependenciesLoad() throws Exception 
+   public void setUpdateDependenciesDelta() throws Exception 
    {
       Holon holon = (Holon)getController().getState();
       awExchangeVelocity = (ValueDouble)createDependencyOnValue(
@@ -59,7 +59,7 @@ public class DOAWExchange extends ProcessorDoubleLoad {
    }
 
    @Override
-   public void updateLoad() throws Exception 
+   public void updateDelta() throws Exception 
    {
       value.n = awExchangeVelocity.n * 
             (satConc.n - conc.n) *

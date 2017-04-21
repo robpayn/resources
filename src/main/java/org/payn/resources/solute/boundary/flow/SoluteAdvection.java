@@ -30,7 +30,7 @@ public class SoluteAdvection extends ProcessorDoubleLoadSymmetric {
    private ValueDouble concAdjacent;
 
    @Override
-   public void setUpdateDependenciesLoad() throws Exception 
+   public void setUpdateDependenciesDelta() throws Exception 
    {
       HolonCell cell = ((HolonBoundary)getState().getParentHolon()).getCell();
       concLocal = (ValueDouble)createAbstractDependency(
@@ -48,7 +48,7 @@ public class SoluteAdvection extends ProcessorDoubleLoadSymmetric {
    }
 
    @Override
-   public void updateLoad() 
+   public void updateDelta() 
    {
       if (waterFlow.n <= 0)
       {

@@ -28,7 +28,7 @@ public class SoluteAdvection extends SoluteConcChange {
    private ValueDouble length;
 
    @Override
-   public void setUpdateDependenciesLoad() throws Exception 
+   public void setUpdateDependenciesDelta() throws Exception 
    {
       waterFlow = (ValueDouble)createDependency(
             ResourceSolute.NAME_WATER_FLOW
@@ -45,7 +45,7 @@ public class SoluteAdvection extends SoluteConcChange {
    }
 
    @Override
-   public void updateLoad() throws Exception 
+   public void updateDelta() throws Exception 
    {
       value.n = (waterFlow.n / xSectionArea.n) * ((upstreamConc.n - downstreamConc.n) / (2.0 * length.n));
    }

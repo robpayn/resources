@@ -36,7 +36,7 @@ public class DOPhotosynthesis extends ProcessorDoubleLoad {
    private ValueDouble instPAR;
 
    @Override
-   public void setUpdateDependenciesLoad() throws Exception 
+   public void setUpdateDependenciesDelta() throws Exception 
    {
       Holon holon = (Holon)getController().getState();
       pToPARRatio = (ValueDouble)createDependencyOnValue(
@@ -60,7 +60,7 @@ public class DOPhotosynthesis extends ProcessorDoubleLoad {
     * [Mass Time<sup><small>-1</small></sup>]
     */
    @Override
-   public void updateLoad() throws Exception 
+   public void updateDelta() throws Exception 
    {
       value.n = instPAR.n * pToPARRatio.n * planArea.n;
    }

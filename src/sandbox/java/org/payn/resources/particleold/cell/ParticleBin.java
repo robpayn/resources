@@ -11,8 +11,8 @@ import org.payn.chsm.values.ValueParticleList;
 import org.payn.resources.particle.Particle;
 import org.payn.resources.particle.ParticleList;
 import org.payn.resources.particle.boundary.ParticleLoad;
-import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
-import org.payn.resources.solute.cell.BehaviorSoluteStorage;
+import org.payn.resources.solute.mass.boundary.BehaviorSoluteFlow;
+import org.payn.resources.solute.mass.cell.BehaviorSoluteStorage;
 
 import neoch.HolonBoundary;
 import neoch.HolonCell;

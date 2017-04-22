@@ -3,7 +3,7 @@ package org.payn.resources.particleold.boundary;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueParticleList;
 import org.payn.resources.particle.ResourceParticle;
-import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
+import org.payn.resources.solute.mass.boundary.BehaviorSoluteFlow;
 
 import neoch.behaviors.BehaviorMatrix;
 

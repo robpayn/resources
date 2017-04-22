@@ -1,26 +1,26 @@
 package org.payn.resources.solute;
 
 import org.payn.chsm.ResourceAbstract;
-import org.payn.resources.solute.boundary.BehaviorSoluteActiveMM;
-import org.payn.resources.solute.boundary.BehaviorSoluteAdvection;
-import org.payn.resources.solute.boundary.BehaviorSoluteBoundInject;
-import org.payn.resources.solute.boundary.BehaviorSoluteBoundInterp;
-import org.payn.resources.solute.boundary.BehaviorSoluteConcInterp;
-import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
-import org.payn.resources.solute.boundary.BehaviorSoluteFlowBound;
-import org.payn.resources.solute.cell.BehaviorSoluteStorage;
-import org.payn.resources.solute.gas.oxygen.BehaviorDOAWExchange;
-import org.payn.resources.solute.gas.oxygen.BehaviorDOAWExchangeReach;
-import org.payn.resources.solute.gas.oxygen.BehaviorDOPhotosynthesis;
-import org.payn.resources.solute.gas.oxygen.BehaviorDOPhotosynthesisReach;
-import org.payn.resources.solute.gas.oxygen.BehaviorDORespiration;
-import org.payn.resources.solute.gas.oxygen.BehaviorDORespirationReach;
-import org.payn.resources.solute.gas.oxygen.DOAWExchange;
-import org.payn.resources.solute.gas.oxygen.DOAWExchangeVelocity;
-import org.payn.resources.solute.gas.oxygen.DOPhotosynthesis;
-import org.payn.resources.solute.gas.oxygen.DORespiration;
-import org.payn.resources.solute.gas.oxygen.SaturatedDOConcDownstream;
-import org.payn.resources.solute.gas.oxygen.SaturatedDOConcUpstream;
+import org.payn.resources.solute.mass.boundary.BehaviorSoluteActiveMM;
+import org.payn.resources.solute.mass.boundary.BehaviorSoluteAdvection;
+import org.payn.resources.solute.mass.boundary.BehaviorSoluteBoundInject;
+import org.payn.resources.solute.mass.boundary.BehaviorSoluteBoundInterp;
+import org.payn.resources.solute.mass.boundary.BehaviorSoluteConcInterp;
+import org.payn.resources.solute.mass.boundary.BehaviorSoluteFlow;
+import org.payn.resources.solute.mass.boundary.BehaviorSoluteFlowBound;
+import org.payn.resources.solute.mass.cell.BehaviorSoluteStorage;
+import org.payn.resources.solute.mass.gas.oxygen.BehaviorDOAWExchange;
+import org.payn.resources.solute.mass.gas.oxygen.BehaviorDOAWExchangeReach;
+import org.payn.resources.solute.mass.gas.oxygen.BehaviorDOPhotosynthesis;
+import org.payn.resources.solute.mass.gas.oxygen.BehaviorDOPhotosynthesisReach;
+import org.payn.resources.solute.mass.gas.oxygen.BehaviorDORespiration;
+import org.payn.resources.solute.mass.gas.oxygen.BehaviorDORespirationReach;
+import org.payn.resources.solute.mass.gas.oxygen.DOAWExchange;
+import org.payn.resources.solute.mass.gas.oxygen.DOAWExchangeVelocity;
+import org.payn.resources.solute.mass.gas.oxygen.DOPhotosynthesis;
+import org.payn.resources.solute.mass.gas.oxygen.DORespiration;
+import org.payn.resources.solute.mass.gas.oxygen.SaturatedDOConcDownstream;
+import org.payn.resources.solute.mass.gas.oxygen.SaturatedDOConcUpstream;
 
 /**
  * The solute currency

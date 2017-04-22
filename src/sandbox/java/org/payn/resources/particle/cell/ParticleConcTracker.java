@@ -10,7 +10,7 @@ import org.payn.chsm.values.ValueLong;
 import org.payn.resources.particle.Particle;
 import org.payn.resources.particle.ParticleManager;
 import org.payn.resources.solute.ResourceSolute;
-import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
+import org.payn.resources.solute.mass.boundary.BehaviorSoluteFlow;
 
 import neoch.HolonBoundary;
 import neoch.HolonCell;

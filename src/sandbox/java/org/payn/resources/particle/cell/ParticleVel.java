@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.particle.ParticleManager;
 import org.payn.resources.solute.ResourceSolute;
-import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
+import org.payn.resources.solute.mass.boundary.BehaviorSoluteFlow;
 
 import neoch.HolonBoundary;
 import neoch.HolonCell;

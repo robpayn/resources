@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.solute.ResourceSolute;
-import org.payn.resources.solute.boundary.BehaviorSoluteFlow;
+import org.payn.resources.solute.mass.boundary.BehaviorSoluteFlow;
 
 import neoch.HolonBoundary;
 

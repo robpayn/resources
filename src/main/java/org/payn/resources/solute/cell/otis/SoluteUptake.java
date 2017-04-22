@@ -1,6 +1,6 @@
 package org.payn.resources.solute.cell.otis;
 
-import org.payn.chsm.processors.auto.ProcessorDoubleDelta;
+import org.payn.chsm.finitedifference.processors.ProcessorDoubleDelta;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.solute.ResourceSolute;
 

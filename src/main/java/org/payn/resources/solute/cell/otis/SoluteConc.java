@@ -1,6 +1,6 @@
 package org.payn.resources.solute.cell.otis;
 
-import org.payn.chsm.processors.auto.ProcessorDoubleState;
+import org.payn.chsm.finitedifference.processors.ProcessorDoubleBaseState;
 
 /**
  * Calculate the concentration in a cell based on direct calculations
@@ -9,5 +9,5 @@ import org.payn.chsm.processors.auto.ProcessorDoubleState;
  * @author robpayn
  *
  */
-public class SoluteConc extends ProcessorDoubleState {
+public class SoluteConc extends ProcessorDoubleBaseState {
 }

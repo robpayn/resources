@@ -8,6 +8,6 @@ import neoch.processors.ProcessorStorageDouble;
  * @author v78h241
  *
  */
-public class SnowWaterEquivalent extends ProcessorDoubleState {
+public class SnowWaterEquivalent extends ProcessorDoubleBaseState {
 
 }

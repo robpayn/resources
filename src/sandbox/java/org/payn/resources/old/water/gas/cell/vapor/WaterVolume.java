@@ -2,6 +2,6 @@ package org.payn.resources.old.water.gas.cell.vapor;
 
 import neoch.processors.ProcessorStorageDouble;
 
-public class WaterVolume extends ProcessorDoubleState {
+public class WaterVolume extends ProcessorDoubleBaseState {
    
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 
-import org.payn.chsm.Holon;
+import org.payn.chsm.finitedifference.Holon;
 import org.payn.chsm.processors.ProcessorLong;
 import org.payn.chsm.resources.time.BehaviorTime;
 import org.payn.chsm.values.ValueDouble;

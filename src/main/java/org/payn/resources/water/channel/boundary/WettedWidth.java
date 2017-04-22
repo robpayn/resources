@@ -1,6 +1,6 @@
 package org.payn.resources.water.channel.boundary;
 
-import org.payn.chsm.processors.auto.ProcessorDoubleChangeInit;
+import org.payn.chsm.finitedifference.processors.ProcessorDoubleChangeInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.water.ResourceWater;
 

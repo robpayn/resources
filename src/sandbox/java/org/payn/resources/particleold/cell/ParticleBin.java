@@ -3,8 +3,8 @@ package org.payn.resources.particleold.cell;
 import java.util.ArrayList;
 import java.util.Random;
 
-import org.payn.chsm.Holon;
 import org.payn.chsm.State;
+import org.payn.chsm.finitedifference.Holon;
 import org.payn.chsm.resources.time.BehaviorTime;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueParticleList;
@@ -20,7 +20,7 @@ import neoch.HolonMatrix;
 import neoch.UpdaterStorage;
 import neoch.behaviors.BehaviorMatrix;
 
-public class ParticleBin extends ParticleList implements UpdaterState {
+public class ParticleBin extends ParticleList implements UpdaterBaseState {
 
    ParticleLoad incomingLoad;
    ParticleLoad outgoingLoad;

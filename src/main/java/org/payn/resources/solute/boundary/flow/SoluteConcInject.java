@@ -1,7 +1,7 @@
 package org.payn.resources.solute.boundary.flow;
 
 import org.payn.chsm.Holon;
-import org.payn.chsm.processors.auto.ProcessorDoubleChange;
+import org.payn.chsm.finitedifference.processors.ProcessorDoubleChange;
 import org.payn.chsm.processors.interfaces.InitializerSimpleAuto;
 import org.payn.chsm.resources.time.BehaviorTime;
 import org.payn.chsm.resources.time.Iteration;

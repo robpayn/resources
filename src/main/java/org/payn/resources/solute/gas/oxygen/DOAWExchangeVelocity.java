@@ -1,6 +1,6 @@
 package org.payn.resources.solute.gas.oxygen;
 
-import org.payn.chsm.processors.auto.ProcessorDoubleChange;
+import org.payn.chsm.finitedifference.processors.ProcessorDoubleChange;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.solute.ResourceSolute;
 

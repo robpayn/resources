@@ -1,6 +1,6 @@
 package org.payn.resources.water.channel.temperature;
 
-import org.payn.chsm.processors.auto.ProcessorDoubleInfoInit;
+import org.payn.chsm.finitedifference.processors.ProcessorDoubleInfoInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.water.ResourceWater;
 

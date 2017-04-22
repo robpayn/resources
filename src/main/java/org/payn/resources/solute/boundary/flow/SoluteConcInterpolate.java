@@ -1,8 +1,8 @@
 package org.payn.resources.solute.boundary.flow;
 
+import org.payn.chsm.finitedifference.processors.ProcessorDoubleChangeInit;
 import org.payn.chsm.io.interpolate.Interpolator;
 import org.payn.chsm.io.interpolate.InterpolatorSnapshotTable;
-import org.payn.chsm.processors.auto.ProcessorDoubleChangeInit;
 
 /**
  * Solute concentration processor based on interpolation from input data

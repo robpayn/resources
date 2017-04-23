@@ -29,6 +29,10 @@ public class BehaviorSoluteBoundInterp extends BehaviorSoluteBound {
             InterpolatorSnapshotTable.NAME_DELIMITER, 
             ValueString.class
             );
+      registerStateAbstract(
+            InterpolatorSnapshotTable.DEFAULT_NAME_HEADER,
+            ValueString.class
+            );
    }
 
    @Override

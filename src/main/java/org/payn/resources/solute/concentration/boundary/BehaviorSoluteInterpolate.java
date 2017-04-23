@@ -5,7 +5,6 @@ import org.payn.chsm.resources.BehaviorAbstract;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
 import org.payn.resources.solute.ResourceSolute;
-import org.payn.resources.solute.mass.boundary.flow.SoluteConcInject;
 import org.payn.resources.solute.mass.boundary.flow.SoluteConcInterpolate;
 
 /**
@@ -23,7 +22,7 @@ public class BehaviorSoluteInterpolate extends BehaviorAbstract {
       addProcessorAbstract(
             ResourceSolute.NAME_SOLUTE_CONC, 
             SoluteConcInterpolate.class, 
-            SoluteConcInject.getValueClass()
+            SoluteConcInterpolate.getValueClass()
             );
    }
 
@@ -44,6 +43,10 @@ public class BehaviorSoluteInterpolate extends BehaviorAbstract {
             );
       registerStateAbstract(
             InterpolatorSnapshotTable.NAME_DELIMITER, 
+            ValueString.class
+            );
+      registerStateAbstract(
+            InterpolatorSnapshotTable.DEFAULT_NAME_HEADER,
             ValueString.class
             );
    }

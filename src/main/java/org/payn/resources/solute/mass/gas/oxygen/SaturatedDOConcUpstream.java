@@ -1,6 +1,6 @@
 package org.payn.resources.solute.mass.gas.oxygen;
 
-import org.payn.chsm.finitedifference.processors.ProcessorDoubleInfoInit;
+import org.payn.chsm.processors.finitedifference.ProcessorDoubleInfoInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.solute.ResourceSolute;
 

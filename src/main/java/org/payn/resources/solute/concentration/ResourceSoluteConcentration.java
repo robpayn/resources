@@ -1,6 +1,6 @@
 package org.payn.resources.solute.concentration;
 
-import org.payn.chsm.ResourceAbstract;
+import org.payn.chsm.resources.ResourceAbstract;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.concentration.boundary.BehaviorSoluteFlow;
 import org.payn.resources.solute.concentration.boundary.BehaviorSoluteFlowBound;

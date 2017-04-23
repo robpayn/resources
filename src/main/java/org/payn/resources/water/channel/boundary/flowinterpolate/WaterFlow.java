@@ -1,7 +1,7 @@
 package org.payn.resources.water.channel.boundary.flowinterpolate;
 
-import org.payn.chsm.io.interpolate.Interpolator;
-import org.payn.chsm.io.interpolate.InterpolatorSnapshotTable;
+import org.payn.chsm.io.inputters.Interpolator;
+import org.payn.chsm.io.inputters.InterpolatorSnapshotTable;
 import org.payn.neoch.processors.ProcessorDoubleLoadInit;
 
 /**

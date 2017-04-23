@@ -1,8 +1,8 @@
 package org.payn.resources.water;
 
 import org.payn.chsm.Holon;
-import org.payn.chsm.Processor;
-import org.payn.chsm.ResourceAbstract;
+import org.payn.chsm.processors.Processor;
+import org.payn.chsm.resources.ResourceAbstract;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.water.channel.boundary.BedElevation;
 import org.payn.resources.water.channel.boundary.BedSlope;

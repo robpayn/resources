@@ -1,6 +1,6 @@
 package org.payn.resources.solute;
 
-import org.payn.chsm.ResourceAbstract;
+import org.payn.chsm.resources.ResourceAbstract;
 import org.payn.resources.solute.mass.boundary.BehaviorSoluteActiveMM;
 import org.payn.resources.solute.mass.boundary.BehaviorSoluteAdvection;
 import org.payn.resources.solute.mass.boundary.BehaviorSoluteBoundInject;

@@ -1,6 +1,6 @@
 package org.payn.resources.particleold;
 
-import org.payn.chsm.ProcessorAbstract;
+import org.payn.chsm.processors.ProcessorAbstract;
 import org.payn.chsm.processors.interfaces.UpdaterAuto;
 import org.payn.chsm.values.ValueParticleList;
 

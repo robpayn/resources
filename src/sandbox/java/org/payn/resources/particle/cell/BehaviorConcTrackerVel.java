@@ -1,7 +1,7 @@
 package org.payn.resources.particle.cell;
 
-import org.payn.chsm.Controller;
 import org.payn.chsm.finitedifference.Holon;
+import org.payn.chsm.processors.Controller;
 import org.payn.chsm.values.ValueLong;
 import org.payn.chsm.values.ValueString;
 import org.payn.resources.particle.ResourceParticle;

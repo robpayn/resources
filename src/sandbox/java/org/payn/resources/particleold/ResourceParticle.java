@@ -1,6 +1,6 @@
 package org.payn.resources.particleold;
 
-import org.payn.chsm.Resource;
+import org.payn.chsm.resources.Resource;
 import org.payn.resources.particle.boundary.BehaviorParticleMove;
 import org.payn.resources.particle.cell.BehaviorConcTrackerAlt;
 import org.payn.resources.particle.cell.BehaviorConcTrackerLagrange;

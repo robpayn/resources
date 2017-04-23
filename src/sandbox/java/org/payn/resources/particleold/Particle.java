@@ -1,6 +1,6 @@
 package org.payn.resources.particleold;
 
-import org.payn.chsm.Processor;
+import org.payn.chsm.processors.Processor;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueLong;
 import org.payn.chsm.values.ValueTimeSeries;

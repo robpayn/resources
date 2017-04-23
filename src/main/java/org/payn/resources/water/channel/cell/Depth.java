@@ -1,6 +1,6 @@
 package org.payn.resources.water.channel.cell;
 
-import org.payn.chsm.finitedifference.processors.ProcessorDoubleInfoInit;
+import org.payn.chsm.processors.finitedifference.ProcessorDoubleInfoInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.water.ResourceWater;
 

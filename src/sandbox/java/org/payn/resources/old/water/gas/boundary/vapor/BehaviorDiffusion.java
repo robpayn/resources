@@ -2,8 +2,8 @@ package org.payn.resources.old.water.gas.boundary.vapor;
 
 import java.util.HashMap;
 
-import org.payn.chsm.Processor;
-import org.payn.chsm.Value;
+import org.payn.chsm.processors.Processor;
+import org.payn.chsm.values.Value;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.old.water.CurrencyWater;
 

@@ -4,7 +4,7 @@ import java.io.File;
 import java.sql.Time;
 
 import org.payn.chsm.Holon;
-import org.payn.chsm.io.interpolate.InterpolatorSnapshotTable;
+import org.payn.chsm.io.inputters.InterpolatorSnapshotTable;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
 

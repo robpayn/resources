@@ -1,6 +1,6 @@
 package org.payn.resources.solute.concentration.cell;
 
-import org.payn.chsm.finitedifference.processors.ProcessorDoubleBaseState;
+import org.payn.chsm.processors.finitedifference.ProcessorDoubleBaseState;
 
 /**
  * Calculate the concentration in a cell based on direct calculations

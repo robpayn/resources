@@ -1,6 +1,6 @@
 package org.payn.resources.solute.mass.boundary;
 
-import org.payn.chsm.BehaviorAbstract;
+import org.payn.chsm.resources.BehaviorAbstract;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.solute.ResourceSolute;
 import org.payn.resources.solute.mass.boundary.flow.SoluteFlowBound;

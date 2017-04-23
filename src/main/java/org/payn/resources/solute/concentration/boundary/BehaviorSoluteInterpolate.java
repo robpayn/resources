@@ -1,7 +1,7 @@
 package org.payn.resources.solute.concentration.boundary;
 
-import org.payn.chsm.BehaviorAbstract;
-import org.payn.chsm.io.interpolate.InterpolatorSnapshotTable;
+import org.payn.chsm.io.inputters.InterpolatorSnapshotTable;
+import org.payn.chsm.resources.BehaviorAbstract;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
 import org.payn.resources.solute.ResourceSolute;

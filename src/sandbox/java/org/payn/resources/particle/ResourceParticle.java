@@ -1,6 +1,6 @@
 package org.payn.resources.particle;
 
-import org.payn.chsm.Resource;
+import org.payn.chsm.resources.Resource;
 import org.payn.resources.particle.cell.BehaviorConcTrackerVel;
 
 public class ResourceParticle extends Resource {

@@ -1,4 +1,4 @@
-package org.payn.resources.solute.mass.cell.storage;
+package org.payn.resources.solute.mass.cell;
 
 import org.payn.chsm.processors.finitedifference.ProcessorDoubleInfoInitRequired;
 import org.payn.chsm.values.ValueDouble;

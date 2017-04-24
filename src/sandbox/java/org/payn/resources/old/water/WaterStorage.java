@@ -8,6 +8,6 @@ import neoch.processors.ProcessorStorageDouble;
  * @author robpayn
  *
  */
-public class WaterStorage extends ProcessorDoubleBaseState {
+public class WaterStorage extends ProcessorDoubleStore {
    
 }

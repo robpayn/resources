@@ -47,7 +47,8 @@ public class SoluteAdvection extends SoluteConcChange {
    @Override
    public void updateDelta() throws Exception 
    {
-      value.n = (waterFlow.n / xSectionArea.n) * ((upstreamConc.n - downstreamConc.n) / (2.0 * length.n));
+      value.n = (waterFlow.n / xSectionArea.n) * 
+            ((upstreamConc.n - downstreamConc.n) / (2.0 * length.n));
    }
 
 }

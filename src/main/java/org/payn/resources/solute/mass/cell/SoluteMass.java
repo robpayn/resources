@@ -1,7 +1,7 @@
 package org.payn.resources.solute.mass.cell;
 
+import org.payn.chsm.processors.finitedifference.ProcessorDoubleStoreInit;
 import org.payn.chsm.values.ValueDouble;
-import org.payn.neoch.processors.ProcessorDoubleStoreInit;
 import org.payn.resources.solute.ResourceSolute;
 
 /**

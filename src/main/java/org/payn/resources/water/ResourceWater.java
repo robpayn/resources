@@ -61,7 +61,7 @@ public class ResourceWater extends ResourceAbstract {
     * Name of behavior for the channel storage
     */
    public static final String BEHAVIOR_CHANNEL_STORAGE = "channel";
-
+   
    /**
     * Name of behavior for dynamic wave routing
     */
@@ -306,7 +306,7 @@ public class ResourceWater extends ResourceAbstract {
     * Default name for downstream water density
     */
    public static final String DEFAULT_NAME_WATER_DENSITY_DOWNSTREAM = "WaterDensityDownstream";
-   
+
    /**
     * Get the Euclidian distance on a two-dimensional plane
     * 

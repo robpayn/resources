@@ -1,6 +1,6 @@
 package org.payn.resources.water.channel.cell;
 
-import org.payn.chsm.processors.finitedifference.ProcessorDoubleInfoInitRequired;
+import org.payn.chsm.processors.finitedifference.ProcessorDoublePoststoreInitRequired;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.water.ResourceWater;
 
@@ -10,7 +10,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class WaterHead extends ProcessorDoubleInfoInitRequired  {
+public class WaterHead extends ProcessorDoublePoststoreInitRequired  {
 
    /**
     * Volume of water

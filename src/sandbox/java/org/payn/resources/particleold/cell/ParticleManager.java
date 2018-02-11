@@ -19,7 +19,7 @@ import neoch.HolonCell;
 import neoch.HolonMatrix;
 import neoch.UpdaterInfo;
 
-public abstract class ParticleManager extends ProcessorLong implements UpdaterInfo {
+public abstract class ParticleManager extends ProcessorLong implements UpdaterPoststore {
    
    class CurrencyStructure {
       

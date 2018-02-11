@@ -1,7 +1,7 @@
 package org.payn.resources.water.channel.temperature;
 
 import org.payn.chsm.Holon;
-import org.payn.chsm.processors.finitedifference.ProcessorDoubleInfoInit;
+import org.payn.chsm.processors.finitedifference.ProcessorDoublePoststoreInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
 import org.payn.resources.water.ResourceWater;
@@ -13,7 +13,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class WaterTemperature extends ProcessorDoubleInfoInit {
+public class WaterTemperature extends ProcessorDoublePoststoreInit {
 
    /**
     * Reach average temperature calculated at the boundary

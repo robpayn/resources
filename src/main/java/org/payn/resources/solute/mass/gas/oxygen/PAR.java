@@ -6,7 +6,7 @@ import java.sql.Time;
 import org.payn.chsm.Holon;
 import org.payn.chsm.io.inputters.Interpolator;
 import org.payn.chsm.io.inputters.InterpolatorSnapshotTable;
-import org.payn.chsm.processors.finitedifference.ProcessorDoubleInfoInit;
+import org.payn.chsm.processors.finitedifference.ProcessorDoublePoststoreInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueString;
 
@@ -17,7 +17,7 @@ import org.payn.chsm.values.ValueString;
  * @author v78h241
  *
  */
-public class PAR extends ProcessorDoubleInfoInit {
+public class PAR extends ProcessorDoublePoststoreInit {
 
    /**
     * Interpolator for the input file

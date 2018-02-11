@@ -13,7 +13,7 @@ import neoch.processors.ProcessorDoubleTrade;
  * @author robpayn
  *
  */
-public class HydraulicGradient extends ProcessorDoubleChange implements UpdaterSimple {
+public class HydraulicGradient extends ProcessorDoublePredelta implements UpdaterSimple {
 
    /**
     * Head in the connected cell

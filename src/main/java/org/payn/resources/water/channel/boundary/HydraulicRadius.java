@@ -1,6 +1,6 @@
 package org.payn.resources.water.channel.boundary;
 
-import org.payn.chsm.processors.finitedifference.ProcessorDoubleChangeInit;
+import org.payn.chsm.processors.finitedifference.ProcessorDoublePredeltaInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.water.ResourceWater;
 
@@ -10,7 +10,7 @@ import org.payn.resources.water.ResourceWater;
  * @author v78h241
  *
  */
-public class HydraulicRadius extends ProcessorDoubleChangeInit {
+public class HydraulicRadius extends ProcessorDoublePredeltaInit {
 
    /**
     * Depth of the channel flow

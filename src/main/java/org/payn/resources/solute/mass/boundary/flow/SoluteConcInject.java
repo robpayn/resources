@@ -1,7 +1,7 @@
 package org.payn.resources.solute.mass.boundary.flow;
 
 import org.payn.chsm.Holon;
-import org.payn.chsm.processors.finitedifference.ProcessorDoubleChange;
+import org.payn.chsm.processors.finitedifference.ProcessorDoublePredelta;
 import org.payn.chsm.processors.interfaces.InitializerSimpleAuto;
 import org.payn.chsm.resources.time.BehaviorTime;
 import org.payn.chsm.resources.time.Iteration;
@@ -16,7 +16,7 @@ import org.payn.resources.solute.ResourceSolute;
  * @author robpayn
  *
  */
-public class SoluteConcInject extends ProcessorDoubleChange implements InitializerSimpleAuto {
+public class SoluteConcInject extends ProcessorDoublePredelta implements InitializerSimpleAuto {
 
    /**
     * Value for background concentration

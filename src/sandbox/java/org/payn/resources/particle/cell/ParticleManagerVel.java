@@ -25,7 +25,7 @@ import neoch.UpdaterInfo;
  * @author robpayn
  *
  */
-public class ParticleManagerVel extends ProcessorLong implements UpdaterInfo {
+public class ParticleManagerVel extends ProcessorLong implements UpdaterPoststore {
 
    /**
     * Map of resources being tracked by particles

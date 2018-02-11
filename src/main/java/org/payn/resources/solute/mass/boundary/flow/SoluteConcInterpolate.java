@@ -2,7 +2,7 @@ package org.payn.resources.solute.mass.boundary.flow;
 
 import org.payn.chsm.io.inputters.Interpolator;
 import org.payn.chsm.io.inputters.InterpolatorSnapshotTable;
-import org.payn.chsm.processors.finitedifference.ProcessorDoubleChangeInit;
+import org.payn.chsm.processors.finitedifference.ProcessorDoublePredeltaInit;
 
 /**
  * Solute concentration processor based on interpolation from input data
@@ -10,7 +10,7 @@ import org.payn.chsm.processors.finitedifference.ProcessorDoubleChangeInit;
  * @author robpayn
  *
  */
-public class SoluteConcInterpolate extends ProcessorDoubleChangeInit {
+public class SoluteConcInterpolate extends ProcessorDoublePredeltaInit {
 
    /**
     * Interpolator

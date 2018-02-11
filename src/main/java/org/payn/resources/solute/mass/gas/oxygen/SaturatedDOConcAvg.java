@@ -1,6 +1,6 @@
 package org.payn.resources.solute.mass.gas.oxygen;
 
-import org.payn.chsm.processors.finitedifference.ProcessorDoubleInfoInit;
+import org.payn.chsm.processors.finitedifference.ProcessorDoublePoststoreInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.solute.ResourceSolute;
 
@@ -10,7 +10,7 @@ import org.payn.resources.solute.ResourceSolute;
  * @author robpayn
  *
  */
-public class SaturatedDOConcAvg extends ProcessorDoubleInfoInit {
+public class SaturatedDOConcAvg extends ProcessorDoublePoststoreInit {
 
    /**
     * Upstream saturated concentration

@@ -161,6 +161,7 @@ public class WaterFlow extends ProcessorDoubleLoadSymmetricInitRequired {
     * 
     * @param flow
     * @return
+    *       Value for water flow
     * @throws Exception
     */
    private double calculate(double flow) throws Exception

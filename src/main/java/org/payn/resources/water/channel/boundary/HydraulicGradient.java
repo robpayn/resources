@@ -1,6 +1,6 @@
 package org.payn.resources.water.channel.boundary;
 
-import org.payn.chsm.processors.finitedifference.ProcessorDoublePredeltaInit;
+import org.payn.chsm.finitediff.processors.ProcessorDoublePreauxiliaryInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;
@@ -12,7 +12,7 @@ import org.payn.resources.water.ResourceWater;
  * @author robpayn
  *
  */
-public class HydraulicGradient extends ProcessorDoublePredeltaInit {
+public class HydraulicGradient extends ProcessorDoublePreauxiliaryInit {
 
    /**
     * Depth of the channel flow

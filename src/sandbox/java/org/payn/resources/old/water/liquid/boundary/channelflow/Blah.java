@@ -5,7 +5,7 @@ import org.payn.chsm.processors.interfaces.UpdaterSimple;
 
 import neoch.UpdaterTrade;
 
-public class Blah extends ProcessorDouble implements UpdaterPredelta, UpdaterSimple {
+public class Blah extends ProcessorDouble implements UpdaterPreauxiliary, UpdaterSimple {
 
    @Override
    public void setUpdateDependencies() throws Exception 

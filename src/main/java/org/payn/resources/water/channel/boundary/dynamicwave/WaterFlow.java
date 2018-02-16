@@ -92,7 +92,8 @@ public class WaterFlow extends ProcessorDoubleLoadSymmetricInitRequired {
    }
 
    @Override
-   public void initialize() throws Exception 
+   public void initialize() 
+         throws Exception 
    {
       super.initialize();
       if (velocityExponent == null)

@@ -1,6 +1,6 @@
 package org.payn.resources.water.channel.boundary.dynamicwave;
 
-import org.payn.chsm.processors.finitedifference.ProcessorDoublePredeltaInit;
+import org.payn.chsm.finitediff.processors.ProcessorDoublePreauxiliaryInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.water.ResourceWater;
 
@@ -11,7 +11,7 @@ import org.payn.resources.water.ResourceWater;
  * @author v78h241
  *
  */
-public class Friction extends ProcessorDoublePredeltaInit {
+public class Friction extends ProcessorDoublePreauxiliaryInit {
 
    /**
     * Hydraulic radius

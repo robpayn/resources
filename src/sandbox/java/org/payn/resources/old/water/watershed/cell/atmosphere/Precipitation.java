@@ -4,7 +4,7 @@ import org.payn.chsm.processors.interfaces.UpdaterSimple;
 
 import neoch.processors.ProcessorDoubleTrade;
 
-public class Precipitation extends ProcessorDoublePredelta implements UpdaterSimple {
+public class Precipitation extends ProcessorDoublePreauxiliary implements UpdaterSimple {
 
     @Override
     public void setUpdateDependencies() throws Exception

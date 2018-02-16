@@ -20,7 +20,7 @@ import neoch.HolonMatrix;
 import neoch.UpdaterStorage;
 import neoch.behaviors.BehaviorMatrix;
 
-public class ParticleBin extends ParticleList implements UpdaterStore {
+public class ParticleBin extends ParticleList implements UpdaterCore {
 
    ParticleLoad incomingLoad;
    ParticleLoad outgoingLoad;

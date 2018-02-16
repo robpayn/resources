@@ -18,7 +18,7 @@ import neoch.HolonCell;
 import neoch.HolonMatrix;
 import neoch.UpdaterInfo;
 
-public class ParticleManagerOneDim extends ParticleManager implements UpdaterPoststore {
+public class ParticleManagerOneDim extends ParticleManager implements UpdaterPostauxiliary {
    
    private class ResourceStructure {
       

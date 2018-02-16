@@ -9,6 +9,6 @@ import neoch.processors.ProcessorDoubleStore;
  * @author robpayn
  *
  */
-public abstract class HydraulicHead extends ProcessorDoubleStore {
+public abstract class HydraulicHead extends ProcessorDoubleCore {
 
 }

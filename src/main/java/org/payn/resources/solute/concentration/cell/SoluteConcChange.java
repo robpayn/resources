@@ -1,6 +1,6 @@
 package org.payn.resources.solute.concentration.cell;
 
-import org.payn.chsm.processors.finitedifference.ProcessorDoubleDelta;
+import org.payn.chsm.finitediff.processors.ProcessorDoubleDelta;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.HolonBoundary;
 import org.payn.neoch.HolonCell;

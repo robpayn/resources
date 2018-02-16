@@ -1,6 +1,6 @@
 package org.payn.resources.water.channel.boundary;
 
-import org.payn.chsm.processors.finitedifference.ProcessorDoublePredeltaInit;
+import org.payn.chsm.finitediff.processors.ProcessorDoublePreauxiliaryInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.water.ResourceWater;
 
@@ -10,7 +10,7 @@ import org.payn.resources.water.ResourceWater;
  * @author v78h241
  *
  */
-public class WettedWidth extends ProcessorDoublePredeltaInit {
+public class WettedWidth extends ProcessorDoublePreauxiliaryInit {
 
    /**
     * Depth of channel flow

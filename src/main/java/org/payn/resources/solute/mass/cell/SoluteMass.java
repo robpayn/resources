@@ -1,6 +1,6 @@
 package org.payn.resources.solute.mass.cell;
 
-import org.payn.chsm.processors.finitedifference.ProcessorDoubleStoreInit;
+import org.payn.chsm.finitediff.processors.ProcessorDoubleCoreInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.solute.ResourceSolute;
 
@@ -10,7 +10,7 @@ import org.payn.resources.solute.ResourceSolute;
  * @author v78h241
  *
  */
-public class SoluteMass extends ProcessorDoubleStoreInit {
+public class SoluteMass extends ProcessorDoubleCoreInit {
    
    /**
     * Concentration value

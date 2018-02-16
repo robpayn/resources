@@ -1,6 +1,6 @@
 package org.payn.resources.solute.mass.gas.oxygen;
 
-import org.payn.chsm.processors.finitedifference.ProcessorDoublePredelta;
+import org.payn.chsm.finitediff.processors.ProcessorDoublePreauxiliary;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.solute.ResourceSolute;
 
@@ -18,7 +18,7 @@ import org.payn.resources.solute.ResourceSolute;
  * 
  * @author robert.payn
  */
-public class DOAWExchangeVelocity extends ProcessorDoublePredelta {
+public class DOAWExchangeVelocity extends ProcessorDoublePreauxiliary {
 
    /**
     * Temperature of water (&deg;C)

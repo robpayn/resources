@@ -1,6 +1,6 @@
 package org.payn.resources.water.channel.cell;
 
-import org.payn.chsm.processors.finitedifference.ProcessorDoubleStoreInit;
+import org.payn.chsm.finitediff.processors.ProcessorDoubleCoreInit;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.resources.water.ResourceWater;
 
@@ -10,7 +10,7 @@ import org.payn.resources.water.ResourceWater;
  * @author v78h241
  *
  */
-public class WaterVolume extends ProcessorDoubleStoreInit {
+public class WaterVolume extends ProcessorDoubleCoreInit {
 
    /**
     * Hydraulic head in the cell

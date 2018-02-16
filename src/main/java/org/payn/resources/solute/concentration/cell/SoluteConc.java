@@ -1,6 +1,6 @@
 package org.payn.resources.solute.concentration.cell;
 
-import org.payn.chsm.processors.finitedifference.ProcessorDoubleStore;
+import org.payn.chsm.finitediff.processors.ProcessorDoubleCore;
 
 /**
  * Calculate the concentration in a cell based on direct calculations
@@ -9,5 +9,5 @@ import org.payn.chsm.processors.finitedifference.ProcessorDoubleStore;
  * @author robpayn
  *
  */
-public class SoluteConc extends ProcessorDoubleStore {
+public class SoluteConc extends ProcessorDoubleCore {
 }

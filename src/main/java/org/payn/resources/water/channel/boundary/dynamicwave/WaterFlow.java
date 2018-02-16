@@ -2,7 +2,7 @@ package org.payn.resources.water.channel.boundary.dynamicwave;
 
 import org.payn.chsm.Holon;
 import org.payn.chsm.State;
-import org.payn.chsm.resources.time.BehaviorTime;
+import org.payn.chsm.resources.time.BehaviorTimeStepper;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.neoch.processors.ProcessorDoubleLoadSymmetricInitRequired;
 import org.payn.resources.water.ResourceWater;
@@ -115,7 +115,7 @@ public class WaterFlow extends ProcessorDoubleLoadSymmetricInitRequired {
    {
       timeStep = (ValueDouble)getState(
             (Holon)controller.getState(),
-            BehaviorTime.ITERATION_INTERVAL
+            BehaviorTimeStepper.ITERATION_INTERVAL
             ).getValue();
       State velocityState = createDependency(
             ResourceWater.DEFAULT_NAME_VELOCITY

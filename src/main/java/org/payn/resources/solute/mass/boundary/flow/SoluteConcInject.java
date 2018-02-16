@@ -3,7 +3,7 @@ package org.payn.resources.solute.mass.boundary.flow;
 import org.payn.chsm.Holon;
 import org.payn.chsm.finitediff.processors.ProcessorDoublePreauxiliary;
 import org.payn.chsm.processors.interfaces.InitializerSimpleAuto;
-import org.payn.chsm.resources.time.BehaviorTime;
+import org.payn.chsm.resources.time.BehaviorTimeStepper;
 import org.payn.chsm.resources.time.Iteration;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueLong;
@@ -69,7 +69,7 @@ public class SoluteConcInject extends ProcessorDoublePreauxiliary implements Ini
       Holon controllerHolon = (Holon)getController().getState();
       iterationInterval = (ValueDouble)createDependency(
             controllerHolon,
-            BehaviorTime.ITERATION_INTERVAL
+            BehaviorTimeStepper.ITERATION_INTERVAL
             ).getValue();
 
       mass = (ValueDouble)createAbstractDependency(

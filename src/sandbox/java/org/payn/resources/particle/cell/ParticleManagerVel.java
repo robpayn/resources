@@ -9,7 +9,7 @@ import java.util.Map.Entry;
 
 import org.payn.chsm.finitedifference.Holon;
 import org.payn.chsm.processors.ProcessorLong;
-import org.payn.chsm.resources.time.BehaviorTime;
+import org.payn.chsm.resources.time.BehaviorTimeStepper;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueLong;
 import org.payn.chsm.values.ValueString;
@@ -96,15 +96,15 @@ public class ParticleManagerVel extends ProcessorLong implements UpdaterPostauxi
       
       tick = (ValueLong)createDependency(
             (Holon)loadController().getState(),
-            BehaviorTime.DEFAULT_ITERATION_NAME
+            BehaviorTimeStepper.DEFAULT_ITERATION_NAME
             ).getValue();
       time = (ValueDouble)createDependency(
             (Holon)loadController().getState(),
-            BehaviorTime.DEFAULT_TIME_NAME
+            BehaviorTimeStepper.DEFAULT_TIME_NAME
             ).getValue();
       timeStep = (ValueDouble)createDependency(
             (Holon)loadController().getState(),
-            BehaviorTime.ITERATION_INTERVAL
+            BehaviorTimeStepper.ITERATION_INTERVAL
             ).getValue();
       releaseInterval = (ValueLong)createDependency(
             BehaviorConcTrackerVel.REQ_STATE_INTERVAL_RELEASE

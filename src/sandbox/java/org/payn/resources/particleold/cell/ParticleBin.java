@@ -5,7 +5,7 @@ import java.util.Random;
 
 import org.payn.chsm.State;
 import org.payn.chsm.finitedifference.Holon;
-import org.payn.chsm.resources.time.BehaviorTime;
+import org.payn.chsm.resources.time.BehaviorTimeStepper;
 import org.payn.chsm.values.ValueDouble;
 import org.payn.chsm.values.ValueParticleList;
 import org.payn.resources.particle.Particle;
@@ -77,7 +77,7 @@ public class ParticleBin extends ParticleList implements UpdaterCore {
       
       volume = (ValueDouble)createDependency(BehaviorSoluteStorage.REQ_STATE_VOLUME).getValue();
       Holon matrixHolon = (Holon)loadController().getState();
-      timeInterval = (ValueDouble)matrixHolon.getState(BehaviorTime.ITERATION_INTERVAL).getValue();
+      timeInterval = (ValueDouble)matrixHolon.getState(BehaviorTimeStepper.ITERATION_INTERVAL).getValue();
       random = new Random(System.currentTimeMillis());
    }
 

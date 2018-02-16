@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 
 import org.payn.chsm.finitedifference.Holon;
 import org.payn.chsm.processors.ProcessorLong;
-import org.payn.chsm.resources.time.BehaviorTime;
+import org.payn.chsm.resources.time.BehaviorTimeStepper;
 import org.payn.chsm.resources.time.Iteration;
 import org.payn.chsm.resources.time.Time;
 import org.payn.chsm.values.ValueDouble;
@@ -66,15 +66,15 @@ public abstract class ParticleManager extends ProcessorLong implements UpdaterPo
       
       tick = (ValueLong)createDependency(
             (Holon)loadController().getState(),
-            BehaviorTime.DEFAULT_ITERATION_NAME
+            BehaviorTimeStepper.DEFAULT_ITERATION_NAME
             ).getValue();
       time = (ValueDouble)createDependency(
             (Holon)loadController().getState(),
-            BehaviorTime.DEFAULT_TIME_NAME
+            BehaviorTimeStepper.DEFAULT_TIME_NAME
             ).getValue();
       timeStep = (ValueDouble)createDependency(
             (Holon)loadController().getState(),
-            BehaviorTime.ITERATION_INTERVAL
+            BehaviorTimeStepper.ITERATION_INTERVAL
             ).getValue();
       releaseInterval = (ValueLong)createDependency(
             BehaviorConcTrackerLagrange.REQ_STATE_INTERVAL_RELEASE

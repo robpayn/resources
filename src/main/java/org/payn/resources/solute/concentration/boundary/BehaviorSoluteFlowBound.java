@@ -19,14 +19,16 @@ public class BehaviorSoluteFlowBound extends BehaviorAbstract {
             ResourceSolute.NAME_WATER_FLOW, 
             ValueDouble.class
             );
-      registerStateAbstract(
-            ResourceSolute.NAME_SOLUTE_CONC, 
-            ValueDouble.class
-            );
    }
 
    @Override
    public void addProcessors() 
-   {}
+   {
+      addProcessorAbstract(
+            ResourceSolute.NAME_SOLUTE_CONC,
+            SoluteConcDownstream.class,
+            ValueDouble.class
+            );
+   }
 
 }
